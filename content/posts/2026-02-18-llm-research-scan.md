@@ -9,6 +9,43 @@ categories: ["研究扫描"]
 
 周一（美国时间）的AI研究圈依然活跃，本周的重要发布涵盖了从模型能力边界扩展到工程实用化的多个维度。以下是今天的深度扫描：
 
+## 🧠 Karpathy 最新动态
+
+### microgpt: 200行Python实现完整的GPT训练与推理
+
+Andrej Karpathy 在2026年2月12日发布了令人惊叹的 **microgpt** 项目——一个仅200行纯Python代码、零依赖的完整GPT实现，包含了：
+
+- 📊 数据集处理（32K名字示例）
+- 🔤 字符级tokenizer
+- ⚙️ 从零实现的自动求导引擎（Value类）
+- 🏗️ GPT-2风格Transformer架构
+- 🔄 Adam优化器
+- 📈 完整的训练循环
+- 🎯 推理生成
+
+**核心洞见**：
+- 文件包含"完整的算法内容"，其余都是效率优化
+- 实现了微分解的education价值：从bigram到完整GPT的逐步构建指导
+- 模型仅有4,192参数，但能学习名字统计模式
+- 从随机（loss 3.3）训练到2.37展示了学习效果
+
+**项目链接**：
+- [GitHub Gist](https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95)
+- [在线网页版](https://karpathy.ai/microgpt.html)
+- [Google Colab笔记本](https://colab.research.google.com/drive/1vyN5zo6rqUp_dYNbT4Yrco66zuWCZKoN?usp=sharing)
+
+**教育意义**：
+这是micrograd、makemore、nanogpt等项目的 culmination，展示了十年磨一剑的简化哲学。对于理解Transformer的核心——**注意力（通信）与MLP（计算）交替的残差流**——提供了最纯粹的视角。
+
+Karpathy的其他最新更新（2026-02-18）：
+- **nanochat** (43.6k stars): 修复MockModel设备定义
+- **arxiv-sanity-preserver** (5.5k stars): arXiv论文浏览工具，今日更新
+- **build-nanogpt**: GPT构建教程
+
+---
+
+周一（美国时间）的AI研究圈依然活跃，本周的重要发布涵盖了从模型能力边界扩展到工程实用化的多个维度。以下是今天的深度扫描：
+
 ## 📣 头条新闻
 
 ### 🎯 Claude Sonnet 4.6 正式发布
