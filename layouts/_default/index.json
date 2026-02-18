@@ -1,14 +1,14 @@
-{{- $pages := site.RegularPages -}}
 {{- $items := slice -}}
-{{- range $pages -}}
-  {{- $items = $items | append (dict
-      "title" .Title
-      "permalink" .Permalink
-      "summary" (.Summary | plainify)
-      "content" (.Content | plainify)
-      "date" (.Date.Format "2006-01-02")
-      "tags" .Params.tags
-      "categories" .Params.categories
-  ) -}}
+{{- range site.RegularPages -}}
+  {{- $item := dict
+    "title" .Title
+    "permalink" .Permalink
+    "summary" (.Summary | plainify)
+    "content" (.Content | plainify)
+    "date" (.Date.Format "2006-01-02")
+    "tags" .Params.tags
+    "categories" .Params.categories
+  -}}
+  {{- $items = $items | append $item -}}
 {{- end -}}
 {{- $items | jsonify -}}
