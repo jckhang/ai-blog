@@ -2,11 +2,7 @@
   "builds": [
     {
       "src": "hugo.toml",
-      "use": "@hugo-api/serverless",
-      "config": {
-        "buildCommand": "hugo --minify",
-        "outputDirectory": "public"
-      }
+      "use": "@hugo-api/serverless-v3"
     }
   ],
   "routes": [
