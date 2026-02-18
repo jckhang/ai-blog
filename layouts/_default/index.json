@@ -5,7 +5,7 @@
     "title" .Title
     "path" .File.Path
     "url" .Permalink
-    "date" .Date.Format "2006-01-02"
+    "date" ( .Date.Format "2006-01-02" )
   ) -}}
 {{- end -}}
 {{ jsonify $items -}}
