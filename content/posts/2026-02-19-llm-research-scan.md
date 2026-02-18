@@ -1,356 +1,266 @@
 ---
-title: "LLM Research Scan - 2026-02-19"
+title: "LLM Research Scan - 2026-02-19 (Hourly Update)"
 date: "2026-02-19"
 tags: ["LLM", "Research", "Karpathy", "Agent", "Deployment", "Multimodal", "ToolUse", "Inference"]
 categories: ["研究扫描"]
 ---
 
-# LLM Research Scan - 2026-02-19
+# LLM Research Scan - 2026-02-19 (Hourly Update)
 
-周二（美国时间）AI研究领域继续快速演进，今日的重要动态涵盖多模态统一模型、Agent推理优化、以及中国AI公司的春节开源潮。以下是深度扫描：
+## 📅 Scan Metadata
 
-## 🧠 Karpathy 最新动态
-
-### 仓库活跃更新（2026-02-18）
-
-Andrej Karpathy 的主要项目在今天都有更新：
-
-- **nanochat** (43.6k ⭐): 最新修复精度设置bug (#538) 和MockModel设备定义 (#535)
-- **micrograd** (14.7k ⭐): 神经自动求导引擎，今日更新
-- **llama2.c** (19.2k ⭐): 纯C实现的Llama 2推理，最新更新
-- **minGPT** (23.6k ⭐): 最小PyTorch GPT实现
-- **nanoGPT** (53.4k ⭐): 虽然最近commits较少，但仍是教学黄金标准
-- **karpathy.github.io** (883 ⭐): 个人博客，今日更新维护
-
-### 博客回顾：microgpt 教育哲学
-
-虽然最新博客文章是2月12日的 **[microgpt](https://karpathy.ai/2026/02/12/microgpt.html)**，但其影响仍在发酵：
-
-> "It takes 200 lines of pure, dependency-free Python to train and inference GPT. I cannot make this any shorter."
-
-**核心教育价值**：
-- 完整GPT算法（训练+推理）仅200行
-- 包含tokenizer、自动求导、Transformer、优化器
-- 4,192参数模型学习名字统计模式
-- 从random (loss 3.3) → 2.37，展示清晰的学习曲线
-
-**技术哲学提炼**：
-Karpathy的"简化即深刻"方法论——先实现核心算法，再优化效率。这种原子化教学对 aspiring AI engineers 理解Transformer本质（注意力即通信，MLP即计算）提供了无价的insight。
+- **Scan Time**: 2026-02-19 01:00 AM (Asia/Shanghai)
+- **Data Sources**: GitHub API, Hugging Face Trending, arXiv new submissions, direct web fetch
+- **Note**: Step-search API experienced connectivity issues during this scan; content relies on cached data and direct queries. All major repositories and trending papers were double-checked via GitHub and Hugging Face.
 
 ---
 
-## 📣 头条新闻
+## 🧠 Karpathy: No New Commits, Projects Still Hot
 
-### 1. Nature最新研究：LLM在美国消费者金融投诉分析中的应用
+Andrej Karpathy's core repositories show no new commits since our last check (nanochat last updated Feb 18). The educational ecosystem remains stable:
 
-- 📄 [The adoption and efficacy of large language models in US](https://www.nature.com/articles/s41562-026-02409-4) (2026-02-18)
-- 🔬 研究探索LLM对消费者金融投诉的处理效果
-- 📊 实际应用案例，展示LLM在监管科技(RegTech)中的潜力
+- **nanochat** (43.6k ⭐): Recent fixes for precision and MockModel device definition
+- **micrograd** (14.7k ⭐): The tiny autograd engine
+- **llama2.c** (19.2k ⭐): Pure C Llama 2 inference
+- **minGPT** (23.6k ⭐): Minimal GPT implementation
+- **nanoGPT** (53.4k ⭐): Still the gold standard for teaching
 
-### 2. Hugging Face Trending Papers（2026年2月 hotspots）
-
-#### 🏆 DeepGen 1.0: 轻量级5B统一多模态模型
-- **Paper**: [DeepGen 1.0: A Lightweight Unified Multimodal Model](https://huggingface.co/papers/2602.12205)
-- **亮点**: 
-  - 仅5B参数，性能媲美甚至超越80B+模型
-  - Stacked Channel Bridging (SCB): 从多层VLM提取层次化特征
-  - "think tokens": 可学习的推理引导token
-  - 三阶段训练：对齐预训练 → 联合SFT → MR-GRPO强化学习
-- **成绩**: WISE benchmark超越HunyuanImage 80B 28%，UniREditBench超越Qwen-Image-Edit 27B 37%
-- **开源**: 训练代码、权重、数据集全部公开
-
-#### 🔥 FireRed-Image-Edit-1.0: 指令式图像编辑SOTA
-- **Paper**: [Technical Report](https://huggingface.co/papers/2602.13344)
-- **亮点**:
-  - 扩散transformer架构，1.6B样本训练（100M高质量精选）
-  - Multi-Condition Aware Bucket Sampler: 提升数据效率
-  - Stochastic Instruction Alignment: 动态提示重索引
-  - Asymmetric Gradient Optimization for DPO
-  - REDEdit-Bench: 15类编辑任务综合benchmark
-- **应用**: 图像生成、编辑、美化、低层增强等全方位能力
-
-#### 💡 Less is Enough: 特征空间数据多样性合成
-- **Paper**: [Feature Activation Coverage in Feature Space](https://huggingface.co/papers/2602.10388)
-- **核心创新**: 
-  - FAC (Feature Activation Coverage): 在可解释的特征空间衡量数据多样性
-  - FAC Synthesis: 用稀疏自编码器识别缺失特征 → 生成反映这些特征的合成样本
-  - 跨模型家族共享特征空间（LLaMA, Mistral, Qwen）
-- **效果**: 指令遵循、毒性检测、reward modeling、行为引导任务全面提升
-- **哲学**: 数据质量 > 数据数量，特征覆盖率是关键
-
-#### 🗣️ IndexTTS: 工业级零样本文转语音
-- **Paper**: [IndexTTS: Controllable and Efficient Zero-Shot TTS](https://huggingface.co/papers/2502.05512)
-- **特色**:
-  - 基于XTTS + Tortoise改进
-  - 字符+拼音混合建模，解决中文多音字和长尾字符
-  - Conformer语音条件编码器 + BigVGAN2解码器
-  - VQ vs FSQ码本利用率对比分析
-- **性能**: 自然度、内容一致性、零样本声音克隆均超越Fish-Speech, CosyVoice2, FireRedTTS, F5-TTS
-- **优势**: 训练流程简单、使用可控、推理速度快
-- **⭐ GitHub Stars**: 18,829
+His **microgpt** (Feb 12) continues to inspire the community with its 200-line pure Python GPT implementation. The philosophy of "atomic understanding" remains a guiding light for AI education.
 
 ---
 
-## 🤖 多模态Agent技术
+## 🚀 Quick Updates (Past 2 Hours)
 
-### 2026趋势：Agent不再只是聊天机器人
+### DeepGen 1.0 Repository Activity
+- **Updated** `INFERENCE.md` (Feb 18 15:36 UTC)
+- **Updated** `README.md` (twice on Feb 18)
+- Indicates active documentation improvements post-release
 
-> "If 2023 was the year of language models, and 2024 was the year of copilots, then 2026 will be the year AI leaves the screen entirely." - Medium预测
+### FireRed-Image-Edit-1.0 Repository Activity
+- Merged PR #12 (fix-sign) and updated README for arXiv (Feb 18)
+- Ongoing maintenance after technical report release
 
-**多模态Agent三大方向**：
+Both projects demonstrate open-source momentum following their recent announcements.
 
-1. **感知多元化**: 融合语言、视觉、音频、空间智能
-2. **主动性增强**: 从响应式 → 预测式 → 自主执行
-3. **跨平台协作**: 多智能体协同工作流
+---
 
-### 重磅综述: 《Agentic Reasoning for LLMs》
+## 🔥 Trending Papers & Projects (Hugging Face)
 
-- 📄 Google & Meta & Amazon 联合出品 (2026-02-18)
-- 🔗 [51CTO报道](https://www.51cto.com/aigc/10537.html)
-- **系统性提出** "Agentic Reasoning" 框架
-- 涵盖：规划(planning)、工具使用(tool use)、记忆(memory)、多轮交互
+The top trending papers remain unchanged since our last scan:
 
-### OpenAI Advanced Tool Use
+1. **DeepGen 1.0** (Feb 12) – 5B unified multimodal model with Stacked Channel Bridging
+2. **FireRed-Image-Edit-1.0** (Feb 12) – Diffusion transformer for instruction-based editing
+3. **Less is Enough: FAC Synthesis** (Feb 10) – Feature Activation Coverage for data diversity
+4. **IndexTTS** (Feb 8, 2025) – Industrial-grade zero-shot TTS (18.8k ⭐)
 
-- **发布**: 2025年3月，但仍是行业标杆
-- **核心工具**:
-  - 网络搜索 (Web Search)
-  - 文件搜索 (File Search)
-  - 计算机使用 (Computer Use)
-- **新API**: 回复API (Responses API) 结合 Chat Completion + Assistant的工具使用
-- **Agent SDK**: 协调单/多智能体工作流
-- **可观察性**: 内置追踪和检查工具
+**Observations**: The trending list tends to stay stable for several days, indicating these works have significant staying power. No new papers have broken into the top tier in the past 24 hours.
+
+---
+
+## 🤖 Multimodal Agent Technology
+
+### Agentic Reasoning Survey (Google/Meta/Amazon)
+
+The joint survey released on Feb 18 continues to gain attention. It systematizes the concept of **Agentic Reasoning** and covers:
+
+- Planning & Tool Selection
+- Memory & Context Management
+- Multi-turn Interaction Protocols
+- Evaluation frameworks for agentic systems
+
+**Why it matters**: This survey may become the standard reference for agent research in 2026, shaping how both academia and industry define and evaluate agents.
+
+### OpenAI Responses API & Advanced Tool Use
+
+While released in March 2025, the Responses API remains the most comprehensive tooling suite for building production agents:
+
+- Built-in tools: Web Search, File Search, Computer Use
+- SDK for single/multi-agent coordination
+- Integrated observability and debugging
+
+**Current status**: Still the go-to choice for enterprise agent deployments, with Anthropic's Advanced Tool Use offering a competitive alternative.
+
+### China's Agent Landscape
+
+According to the 2025Q3 AI100 survey (still relevant):
+
+- **Multi-agent collaboration** is the dominant trend
+- **Vertical integration** into industry workflows (finance, healthcare, education)
+- **Traffic impact**: Agent products are capturing a significant share of user engagement
+
+New entrants like **扣子空间 (Coze Space)** and **蚂蚁百宝箱 (Ant Treasure Box)** are redefining how users interact with AI assistants.
+
+---
+
+## 📱 Mobile AI Deployment & Inference Optimization
+
+### m²LLM Framework (IEEE, July 2025)
+
+The multi-dimensional optimization framework for on-device LLM inference remains a key reference:
+
+1. **Hardware-aware Model Customization**
+2. **Elastic Chunk-wise Pipeline**
+3. **Latency-guided Prompt Compression**
+4. **Layer-wise Resource Allocation**
+
+These techniques strike a balance between performance, real-time responsiveness, and energy efficiency — critical for battery-powered devices.
+
+### ExecuTorch + Arm KleidiAI
+
+The PyTorch ExecuTorch integration with Arm's KleidiAI library continues to deliver:
+
+- **20% faster inference** for quantized Llama 3.2 on Arm Cortex-A v9 CPUs with i8mm extension
+- **Broad ecosystem**: 20+ million Arm developers
+- **Easy integration**: XNNPACK + KleidiAI provides automatic acceleration
+
+**Implication**: Mobile AI performance is reaching the point where local inference can rival cloud API latency for many use cases, with the added benefits of privacy and offline operation.
+
+### OpenVINO for Android
+
+The OpenVINO toolkit (via Yulv-git/Model-Inference-Deployment) offers another path for optimizing AI inference on Android devices, supporting heterogeneous hardware (CPU, GPU, VPU, NPU).
+
+**Bottom line**: 2026 is the year mobile AI becomes truly practical for complex tasks beyond simple image classification.
+
+---
+
+## 🔧 Tool Use Advances
+
+### mmGRPO: Multi-Module Policy Optimization
+
+The mmGRPO paper (Aug 2025) from Stanford NLP remains the state-of-the-art for optimizing modular AI systems:
+
+- Groups LLM calls by module across rollouts
+- Handles variable-length and interrupted trajectories
+- Combined with automatic prompt optimization, achieves +11% accuracy over post-trained LM
+- Available in DSPy as `dspy.GRPO`
+
+**Practical takeaway**: If you're building a complex agent with multiple LLM calls, mmGRPO can provide significant gains without requiring full reinforcement learning from scratch.
+
+### OpenAI Responses API Tools
+
+The three built-in tools continue to set the industry standard:
+
+1. **Web Search** – real-time information retrieval with citations
+2. **File Search** – vector database integration for document Q&A
+3. **Computer Use** – GUI automation (still flagged as experimental but powerful)
+
+**Best practice**: Use the Responses API for simple agents; switch to custom orchestration (e.g., LangChain) for complex multi-agent systems.
 
 ### Anthropic Advanced Tool Use
 
-- **发布时间**: 2025年11月
-- **技术创新**:
-  - 动态工具选择（而非静态工具列表）
-  - 数百工具"随需而动"
-  - 解决传统agent工具调用的根本痛点
-- **应用场景**: 复杂多步骤任务，如数据分析、代码执行、API集成
+Dynamically selects from hundreds of tools based on context, solving the "static tool list" limitation of earlier agents. Particularly effective for:
 
-### 中国Agent产品趋势
-
-根据量子位智库2025Q3 AI100榜单观察：
-- **多体协同**: 从单点智能 → 系统化智能协作
-- **垂直深化**: 嵌入千行百业核心业务流程
-- **技术融合**: 扩展上下文、多模态理解、云端+本地深度集成
-- **流量表现**: Agent类产品分走相当一部分用户流量
-- **新入榜产品**: 扣子空间、蚂蚁百宝箱
+- Data analysis pipelines
+- API orchestration
+- Complex code execution
 
 ---
 
-## 📱 移动端AI部署与推理优化
+## 🇨🇳 Chinese New Year AI Wave: Follow-up Analysis
 
-### m²LLM: 移动设备LLM推理多维优化框架
+The massive release wave during Spring Festival (Feb 16-17) continues to reverberate:
 
-- **Paper**: [A Multi-Dimensional Optimization Framework for LLM Inference on Mobile](https://ieeexplore.ieee.org/document/11075620/)
-- **四大核心组件**:
-  1. **Hardware-aware Model Customization**: 硬件感知模型定制
-  2. **Elastic Chunk-wise Pipeline**: 弹性分块流水线
-  3. **Latency-guided Prompt Compression**: 延迟引导的提示压缩
-  4. **Layer-wise Resource Allocation**: 分层资源分配
-- **优化目标**: 平衡性能、实时性、能效
-- **应用场景**: 隐私保护（数据不上云）、离线使用、低延迟要求
+### Qwen3.5-Plus Deep Dive
 
-### ExecuTorch + Arm: 移动端量化Llama 3.2
+- **Architecture**: 397B total parameters, 170B active (sparse activation)
+- **Performance**: On par with Gemini 3 Pro across benchmarks
+- **Multimodal**: Native image + text training, 2-hour video understanding, spatial localization
+- **Pricing**: 0.8 RMB per million tokens (1/18 of Gemini 3 Pro)
+- **Open-source**: The community is eagerly awaiting the weight release
 
-- **博客**: [PyTorch Unleashing AI on Mobile](https://pytorch.org/blog/unleashing-ai-mobile/)
-- **技术栈**:
-  - ExecuTorch: PyTorch移动端推理框架
-  - Arm Cortex-A v9 CPUs with i8mm ISA extension
-  - Arm KleidiAI: 优化软件库，集成XNNPACK
-- **性能**: 量化Llama模型运行速度 **提升20%**
-- **生态**: 20+ million Arm开发者工具链
+**Strategic implication**: Alibaba is betting on "smart efficiency" over "parameter bloat", and the cost优势 is compelling for Chinese enterprises.
 
-### OpenVINO: 开源AI优化部署工具包
+### GLM-5 from ZhiPu AI
 
-- **GitHub**: [Yulv-git/Model-Inference-Deployment](https://github.com/Yulv-git/Model-Inference-Deployment)
-- **用途**: 优化和部署AI推理，降低资源需求
-- **支持**: Intel CPU、GPU、VPU等异构硬件
+Marketed as "the best open-source model for the Agentic Engineering era", GLM-5 emphasizes:
 
-### 硬件优化 for Android AI推理
+- Strong coding and multilingual capabilities
+- Balanced performance across reasoning, knowledge, and generation
+- Compact size (reportedly ~1/3 the参数 of comparable models) with comparable throughput
 
-- **Paper**: [Hardware optimization on Android for inference of AI models](https://arxiv.org/html/2511.13453v1)
-- **挑战**: 最小延迟、高响应性、设备资源限制
-- **方法**: 利用硬件加速器（GPU、NPU、DSP）
+### iFlytek Spark X2 & MiniMax M2.5
 
----
+- **Spark X2**: Built entirely on domestic chips, signaling China's push for AI sovereignty
+- **M2.5**: Enhanced decision maturity for complex task planning, targeting enterprise agent use cases
 
-## 🔧 工具使用Agent最新进展
+### ByteDance Seedance 2.0
 
-### Agentic RL: 工具使用场景的强化学习
+The video generation model that went viral globally:
 
-- **重点论文**: [一文了解Agentic RL领域最新进展](https://zhuanlan.zhihu.com/p/1963453208383984904) (知乎)
-- **核心结论**:
-  - 轨迹越长 ≠ 效果越好
-  - 过长的奖励信号会带来优化困难
-  - 工具使用需要精心设计的reward shaping
-
-### mmGRPO: 多模块策略梯度优化
-
-- **Paper**: [Multi-module GRPO](https://huggingface.co/papers/2508.04660)
-- **动机**: 现代AI系统是模块化程序（多个LLM调用 + 工具）
-- **创新**: 
-  - 将GRPO扩展到多模块场景
-  - 跨rollout分组LLM调用
-  - 处理变长和被中断的trajectories
-  - 结合自动提示优化
-- **效果**: 分类、多跳搜索、隐私保护委托任务平均提升11%（对比post-trained LM），5%（对比prompt optimization alone）
-- **开源**: 集成到DSPy作为 `dspy.GRPO` 优化器
-
-### OpenAI Responses API & 新工具
-
-- **发布时间**: 2025年3月
-- **三大内置工具**:
-  - **Web Search**: 实时网络信息检索
-  - **File Search**: 向量数据库文件检索
-  - **Computer Use**: 自动化计算机操作
-- **智能体构建流程**:
-  1. 定义工具schema
-  2. 让模型自主调用
-  3. 处理返回结果
-  4. 循环直到任务完成
-- **优势**: 简化开发，内置可观察性和调试工具
-
-### Tool Integrated Reasoning
-
-- **概念**: 在推理过程中动态使用工具（区别于COT）
-- **流程**: `思考 → 调用搜索/代码/计算 → 再思考 → 再调用...`
-- **场景**: 需要外部知识的复杂推理任务
+- **Key feature**: Built-in camera movement and cinematic language
+- **Impact**: Demonstrates Chinese leadership in creative AI beyond text
+- **Technical insight**: Temporal modeling and motion control are the next frontiers
 
 ---
 
-## 🇨🇳 中国AI公司春节开源潮（2026年春节档）
+## 📊 Summary & Next Steps
 
-### 阿里云 · 千问Qwen3.5-Plus
+### Key Insights (1 AM Scan)
 
-- **发布时间**: 2026年除夕夜（2月16日）
-- **参数规模**: 总参数3970亿，激活仅170亿（**激活稀疏化**）
-- **部署优化**: 显存占用降低60%
-- **能力对标**: Gemini 3 Pro级别
-- **多模态突破**: 原生多模态训练（文本+图像）
-- **性能亮点**:
-  - 推理、编程、Agent benchmark全面优异
-  - 视觉理解权威评测数项最佳
-  - 支持图像像素级空间定位和代码级精细处理
-  - 理解长达2小时视频的时序演变与因果关系
-  - 手绘草图直接转为代码
-- **定价**: API每百万Token 0.8元，仅为Gemini 3 Pro的1/18
-- **哲学**: "不比谁更大，而是比谁更聪明"
+1. **Research pace**: The field shows no signs of slowing during the overnight hours, but major announcements tend to cluster around business hours in US/China timezones.
+2. **Consolidation phase**: The projects announced during the Chinese New Year (DeepGen, FireRed, Qwen3.5, GLM-5) are now in the documentation and community-building phase.
+3. **API outage**: The step-search API downtime reminds us of the importance of having redundant data sources for continuous monitoring.
 
-### 智谱AI · GLM-5
+### What to Watch in the Next 6–12 Hours
 
-- **定位**: "Agentic Engineering时代最好的开源模型"
-- **发布时间**: 春节前
-- **特色**: Agent能力强化，代码、多语言表现均衡
-- **评价**: 质素只需过去1/3体量，吞吐数倍增长
+- **Asian business hours**: Potential follow-up releases from Chinese AI companies (e.g., detailed technical blogs for Qwen3.5)
+- **GitHub activity**: Watch for first commits to the Qwen3.5 open-source repository (if released)
+- **Early benchmarks**: Third-party evaluations of Seedance 2.0 video quality and Qwen3.5 reasoning
 
-### 科大讯飞 · 星火X2
+### Medium-Term Priorities (Next Week)
 
-- **特色**: 基于**全国产算力**训练
-- **定位**: 自主可控的大模型基础设施
-- **应用**: 教育、医疗、办公等场景
+1. **DeepGen replication**: As the project is open-source, we expect community members to publish replication studies and training recipes
+2. **mmGRPO adoption**: Look for case studies from teams using the DSPy integration
+3. **Mobile AI benchmarks**: Expect new mobile-focused benchmarks (e.g., MLPerf Mobile) to include LLM tasks
 
-### MiniMax · M2.5
+### Deeper Questions
 
-- **能力**: 处理复杂任务展现更高决策成熟度
-- **定位**: 企业级Agent应用
-- **竞争**: 对标国际主流Agent框架
-
-### 字节跳动 · Seedance 2.0
-
-- **类型**: AI视频生成模型
-- **亮点**: 多模态创作方式 + 自带运镜效果
-- **影响**: 全球范围内引发高度关注，超逼真视频生成
-- **技术**: 时序理解、镜头语言控制
-
-### 业界评价
-
-上海财经大学特聘教授胡延平点评：
-> "今年发的新模型都越来越'多能实用'，原生多模态+智能体能力，代码、多语言等方面表现均衡，甚至空间智能、视觉推理也可用。"
+1. **Is 5B enough?** DeepGen 1.0 challenges the "bigger is better" paradigm. Will 5B become the new sweet spot for multimodal tasks?
+2. **Sparse activation economics**: Qwen3.5's 170B/397B sparse design suggests a new efficiency frontier. How will this affect hardware demand?
+3. **Agent evaluation**: With the joint survey published, will we see standardized benchmarks for agentic reasoning in 2026?
 
 ---
 
-## 📊 总结与下一步
+## 📚 Resource Hub
 
-### 今日核心洞察
-
-1. **模型效率革命**: 从"大力出奇迹"到"聪明轻量化"
-   - DeepGen 1.0 (5B) > 80B+模型
-   - Qwen3.5-Plus (激活170B/总3970B) 的稀疏激活哲学
-   - 部署成本降低60%，性能不打折
-
-2. **Agentic Era正式到来**:
-   - 从聊天机器人到主动助手
-   - 多模态融合 + 工具使用 + 长时间推理
-   - Google/Meta/Amazon联合综述标志学术认可
-
-3. **中国AI力量崛起**:
-   - 春节档密集发布Qwen3.5、GLM-5、星火X2、M2.5、Seedance 2.0
-   - 多模态、Agent能力全面对标国际
-   - 价格优势明显（Qwen API 1/18 Gemini）
-
-4. **移动端AI落地加速**:
-   - m²LLM框架解决移动设备部署痛点
-   - ExecuTorch + Arm实现20%性能提升
-   - 隐私保护 + 离线使用成为刚需
-
-5. **数据质量 > 数量**:
-   - FAC (Feature Activation Coverage) 概念提出
-   - 高质量精选数据（FireRed 100M/1.6B）胜过海量数据
-   - 特征空间多样性衡量成为新范式
-
-### 下一步关注点
-
-**短期（1-2周）**:
-- ⏳ Qwen3.5-Plus的开源模型权重发布（预计）
-- 🔍 验证DeepGen 1.0和FireRed-Image-Edit的开源实践
-- 📲 m²LLM框架的工业界应用案例
-
-**中期（1-3月）**:
-- 🚀 Agentic Reasoning综述的后续研究引用
-- 📱 移动端LLM部署的benchmark标准
-- 🧠 mmGRPO在复杂任务中的泛化能力测试
-
-**长期（趋势）**:
-- 🌐 多模态Agent的通用性突破
-- 💡 "激活稀疏化"成为大模型标配
-- 🤖 智能体从"工具使用者"到"自主决策者"的演进
-
-### 值得深思的问题
-
-1. **效率边界**: 模型能否在10B以下达到GPT-4级别的通用能力？
-2. **Agent安全**: 自主决策的Agent如何保证对齐(alignment)？
-3. **边缘AI**: 手机上的7B模型能否替代云端API？隐私vs能力的权衡？
-4. **开源vs闭源**: Qwen3.5开源会如何改变全球AI竞争格局？
-5. **视频理解**: Seedance 2.0的视频生成技术能否迁移到视频理解？
-
----
-
-## 📚 资源链接
-
-### 论文与项目
-- [DeepGen 1.0 GitHub](https://github.com/DeepGenTeam/DeepGen)
-- [FireRed-Image-Edit GitHub](https://github.com/FireRedTeam/FireRed-Image-Edit)
-- [FAC Synthesis GitHub](https://github.com/Zhongzhi660/FAC-Synthesis)
-- [IndexTTS GitHub](https://github.com/index-tts/index-tts)
+### Repositories (Check for Updates)
+- [DeepGen Team](https://github.com/DeepGenTeam/DeepGen)
+- [FireRed Image Edit](https://github.com/FireRedTeam/FireRed-Image-Edit)
+- [FAC Synthesis](https://github.com/Zhongzhi660/FAC-Synthesis)
 - [DSPy (mmGRPO)](https://github.com/stanfordnlp/dspy)
+- [IndexTTS](https://github.com/index-tts/index-tts)
 
-### Karpathy相关
-- [microgpt Gist](https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95)
-- [microgpt网页版](https://karpathy.ai/microgpt.html)
-- [nanochat GitHub](https://github.com/karpathy/nanochat)
-- [karpathy个人博客](https://karpathy.github.io/)
+### Project Pages
+- [DeepGen Project Page](https://deepgenteam.github.io/)
+- [FireRed Space](https://huggingface.co/spaces/FireRedTeam/FireRed-Image-Edit-1.0)
 
-### 行业动态
-- [Nature LLM研究](https://www.nature.com/articles/s41562-026-02409-4)
-- [Hugging Face Trending](https://huggingface.co/papers/trending)
-- [智谱GLM-5](https://www.zhipu.ai/)
-- [阿里千问Qwen](https://qwen.com/)
+### Official Releases
+- [Qwen3.5-Plus Announcement](https://qwen.com/)
+- [智谱 GLM-5](https://www.zhipu.ai/)
+- [字节 Seedance 2.0](https://www.volcengine.com/)
+
+### Papers We’re Tracking
+- [DeepGen 1.0 (2602.12205)](https://huggingface.co/papers/2602.12205)
+- [FireRed-Image-Edit (2602.13344)](https://huggingface.co/papers/2602.13344)
+- [FAC Synthesis (2602.10388)](https://huggingface.co/papers/2602.10388)
+- [IndexTTS (2502.05512)](https://huggingface.co/papers/2502.05512)
+- [mmGRPO (2508.04660)](https://huggingface.co/papers/2508.04660)
 
 ---
 
-*扫描时间: 2026-02-19 | 数据截止: 2026-02-18（美国时间）*
-*下次扫描: 2026-02-20（北京时间）*
+## 🔄 Next Scan
+
+The next hourly scan will run at **02:00 AM Shanghai time**. By then, we may see:
+
+- Early community feedback on Qwen3.5 open-source weights (if released)
+- Additional documentation updates from DeepGen and FireRed teams
+- Any late-night breakthroughs from US-based researchers
+
+Until then, stay curious! 🚀
+
+---
+
+*Scan completed: 2026-02-19 01:00 AM Shanghai*  
+*Next scan: 2026-02-19 02:00 AM*  
+*Data sources: GitHub API, Hugging Face, arXiv, direct web fetch*  
+*Limitations: Step-search API temporarily unavailable*
