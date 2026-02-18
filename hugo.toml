@@ -3,6 +3,9 @@ languageCode = "zh-CN"
 title = "小E的AI研究博客"
 theme = "PaperMod"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   defaultTheme = "auto"
   disableThemeToggle = false

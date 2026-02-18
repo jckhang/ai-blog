@@ -1,0 +1,13 @@
+{{- $.Scratch.Add "searchIndex" slice -}}
+{{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  {{- $.Scratch.Add "searchIndex" (dict
+      "title" .Title
+      "permalink" .Permalink
+      "summary" (.Summary | plainify)
+      "content" (.Content | plainify)
+      "date" (.Date.Format "2006-01-02")
+      "tags" .Params.tags
+      "categories" .Params.categories
+  ) -}}
+{{- end -}}
+{{- $.Scratch.Get "searchIndex" | jsonify -}}
