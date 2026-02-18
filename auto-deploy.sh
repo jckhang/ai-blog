@@ -34,27 +34,12 @@ git commit -m "$COMMIT_MSG" --no-verify
 echo "🚀 推送到 GitHub..."
 git push origin master
 
-# 触发 Vercel 部署
-echo "🌐 触发 Vercel 生产部署..."
+# 触发 Vercel 部署（使用 Vercel CLI，需要先 login）
 if command -v vercel &> /dev/null; then
-  # 使用 Vercel CLI（需要先登录）
-  vercel --prod --yes || echo "⚠️  Vercel CLI 部署失败，可能需要先运行 'vercel login'"
+  echo "🌐 使用 Vercel CLI 部署..."
+  vercel --prod --yes && echo "✅ 部署成功" || echo "⚠️  Vercel CLI 失败，请先运行 'vercel login'"
 else
-  # 使用 Vercel API 触发（需要设置 VERCEL_TOKEN 环境变量）
-  TOKEN="${VERCEL_TOKEN:-}"
-  PROJECT_ID="prj_5blqrh8mDYeDnQSuuwRattgH973e"
-  if [ -n "$TOKEN" ]; then
-    echo "使用 Vercel API 触发部署..."
-    curl -s -X POST \
-      -H "Authorization: Bearer $TOKEN" \
-      -H "Content-Type: application/json" \
-      -d "{\"githubBranch\":\"master\"}" \
-      "https://api.vercel.com/v1/projects/$PROJECT_ID/instances" \
-      && echo "✅ 部署触发成功" \
-      || echo "⚠️  API 触发失败"
-  else
-    echo "⚠️  未设置 VERCEL_TOKEN，跳过 API 触发（请配置环境变量）"
-  fi
+  echo "⚠️  Vercel CLI 未安装，跳过部署"
 fi
 
 echo "✅ 自动部署完成！"

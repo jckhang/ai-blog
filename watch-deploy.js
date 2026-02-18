@@ -90,17 +90,18 @@ function commitAndDeploy() {
     log('推送到 GitHub...', 'DEPLOY');
     execSync('git push origin master', { cwd: PROJECT_DIR, stdio: 'ignore' });
 
-    // Vercel API 触发
-    const token = process.env.VERCEL_TOKEN || '';
-    const projectId = 'prj_5blqrh8mDYeDnQSuuwRattgH973e';
-
-    log('触发 Vercel 生产部署...', 'DEPLOY');
+    // 使用 Vercel CLI 部署（需要预先 vercel login）
+    log('使用 Vercel CLI 部署...', 'DEPLOY');
     const { exec } = require('child_process');
-    if (!token) {
-      log('未设置 VERCEL_TOKEN 环境变量，跳过 API 触发', 'WARN');
+    exec('vercel --prod --yes', { cwd: PROJECT_DIR }, (error, stdout, stderr) => {
+      if (error) {
+        log(`Vercel CLI 失败: ${stderr || error.message}`, 'ERROR');
+        log('提示: 请先运行 "vercel login" 登录 Vercel 账号', 'INFO');
+      } else {
+        log('✅ 部署完成', 'DEPLOY');
+      }
       pending = false;
-      return;
-    }
+    });
 
   } catch (e) {
     log(`错误: ${e.message}`, 'ERROR');
