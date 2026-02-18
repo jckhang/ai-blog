@@ -15,7 +15,6 @@ theme = "PaperMod"
   ShowRssButtonInSectionTermList = true
   ShowTableOfContents = true
   Toc = true
-  customCSS = ["css/custom.css"]
   # 颜色主题
   primaryColor = "#1a73e8"
   hidesidebar = false
