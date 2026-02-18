@@ -1,15 +1,13 @@
-{{- $pages := where site.RegularPages "Type" "posts" -}}
-{{- $items := slice -}}
-{{- range $pages -}}
-  {{- $title := .Title -}}
-  {{- $path := .File.Path -}}
-  {{- $url := .Permalink -}}
-  {{- $date := .Date.Format "2006-01-02" -}}
-  {{- $items = $items | append (dict
-    "title" $title
-    "path" $path
-    "url" $url
-    "date" $date
-  ) -}}
+[
+{{- range $index, $page := (where site.RegularPages "Type" "posts") -}}
+  { 
+    "title": {{ $page.Title | jsonify }},
+    "url": {{ $page.Permalink | jsonify }},
+    "summary": {{ $page.Summary | plainify | jsonify }},
+    "content": {{ $page.Content | plainify | jsonify }},
+    "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
+    "tags": {{ $page.Params.tags | jsonify }},
+    "categories": {{ $page.Params.categories | jsonify }}
+  }{{ if ne $index (sub (len (where site.RegularPages "Type" "posts")) 1) }},{{ end }}
 {{- end -}}
-{{ jsonify $items -}}
+]
