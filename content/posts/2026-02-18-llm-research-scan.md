@@ -27,17 +27,19 @@ categories: ["研究扫描"]
 
 <img src="https://github.com/karpathy.png" width="100" style="float:right;margin-left:20px;border-radius:50%"/>
 
-Karpathy的**nanochat**仓库持续活跃，今日（02-18 00:03 UTC）有新的commit：
+Karpathy的**nanochat**仓库今日(02-18)继续活跃：
 
-- **最新 Commit**: `Fix MockModel's device definition (#535)`
+- **最新 Commit**: `Fix MockModel's device definition (#535)` - 由Sofie Van Landeghem提交
 - **时间**: 2026-02-18 00:03:46Z
-- **仓库**: [karpathy/nanochat](https://github.com/karpathy/nanochat)
+- **昨日更新** (02-17): `update dev log with recent`
+- **近期重点** (02-16): SFT脚本优化 - "tune the data mixture", "load optimizer by default when SFT"，基于系统化超参数搜索的最佳配置
 
 **核心项目追踪**:
 - ✅ **nanoGPT** - 训练/微调中型GPT的最简方案 (53.4k ⭐)
 - ✅ **nanochat** - $100打造的最佳ChatGPT体验 (43.6k ⭐)
 - ✅ **llm.c** - 纯C/CUDA实现LLM训练 (28.9k ⭐)
 - ✅ **llama2.c** - 单文件C推理 (19.2k ⭐)
+- ✅ **microgpt** - 200行纯Python实现GPT训练与推理（最新博客，2月12日）
 
 ---
 
@@ -95,15 +97,17 @@ Karpathy的**nanochat**仓库持续活跃，今日（02-18 00:03 UTC）有新的
 
 ## 🏢 企业动态
 
+### NVIDIA
+- **🇯🇵 Nemotron-Nano-9B-v2-Japanese** 发布 (2月17日)
+- **🏆 成就**: Nejumi Leaderboard 4 中，10B以下模型排名第一
+- **🎯 特点**: 结合Nemotron 2 Nano架构 + Nemotron-Personas-Japan合成数据
+- **⚡ 优势**: 6倍吞吐量提升，支持工具调用，多轮对话优化
+- **🚀 应用**: 日语客服Agent、企业内部自动化、领域特定助手
+
 ### Anthropic
 - **💰 Series G融资**: $30B，估值$380B（均由GIC和Coatue领投）
 - **📈 营收**: 年化$14B，过去三年保持年增>10x
 - **🚀 Claude Opus 4.6**: 在agent编码、计算机使用、工具使用、搜索、金融等领域领先
-
-### H Company
-- **🖼️ Holo2-235B-A22B Preview** 发布
-- **🏆 新纪录**: ScreenSpot-Pro 78.5%，OSWorld G 79.0%
-- **🎯 重点**: UI element localization + agentic localization（3步迭代提升10-20%）
 
 ---
 
@@ -257,6 +261,7 @@ Hugging Face Agent Skill案例研究：**教Coding Agent写生产级CUDA内核**
 - [*-PLUIE (2602.15778)](https://arxiv.org/abs/2602.15778)
 
 ### 博客/公告
+- [NVIDIA Nemotron-Nano-9B-v2-Japanese](https://huggingface.co/blog/nvidia/nemotron-nano-9b-v2-japanese-ja) (Feb 17)
 - [OpenEnv in Practice](https://huggingface.co/blog/openenv-turing)
 - [Transformers.js v4 Preview](https://huggingface.co/blog/transformersjs-v4)
 - [Custom CUDA Kernels from Codex & Claude](https://huggingface.co/blog/custom-cuda-kernels-agent-skills)
@@ -269,6 +274,7 @@ Hugging Face Agent Skill案例研究：**教Coding Agent写生产级CUDA内核**
 - [karpathy/nanochat](https://github.com/karpathy/nanochat)
 - [huggingface/transformers.js](https://github.com/xenova/transformers.js)
 - [ggerganov/llama.cpp](https://github.com/ggml-org/llama.cpp)
+- [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM)
 
 ---
 
