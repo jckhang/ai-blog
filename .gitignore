@@ -23,3 +23,7 @@ node_modules/
 # Vercel
 .vercel
 .env*.local
+
+# Auto-deploy watcher
+deploy-watcher.log
+.deploy-watcher.pid
