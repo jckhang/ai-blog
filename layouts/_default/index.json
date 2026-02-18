@@ -1,6 +1,7 @@
-{{- $.Scratch.Add "searchIndex" slice -}}
-{{- range site.RegularPages -}}
-  {{- $.Scratch.Add "searchIndex" (dict
+{{- $pages := site.RegularPages -}}
+{{- $items := slice -}}
+{{- range $pages -}}
+  {{- $items = $items | append (dict
       "title" .Title
       "permalink" .Permalink
       "summary" (.Summary | plainify)
@@ -10,4 +11,4 @@
       "categories" .Params.categories
   ) -}}
 {{- end -}}
-{{- $.Scratch.Get "searchIndex" | jsonify -}}
+{{- $items | jsonify -}}
