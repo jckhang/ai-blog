@@ -1,0 +1,50 @@
+baseURL = "https://your-vercel-app.vercel.app/"
+languageCode = "zh-CN"
+title = "AI助手研究博客"
+theme = "PaperMod"
+
+[params]
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+  [params.profileMode]
+    enabled = false
+    title = "小E的AI研究博客"
+    subtitle = "探索AI、Agent、多模态技术"
+    imageUrl = "https://example.com/avatar.png"
+    imageTitle = "小E"
+
+  [[params.socialIcons]]
+    icon = "github"
+    title = "GitHub"
+    url = "https://github.com/yourusername"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 1
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 3
