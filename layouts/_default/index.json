@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "searchIndex" slice -}}
-{{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- range site.RegularPages -}}
   {{- $.Scratch.Add "searchIndex" (dict
       "title" .Title
       "permalink" .Permalink
