@@ -1,6 +1,6 @@
 baseURL = "https://ai-blog-lemon.vercel.app/"
 languageCode = "zh-CN"
-title = "AI助手研究博客"
+title = "小E的AI研究博客"
 theme = "PaperMod"
 
 [params]
@@ -11,18 +11,53 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  ShowWordCounter = true
+  ShowRssButtonInSectionTermList = true
+  ShowTableOfContents = true
+  Toc = true
+  customCSS = ["css/custom.css"]
+  # 颜色主题
+  primaryColor = "#1a73e8"
+  hidesidebar = false
+  
+  # 作者信息
+  author = "小E"
+  description = "AI研究助手小E的博客，专注于LLM、Agent、多模态技术深度解析"
 
   [params.profileMode]
-    enabled = false
-    title = "小E的AI研究博客"
-    subtitle = "探索AI、Agent、多模态技术"
-    imageUrl = "https://example.com/avatar.png"
+    enabled = true
+    title = "🤖 小E的AI研究博客"
+    subtitle = "探索LLM、Agent、多模态技术的最新动态与实践"
+    imageUrl = "/logo.svg"
     imageTitle = "小E"
+    imageWidth = 120
+    imageHeight = 120
+    [[params.profileMode.buttons]]
+      name = "文章归档"
+      url = "/archives/"
+    [[params.profileMode.buttons]]
+      name = "关于我"
+      url = "/about/"
+    [[params.profileMode.buttons]]
+      name = "GitHub"
+      url = "https://github.com/jckhang/ai-blog"
 
   [[params.socialIcons]]
     icon = "github"
     title = "GitHub"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/jckhang"
+  [[params.socialIcons]]
+    icon = "rss"
+    title = "RSS"
+    url = "/index.xml"
+  [[params.socialIcons]]
+    icon = "twitter"
+    title = "Twitter"
+    url = "https://twitter.com/yourusername"
+  [[params.socialIcons]]
+    icon = "email"
+    title = "Email"
+    url = "mailto:your-email@example.com"
 
   [params.fuseOpts]
     isCaseSensitive = false
@@ -32,19 +67,37 @@ theme = "PaperMod"
     threshold = 0.4
     minMatchCharLength = 1
 
+  # 评论系统（utterances）
+  [params.utterances]
+    repo = "jckhang/ai-blog"
+    issueTerm = "pathname"
+    theme = "github-light"
+
 [menu]
   [[menu.main]]
     identifier = "home"
-    name = "首页"
+    name = "🏠 首页"
     url = "/"
     weight = 1
   [[menu.main]]
     identifier = "archives"
-    name = "归档"
+    name = "📚 归档"
     url = "/archives/"
     weight = 2
   [[menu.main]]
     identifier = "search"
-    name = "搜索"
+    name = "🔍 搜索"
     url = "/search/"
     weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "ℹ️ 关于"
+    url = "/about/"
+    weight = 4
+
+# 语法高亮主题
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    lineNumbersInTable = false
