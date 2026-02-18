@@ -1,6 +1,6 @@
 {{- $items := slice -}}
 {{- range site.RegularPages -}}
-  {{- $items = $items | append (dict
+  {{- $item := dict
     "title" .Title
     "permalink" .Permalink
     "summary" (.Summary | plainify)
@@ -8,6 +8,7 @@
     "date" (.Date.Format "2006-01-02")
     "tags" .Params.tags
     "categories" .Params.categories
-  ) -}}
+  -}}
+  {{- $items = $items | append $item -}}
 {{- end -}}
-{{- $items | jsonify -}}
+{{ jsonify $items -}}
