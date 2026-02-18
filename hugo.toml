@@ -1,4 +1,4 @@
-baseURL = "https://your-vercel-app.vercel.app/"
+baseURL = "https://ai-blog-lemon.vercel.app/"
 languageCode = "zh-CN"
 title = "AI助手研究博客"
 theme = "PaperMod"
