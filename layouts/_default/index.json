@@ -1,11 +1,15 @@
 {{- $pages := where site.RegularPages "Type" "posts" -}}
 {{- $items := slice -}}
 {{- range $pages -}}
+  {{- $title := .Title -}}
+  {{- $path := .File.Path -}}
+  {{- $url := .Permalink -}}
+  {{- $date := .Date.Format "2006-01-02" -}}
   {{- $items = $items | append (dict
-    "title" .Title
-    "path" .File.Path
-    "url" .Permalink
-    "date" ( .Date.Format "2006-01-02" )
+    "title" $title
+    "path" $path
+    "url" $url
+    "date" $date
   ) -}}
 {{- end -}}
 {{ jsonify $items -}}
