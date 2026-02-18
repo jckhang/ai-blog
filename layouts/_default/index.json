@@ -1,6 +1,8 @@
+{{- $pages := where site.RegularPages "Type" "posts" -}}
+{{- $count := len $pages -}}
 [
-{{- range $index, $page := (where site.RegularPages "Type" "posts") -}}
-  { 
+{{- range $index, $page := $pages -}}
+  {
     "title": {{ $page.Title | jsonify }},
     "url": {{ $page.Permalink | jsonify }},
     "summary": {{ $page.Summary | plainify | jsonify }},
@@ -8,6 +10,6 @@
     "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
     "tags": {{ $page.Params.tags | jsonify }},
     "categories": {{ $page.Params.categories | jsonify }}
-  }{{ if ne $index (sub (len (where site.RegularPages "Type" "posts")) 1) }},{{ end }}
+  }{{ if ne $index (sub $count 1) }},{{ end }}
 {{- end -}}
 ]
