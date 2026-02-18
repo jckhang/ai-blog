@@ -15,6 +15,7 @@ categories: ["研究扫描"]
 
 | 领域 | 亮点 | 影响 |
 |------|------|------|
+| **模型发布** | NVIDIA Nemotron-Nano-9B-v2-Japanese | 10B以下Nejumi榜首，强化日语能力 |
 | **Agent** | OpenEnv框架发布 | Meta + Hugging Face联合推出工具使用评估标准 |
 | **多模态** | Holo2-235B刷新纪录 | UI localization达78.5% SOTA |
 | **部署** | Transformers.js v4 | 浏览器端AI迎来WebGPU新时代 |
