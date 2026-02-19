@@ -1,0 +1,23 @@
+{
+  "name": "ai-blog",
+  "version": "1.0.0",
+  "description": "基于 Hugo + PaperMod 主题构建的AI研究博客，部署在Vercel上。",
+  "main": "research-workflow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jckhang/ai-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jckhang/ai-blog/issues"
+  },
+  "homepage": "https://github.com/jckhang/ai-blog#readme",
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
+  }
+}

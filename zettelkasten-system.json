@@ -1,0 +1,164 @@
+{
+  "system": "Zettelkasten (卡片笔记写作法)",
+  "source": "How to Take Smart Notes by Sönke Ahrens",
+  "generated": "2026-02-19",
+  "author": "小E",
+  "description": "基于《卡片笔记写作法》构建的笔记卡片系统，用于知识管理和写作",
+  "cards": [
+    {
+      "id": "001",
+      "title": "Zettelkasten 是什么",
+      "content": "Zettelkasten 是德语「卡片盒」的意思，是一种知识管理系统，通过原子化的卡片记录想法，并通过链接建立知识网络，支持长期思考和创作。",
+      "type": "permanent",
+      "tags": ["zettelkasten", "core-concept"],
+      "links": ["002", "003", "004"]
+    },
+    {
+      "id": "002",
+      "title": "三种笔记类型",
+      "content": "1. 闪念笔记 (Fleeting Notes) - 临时捕捉灵感，快速记录，定期清理\n2. 文献笔记 (Literature Notes) - 阅读后提炼，用自己的话重述，添加引用\n3. 永久笔记 (Permanent Notes) - 原子化、自包含、可链接的知识单元，长期保留",
+      "type": "permanent",
+      "tags": ["note-type", "workflow"],
+      "links": ["001", "005"]
+    },
+    {
+      "id": "003",
+      "title": "原子化原则",
+      "content": "每张永久笔记只包含一个完整的思想，独立成篇，不依赖其他笔记即可理解。这迫使你精确表达，并便于重组和引用。",
+      "type": "permanent",
+      "tags": ["principle", "atomic"],
+      "links": ["001", "010"]
+    },
+    {
+      "id": "004",
+      "title": "链接原则",
+      "content": "每张新笔记都应链接到至少一张已有笔记，形成知识网络的节点。链接是自下而上生成主题和想法的关键，而非依赖预先分类。",
+      "type": "permanent",
+      "tags": ["principle", "linking"],
+      "links": ["001", "006"]
+    },
+    {
+      "id": "005",
+      "title": "文献笔记的写法",
+      "content": "阅读后用自己的话重述核心观点（不可直接抄写），标注出处。目的是内化知识，而非收藏原文。每篇文章/章节只做1-2条文献笔记。",
+      "type": "permanent",
+      "tags": ["literature-note", "skill"],
+      "links": ["002", "007"]
+    },
+    {
+      "id": "006",
+      "title": "自下而上 vs 自上而下",
+      "content": "Zettelkasten 采用自下而上方式：笔记根据内容自然链接，主题在过程中涌现；而非预先设定分类框架。这避免了框架偏见，让想法自由生长。",
+      "type": "permanent",
+      "tags": ["methodology", "topic-generation"],
+      "links": ["004", "008"]
+    },
+    {
+      "id": "007",
+      "title": "闪念笔记的清理",
+      "content": "闪念笔记必须在24-48小时内转化为文献笔记或永久笔记，否则丢弃。它们只是临时缓存，不应长期留存。",
+      "type": "permanent",
+      "tags": ["fleeting-note", "discipline"],
+      "links": ["002", "009"]
+    },
+    {
+      "id": "008",
+      "title": "笔记系统的成长",
+      "content": "笔记数量增长后，相关内容会自动聚集形成主题簇。通过查看链接网络，可以发现意想不到的关联，这些关联产生新想法和写作主题。",
+      "type": "permanent",
+      "tags": ["emergent", "topic-cluster"],
+      "links": ["006", "011"]
+    },
+    {
+      "id": "009",
+      "title": "写作就是思考",
+      "content": "写作不是思考完成后的记录，而是思考本身。把想法写成清晰、连贯的笔记，迫使你深入思考、发现漏洞、完善逻辑。",
+      "type": "permanent",
+      "tags": ["writing", "thinking"],
+      "links": ["010", "015"]
+    },
+    {
+      "id": "010",
+      "title": "笔记的元数据",
+      "content": "每张永久笔记应包含：\n- 唯一ID（可时间戳或自增）\n- 清晰标题\n- 正文（原子化内容）\n- 来源/引用（如适用）\n- 创建日期\n- 标签（可选，但不要强制分类）\n- 链接到其他笔记",
+      "type": "permanent",
+      "tags": ["metadata", "format"],
+      "links": ["003", "009"]
+    },
+    {
+      "id": "011",
+      "title": "从笔记到文章",
+      "content": "当你积累了大量永久笔记后，某主题的笔记群会自然形成。这时，你已有足够材料，只需将这些笔记串联、补充、润色，即可快速产出文章或论文。",
+      "type": "permanent",
+      "tags": ["writing", "production"],
+      "links": ["008", "012"]
+    },
+    {
+      "id": "012",
+      "title": "工具选择原则",
+      "content": "工具应服务流程，而非定义流程。选择支持双向链接、全文检索、版本控制的工具（如 Obsidian, Logseq, Notion）。关键是能快速创建、轻松链接、全局搜索。",
+      "type": "permanent",
+      "tags": ["tools", "implementation"],
+      "links": ["011", "013"]
+    },
+    {
+      "id": "013",
+      "title": "信任系统",
+      "content": "一旦建立卡片系统，就要信任它。把想法记下来就忘记，因为系统会保存一切。这解放大脑空间，让你专注于当下思考和创意。",
+      "type": "permanent",
+      "tags": ["mindset", "trust"],
+      "links": ["014"]
+    },
+    {
+      "id": "014",
+      "title": "常见陷阱",
+      "content": "1. 过度分类：试图给每张笔记贴多个标签，而非链接\n2. 追求完美：笔记写得过长，失去原子性\n3. 忽略链接：只收藏不连接，变成普通文件夹\n4. 频繁回顾：花太多时间整理旧笔记，而非写新笔记",
+      "type": "permanent",
+      "tags": ["pitfall", "avoidance"],
+      "links": ["013"]
+    },
+    {
+      "id": "015",
+      "title": "写作不再是苦差事",
+      "content": "传统写作从空白页开始，而 Zettelkasten 让你从已有思想网络出发。你只是发现和重组已有内容，而非无中生有。这让写作变得流畅、高效。",
+      "type": "permanent",
+      "tags": ["writing", "efficiency"],
+      "links": ["009", "011"]
+    }
+  ],
+  "implementation": {
+    "tool_recommendation": "Obsidian (本地 Markdown 文件，支持双向链接、图谱、强大搜索)",
+    "folder_structure": "zettelkasten/\n  ├── inbox/ (临时闪念笔记)\n  ├── literature/ (文献笔记)\n  ├── permanent/ (永久笔记，按ID排序)\n  ├── resources/ (图片、PDF原稿)\n  └── index.json (卡片索引)",
+    "workflow": [
+      "1. 阅读时做闪念笔记 (paper/数字)",
+      "2. 24小时内转为文献笔记 (用自己的话)",
+      "3. 提炼永久笔记 (原子化、加链接)",
+      "4. 定期浏览链接，发现主题簇",
+      "5. 主题成熟后，直接导出笔记群，补充逻辑，形成文章"
+    ],
+    "key_habits": [
+      "每天至少创建 1-2 张永久笔记",
+      "写笔记时问：这张笔记能否独立存在？",
+      "每张新笔记必须链接到至少一张旧笔记",
+      "每周浏览最近笔记，查看链接网络"
+    ]
+  },
+  "reading_notes": {
+    "core_message": "知识管理不是存储信息，而是通过写作思考，让想法相互碰撞产生新洞见。",
+    "most_valuable": [
+      "原子化原则（强制清晰思考）",
+      "链接网络（自下而上生成主题）",
+      "写作即思考（把写作作为思考工具而非记录工具）"
+    ],
+    "surprising_insights": [
+      "笔记数量越多，越容易发现关联（网络效应）",
+      "分类框架是敌人，会限制想法生长",
+      "写作痛苦源于从空白页开始，而非思考不足"
+    ],
+    "action_items": [
+      "立即开始使用 Obsidian 建立 Zettelkasten",
+      "将现有博客和研究笔记按原子化原则重构",
+      "坚持每天至少 1 张永久笔记，持续 6 个月观察效果"
+    ]
+  }
+}
