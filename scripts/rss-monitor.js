@@ -169,8 +169,8 @@ async function fetchFullContent(url, item) {
   return item.description || '';
 }
 
-// 生成永久笔记
-function createPermanentNote(item, feed, feedIndex) {
+// 生成永久笔记（包含全文）
+async function createPermanentNote(item, feed, feedIndex) {
   const now = new Date();
   const dateStr = now.toISOString().split('T')[0];
   const dateCompact = dateStr.replace(/-/g, '');
@@ -181,6 +181,13 @@ function createPermanentNote(item, feed, feedIndex) {
   const filename = `${dateCompact}-rss-${seq}-${slug}.md`;
   const id = filename.replace('.md', '');
 
+  // 抓取全文（使用 Jina AI）
+  console.log(`   🔍 正在抓取全文: ${item.link}`);
+  const fullContent = await fetchFullContent(item.link, item);
+  console.log(`   ✅ 内容长度: ${fullContent.length} 字符`);
+
+  // 如果全文失败，回退到 description
+  const body = fullContent && fullContent.length > 500 ? fullContent : item.description;
   const content = `---
 id: ${id}
 title: ${title}
@@ -192,7 +199,7 @@ source_url: "${item.link}"
 
 # ${title}
 
-${item.description}
+${body}
 
 ## 来源
 
@@ -206,7 +213,7 @@ ${item.description}
 - [[001-zettelkasten-是什么]]
 
 ---
-*RSS 自动采集 - 请人工审查并补充内容链接*
+*RSS 自动采集 - Jina AI 全文抓取*
 `;
 
   return { id, filename, content };
@@ -247,7 +254,7 @@ async function monitor() {
       const toImport = candidates.slice(0, 1);
       
       for (let i = 0; i < toImport.length; i++) {
-        const note = createPermanentNote(toImport[i], feed, i + 1);
+        const note = await createPermanentNote(toImport[i], feed, i + 1);  // 等待异步抓取
         const filepath = path.join(ZK_PERMANENT_DIR, note.filename);
         
         fs.writeFileSync(filepath, note.content, 'utf-8');
