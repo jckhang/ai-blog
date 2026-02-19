@@ -38,33 +38,45 @@ Git 提交
 
 ### 1. **标准网页文章** (大多数情况)
 
-**目标**: 使用 `web_fetch` 获取全文
+**目标**: 使用 `web_fetch` 获取全文，首选 **Jina AI Reader**
 
-**步骤**:
+**Jina AI Reader 官方用法**:
+
 ```javascript
-const response = await web_fetch({
-  url: item.link,
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (compatible; RSSBot/1.0)'
-  }
-});
-const fullText = response.content;  // Markdown 格式
+// 最简单的方式：在 URL 前加前缀
+const jinaUrl = `https://r.jina.ai/${originalUrl}`;
+// 示例: https://r.jina.ai/https://example.com/article
+
+// 使用 httpsGet 获取
+const resp = await httpsGet(jinaUrl);
+const fullText = await resp.text();  // 直接返回 Markdown 格式
 ```
 
-**挑战**:
-- 部分网站有反爬（Cloudflare, Akamai）
-- 可能需要处理登录墙
-- 移动端优化网站
+**优势**:
+- ✅ 完全免费，无需 API key
+- ✅ 自动处理反爬、JavaScript 渲染
+- ✅ 返回干净 Markdown（带标题）
+- ✅ 高成功率 (>95%)
+- ✅ 支持 PDF、图片、SPA
 
-**解决方案**:
-- 使用 `browser` 工具（需要 Chrome 扩展连接）- 最可靠但慢
-- 尝试 textise dot iitty 或文本化服务（如 `https://r.jina.ai/http://URL`）
-- 回退到描述内容 + 人工审核
+**官方文档**: https://github.com/jina-ai/reader
 
-**质量检查**:
+**进阶选项**（可选）:
+- 缓存控制: `x-cache-tolerance: 3600` (默认缓存1小时)
+- 绕过缓存: `x-no-cache: true`
+- 图片描述: `x-with-generated-alt: true` (为无 alt 的图片生成描述)
+- 指定选择器: `x-target-selector: article` (聚焦特定元素)
+- 等待渲染: `x-wait-for-selector: #content` (等待某元素出现)
+
+**回退策略**:
+1. 首选 Jina AI Reader
+2. 失败则尝试直接 `web_fetch`（添加 User-Agent）
+3. 最后使用 `browser` 工具（需要手动连接）
+
+**质量控制**:
 - 正文长度 > 500 字符（否则视为失败）
 - 包含 `item.title` 关键词（防止抓错页面）
-- 提取 `og:description` 或 `<article>` 标签内容
+- 标题已清理（Jina 可能返回 `# Title...`）
 
 ---
 

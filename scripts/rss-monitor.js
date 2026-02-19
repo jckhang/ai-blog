@@ -90,9 +90,14 @@ function httpsGet(url, options = {}) {
   });
 }
 
-// 使用 Jina AI 阅读器（最简单的方式）
+// 使用 Jina AI Reader（最简单的方式）
 async function fetchWithJina(url) {
-  const jinaUrl = `https://r.jina.ai/http://${url.replace(/^https?:\/\//, '')}`;
+  // 确保 URL 有协议前缀
+  let targetUrl = url;
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    targetUrl = 'https://' + url;
+  }
+  const jinaUrl = `https://r.jina.ai/${targetUrl}`;
   try {
     const resp = await httpsGet(jinaUrl);
     if (resp.ok) {
