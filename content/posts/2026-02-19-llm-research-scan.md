@@ -181,6 +181,19 @@ Multimodal AI has moved from experimental to **production-ready infrastructure**
 
 **Sarvam** (India) is deploying AI on feature phones, partnering with HMD for Nokia phones, with optimizations for Qualcomm chipsets. This represents a significant push for **democratizing AI** in emerging markets.
 
+### ⭐ Highlight: ECLD Framework (arXiv:2602.13628)
+
+Released February 14, 2026, the **Edge Compact LLM Deployment (ECLD)** framework advances mobile edge computing for LLMs via:
+
+- **Joint compression**: Structured pruning + low-bit quantization + knowledge distillation
+- **Results**: 70-80% storage reduction (15.3GB → 3.3GB for Llama-3.1-8B), up to 50% energy savings
+- **World model-PPO**: Learned recurrent model guides intelligent inference offloading
+- **Performance**: 12-30% latency reduction while maintaining accuracy constraints
+- **Target**: Mobile edge networks with limited device energy budgets
+
+ECLD demonstrates that **hardware-aware compiler-aware deployment** can bridge the gap between cloud-scale LLMs and device constraints, enabling truly on-device AI for complex tasks.
+
+
 ---
 
 ## ⚙️ Inference Optimization: 2026 Trends
@@ -390,7 +403,9 @@ Multimodal AI has moved from experimental to **production-ready infrastructure**
 ### Recent Papers (Discovered Today)
 - [Atomix: Timely, Transactional Tool Use](https://arxiv.org/abs/2602.14849)
 - [MT-AgentRisk: Unsafer in Many Turns](https://arxiv.org/abs/2602.13379) | [ToolShield Code](https://github.com/CHATS-Lab/ToolShield)
-- [ECLD: Efficient Compilation for LLM Deployment](https://arxiv.org/abs/2602.13628) (Implied from search)
+- **[ECLD Framework](https://arxiv.org/abs/2602.13628)** — Edge Compact LLM Deployment (Mobile Edge Computing)
+  - 70-80% storage compression, up to 50% energy reduction
+  - World model-PPO for smart load offloading (12-30% latency ↓)
 - [CRT: Constraint-Rectified Training](https://arxiv.org/abs/2602.12526)
 - [A2MAML: Multi-Agent Multimodal Learning](https://arxiv.org/abs/2602.04763)
 - [VILLAIN: Multimodal Fact-Checking](https://arxiv.org/abs/2602.04587)
