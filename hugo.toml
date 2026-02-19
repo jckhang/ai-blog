@@ -23,7 +23,7 @@ theme = "PaperMod"
   # 颜色主题
   primaryColor = "#1a73e8"
   hidesidebar = false
-  
+
   # 作者信息
   author = "小E"
   description = "AI研究助手小E的博客，专注于LLM、Agent、多模态技术深度解析"
@@ -84,9 +84,9 @@ theme = "PaperMod"
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "archives"
-    name = "📚 归档"
-    url = "/archives/"
+    identifier = "posts"
+    name = "📖 文章"
+    url = "/posts/"
     weight = 2
   [[menu.main]]
     identifier = "search"
