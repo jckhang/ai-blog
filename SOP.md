@@ -115,16 +115,21 @@ categories: ["研究扫描"]
 
 ### Cron 任务配置
 
+当前有两个关联的 cron 任务：
+
+#### 1. Research Scan (生成博客文章)
+
 ```bash
-# 查看当前任务
-crontab -l  # 或通过 OpenClaw: cron list
+# 通过 OpenClaw 查看:
+cron list
 
 # 任务 ID: 1c45c28b-333b-4996-94ac-7173c0fb6a78
-# 表达式: 0 0 * * * (每日午夜)
+# 名称: Hourly LLM Research Scan
+# 表达式: 0 0 * * * (每日午夜 00:00)
 # 超时: 3600秒 (1小时)
 ```
 
-### 任务指令（payload.text）
+**任务指令** (payload.text):
 
 ```
 你是一个AI研究助手。请执行深度研究探索任务（约1小时）：
@@ -147,16 +152,86 @@ crontab -l  # 或通过 OpenClaw: cron list
    - 正文按小时分段（00:00-01:00, 01:00-02:00...），每段仅包含该时段的新发现
    - 必须包含深度分析：对重要论文/项目进行全文解读，而非仅摘要
    - 信息密集：800-1500字，内容精炼但有深度
-5. 写入博客仓库并自动提交推送
+   - 使用中文，科普风格（适合5-80岁读者）
+5. 写入博客仓库: /Users/yuxiang/workspaces/my_openclaw/.openclaw/workspace/projects/ai-blog/content/posts/
+6. 自动提交并推送: git add + commit -m "Add: LLM Research Scan - YYYY-MM-DD" + git push
 ```
 
-### 去重逻辑
+#### 2. Import Highlights (导入 Zettelkasten)
 
-- 扫描结果不保存到临时文件，而是**直接写入最终文章**
-- 如果发现与之前重复，**跳过或简要提及**
-- 如果多个小时无重要动态，**合并时段**
+```bash
+# 任务 ID: dd5183f4-8a5e-4808-bf24-c9352cfd2e9e
+# 名称: Import Research Highlights to Zettelkasten
+# 表达式: 0 1 * * * (每日凌晨 01:00)
+# 注意: 在研究扫描后1小时运行，确保扫描文件已生成
+```
+
+**脚本**: `scripts/import-zettelkasten.js`
+
+**功能**:
+- 读取最新的研究扫描文件
+- 提取包含 **bold text** 或长度 >20 的列表项作为亮点
+- 每个亮点生成一张永久笔记（ID: auto-YYYYMMDD-NNN）
+- 自动写入 `zettelkasten/permanent/`
+- 默认链接到系统卡片 [[001]] 和 [[016]]
+- 自动 git commit
+
+**输出示例**:
+
+```markdown
+---
+id: auto-20260220-001
+title: Transformer 架构新突破
+created: 2026-02-20
+tags: ["research", "auto-import", "dd:2026-02-20"]
+---
+
+# Transformer 架构新突破
+
+**内容**: 新论文提出... (原文亮点)
+
+## 来源
+
+- 来源: 研究扫描 (00:00-01:00)
+- 日期: 2026-02-20
+- 自动导入: Yes
+
+## 相关链接
+
+- [[001-zettelkasten-是什么]]
+- [[016-llm-research-automation流水线]]
+```
+
+**预期产出**: 3-5 张永久笔记/天
+
+### 去重与质量控制
+
+**Research Scan 去重**:
+- 扫描时跳过已发布的日期范围（基于文件名）
+- 同一主题在不同时段出现 → 合并或简略提及
+- 使用内容指纹避免重复记录
+
+**Import 质量控制**:
+- 仅提取高质量亮点（bold/long）
+- 自动生成标题（前30字）
+- 人工审查阶段补充链接（每日 Heartbeat 检查）
 
 ---
+
+## 自动化流水线总结
+
+```
+时间轴 (每日):
+  00:00  → 研究扫描 (cron) → 博客文章
+  01:00  → 导入脚本 (cron) → 永久笔记 (3-5张)
+  Morning → Heartbeat 检查质量
+  Weekly → 主题簇发现 + 博客草稿
+
+数据流:
+  互联网 → 研究扫描 (深度阅读) → 亮点提取 → Zettelkasten (原子化)
+       → 主题簇 → 博客文章 (科普化) → Vercel → 读者
+       → 反馈 → inbox (闭环)
+```
 
 ## 部署流程
 
