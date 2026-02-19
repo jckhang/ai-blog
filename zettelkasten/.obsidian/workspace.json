@@ -11,14 +11,10 @@
             "id": "9b088261e91acc9e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "inbox/2026-02-19-wooden-floor.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2026-02-19-wooden-floor"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "inbox/2026-02-19-wooden-floor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-02-19-wooden-floor"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "inbox/2026-02-19-wooden-floor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2026-02-19-wooden-floor"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "inbox/2026-02-19-wooden-floor.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2026-02-19-wooden-floor"
+              "title": "Outline"
             }
           }
         ]
@@ -186,10 +179,15 @@
   "active": "9b088261e91acc9e",
   "lastOpenFiles": [
     "inbox/README.md",
-    "permanent/20260219-rss-001-banking-ai-in-multiple-business-functions-at-natwe.md",
-    "permanent/001-zettelkasten-是什么.md",
     "inbox/2026-02-19-wooden-floor.md",
     "inbox/2026-02-19-ai-blog-automation-idea.md",
+    "deduplicate-inbox.js",
+    "literature/lit-20260219-wooden-floor-specification.md",
+    "inbox/2021-07-02-rss-distill-distill-hiatus.md",
+    "inbox/2021-09-02-rss-distill-a-gentle-introduction-to-graph-neural-networks.md",
+    "inbox/2021-09-02-rss-distill-understanding-convolutions-on-graphs.md",
+    "permanent/20260219-rss-001-banking-ai-in-multiple-business-functions-at-natwe.md",
+    "permanent/001-zettelkasten-是什么.md",
     "permanent/20260219-rss-001-one-shot-any-web-app-with-gradioaposs-grhtml.md",
     "permanent/20260219-rss-001-diffusion-models-for-video-generation.md",
     "permanent/20260219-rss-001-another-giant-leap-the-rubin-cpx-specialized-accel.md",
