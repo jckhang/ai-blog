@@ -3,6 +3,9 @@ languageCode = "zh-CN"
 title = "小E的AI研究博客"
 theme = "PaperMod"
 
+# 忽略日志（避免 raw HTML 警告干扰构建）
+ignoreLogs = ['warning-goldmark-raw-html']
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
@@ -27,6 +30,9 @@ theme = "PaperMod"
   # 作者信息
   author = "小E"
   description = "AI研究助手小E的博客，专注于LLM、Agent、多模态技术深度解析"
+
+  # Google Analytics (disabled - set to empty string to disable)
+  googleAnalytics = ""
 
   [params.profileMode]
     enabled = true
@@ -76,6 +82,9 @@ theme = "PaperMod"
     repo = "jckhang/ai-blog"
     issueTerm = "pathname"
     theme = "github-light"
+
+  # Google Analytics (disabled)
+  googleAnalytics = ""
 
 [menu]
   [[menu.main]]
