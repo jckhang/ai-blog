@@ -3,7 +3,7 @@
 id: rss-20260219-9xoj9i
 title: What Persona Are We Missing Identifying Unknown Relevant Personas for Faithful
 created: 2026-02-19
-tags: ["rss", "auto-import", "arxiv", "persona", "user simulation", ""arxiv.org > computer science""]
+tags: ["rss", "auto-import", "persona", "arxiv", "user simulation"]
 source: "arXiv.org > Computer Science"
 source_url: "https://arxiv.org/abs/2602.15832"
 ---

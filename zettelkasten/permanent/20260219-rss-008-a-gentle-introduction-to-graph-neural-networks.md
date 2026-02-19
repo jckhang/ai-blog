@@ -3,7 +3,7 @@
 id: rss-20260219-zvufbt
 title: A Gentle Introduction to Graph Neural Networks
 created: 2026-02-19
-tags: ["rss", "auto-import", "neural network", "gnn", "graph neural", "distill", "gnn-intro"]
+tags: ["rss", "auto-import", "graph neural", "neural network", "distill", "gnn-intro", "understanding-gnns"]
 source: "Distill: Machine Learning Research"
 source_url: "https://distill.pub/2021/gnn-intro"
 ---

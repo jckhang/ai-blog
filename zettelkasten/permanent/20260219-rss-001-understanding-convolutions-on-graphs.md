@@ -3,7 +3,7 @@
 id: 20260219-rss-001-understanding-convolutions-on-graphs
 title: Understanding Convolutions on Graphs
 created: 2026-02-19
-tags: ["rss", "auto-import", "neural network", "gnn", "graph neural", "distill", "understanding-gnns"]
+tags: ["rss", "auto-import", "distill", "understanding-gnns", "graph neural", "neural network"]
 source: "Distill: Machine Learning Research"
 source_url: "https://distill.pub/2021/understanding-gnns"
 ---

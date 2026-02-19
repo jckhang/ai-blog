@@ -3,7 +3,7 @@
 id: rss-20260219-6fpvxc
 title: Reward Hacking in Reinforcement Learning
 created: 2026-02-19
-tags: ["rss", "auto-import", "agent", "reinforcement learning", "reward", "github", "reward-hacking"]
+tags: ["rss", "auto-import", "reward", "reward hacking", "reinforcement learning", "github", "reward-hacking"]
 source: "Lilian Weng's Blog"
 source_url: "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/"
 ---

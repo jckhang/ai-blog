@@ -3,7 +3,7 @@
 id: 20260219-rss-001-google-deepmind-wants-to-know-if-chatbots-are-just
 title: Google DeepMind wants to know if chatbots are just virtue signaling
 created: 2026-02-19
-tags: ["rss", "auto-import", "google deepmind", "deepmind", "google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling", "clear-cut", ""mit technology review""]
+tags: ["rss", "auto-import", "deepmind", "google deepmind", "clear-cut"]
 source: "MIT Technology Review"
 source_url: "https://www.technologyreview.com/2026/02/18/1133299/google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling/"
 ---
