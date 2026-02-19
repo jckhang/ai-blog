@@ -11,10 +11,14 @@
             "id": "9b088261e91acc9e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "permanent/20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "permanent/20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "permanent/20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from 20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "permanent/20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 20260219-rss-misc-xai8217s-colossus-2-8211-first-gigawatt-datacenter"
             }
           }
         ]
@@ -178,19 +185,26 @@
   },
   "active": "9b088261e91acc9e",
   "lastOpenFiles": [
-    "inbox/README.md",
-    "inbox/2026-02-19-wooden-floor.md",
-    "inbox/2026-02-19-ai-blog-automation-idea.md",
-    "deduplicate-inbox.js",
-    "literature/lit-20260219-wooden-floor-specification.md",
+    "inbox/2021-04-08-rss-distill-weight-banding.md",
+    "inbox/2021-05-06-rss-distill-adversarial-reprogramming-of-neural-cellular-automata.md",
     "inbox/2021-07-02-rss-distill-distill-hiatus.md",
     "inbox/2021-09-02-rss-distill-a-gentle-introduction-to-graph-neural-networks.md",
     "inbox/2021-09-02-rss-distill-understanding-convolutions-on-graphs.md",
+    "permanent/20260219-rss-misc-why-we-think.md",
+    "permanent/20260219-rss-001-another-giant-leap-the-rubin-cpx-specialized-accel.md",
+    "inbox/2026-02-19-ai-blog-automation-idea.md",
+    "permanent/20260219-rss-misc-extrinsic-hallucinations-in-llms.md",
+    "permanent/20260219-rss-misc-towards-a-more-realistic-vr-experience-merging-hap.md",
+    "permanent/20260219-rss-misc-infosys-ai-implementation-framework-offers-busines.md",
+    "permanent/20260219-rss-misc-ibm-and-uc-berkeley-diagnose-why-enterprise-agents.md",
+    "inbox/2026-02-19-wooden-floor.md",
+    "inbox/README.md",
+    "deduplicate-inbox.js",
+    "literature/lit-20260219-wooden-floor-specification.md",
     "permanent/20260219-rss-001-banking-ai-in-multiple-business-functions-at-natwe.md",
     "permanent/001-zettelkasten-是什么.md",
     "permanent/20260219-rss-001-one-shot-any-web-app-with-gradioaposs-grhtml.md",
     "permanent/20260219-rss-001-diffusion-models-for-video-generation.md",
-    "permanent/20260219-rss-001-another-giant-leap-the-rubin-cpx-specialized-accel.md",
     "permanent/20260219-rss-001-the-download-a-blockchain-enigma-and-the-algorithm.md",
     "permanent/20260219-rss-001-distill-hiatus.md",
     "permanent/20260219-rss-001-a-koopman-bayesian-framework-for-high-fidelity-per.md",
