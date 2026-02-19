@@ -3,7 +3,7 @@
 id: 20260219-rss-001-xai8217s-colossus-2-8211-first-gigawatt-datacenter
 title: xAI8217s Colossus 2 8211 First Gigawatt Datacenter In The World Unique RL
 created: 2026-02-19
-tags: ["rss", "auto-import", "rl", "colossus", "title", "unique", "methodology"]
+tags: ["rss", "auto-import", "semianalysis", "xais-colossus", "first-gigawatt-datacenter", ""semianalysis""]
 source: "SemiAnalysis"
 source_url: "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/"
 ---

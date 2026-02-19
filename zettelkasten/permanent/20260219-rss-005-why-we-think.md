@@ -3,9 +3,7 @@
 id: rss-20260219-dc0hlr
 title: Why We Think
 created: 2026-02-19
-tags: ["rss", "auto-import", "rl", "why we think", "why we think
-
-title", "source", "published time"]
+tags: ["rss", "auto-import", "thinking", "github", "arxiv", ""lilian weng's blog""]
 source: "Lilian Weng's Blog"
 source_url: "https://lilianweng.github.io/posts/2025-05-01-thinking/"
 ---

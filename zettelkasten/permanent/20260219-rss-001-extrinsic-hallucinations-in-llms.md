@@ -3,9 +3,7 @@
 id: 20260219-rss-001-extrinsic-hallucinations-in-llms
 title: Extrinsic Hallucinations in LLMs
 created: 2026-02-19
-tags: ["rss", "auto-import", "llm", "language", "rl", "extrinsic hallucinations", "ms
-
-title"]
+tags: ["rss", "auto-import", "llm", "language", "hallucination", "github", ""lilian weng's blog""]
 source: "Lilian Weng's Blog"
 source_url: "https://lilianweng.github.io/posts/2024-07-07-hallucination/"
 ---

@@ -3,9 +3,7 @@
 id: rss-20260219-pvtwbd
 title: A2H Agent-to-Human Protocol for AI Agent
 created: 2026-02-19
-tags: ["rss", "auto-import", "agent", "image", "rl", "human protocol", "agent
-
-title"]
+tags: ["rss", "auto-import", "agent-to-human", "agent", "arxiv", "cornell-reduced-white-small", ""arxiv.org > computer science""]
 source: "arXiv.org > Computer Science"
 source_url: "https://arxiv.org/abs/2602.15831"
 ---

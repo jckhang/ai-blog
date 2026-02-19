@@ -10,27 +10,71 @@ const path = require('path');
 const PROJECT_DIR = '/Users/yuxiang/workspaces/my_openclaw/.openclaw/workspace/projects/ai-blog';
 const ZK_PERMANENT_DIR = path.join(PROJECT_DIR, 'zettelkasten/permanent');
 
-// 技术术语词典（AI/ML/CS 常见关键词）
+// 提取名词短语（改进版）
+function extractPhrases(text) {
+  const phrases = [];
+  
+  // 1. 大写英文单词或词组（如 "Large Language Model", "Graph Neural Network"）
+  const upperCaseRegex = /([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g;
+  let match;
+  while ((match = upperCaseRegex.exec(text)) !== null) {
+    const phrase = match[1].toLowerCase();
+    if (phrase.length > 3 && phrase.length < 30 && !STOP_WORDS.has(phrase)) {
+      phrases.push(phrase);
+    }
+  }
+  
+  // 2. 包含连字符的词组（如 "graph-neural", "multi-modal"）
+  const hyphenRegex = /([a-z]+(?:-[a-z]+)+)/g;
+  while ((match = hyphenRegex.exec(text.toLowerCase())) !== null) {
+    if (match[1].length > 5) phrases.push(match[1]);
+  }
+  
+  // 3. 连续大写字母组成的缩写（如 "LLM", "GPT", "GNN", "RL"）
+  const acronymRegex = /\b([A-Z]{2,4})\b/g;
+  while ((match = acronymRegex.exec(text)) !== null) {
+    const acronym = match[1].toLowerCase();
+    if (!STOP_WORDS.has(acronym)) {
+      phrases.push(acronym);
+    }
+  }
+  
+  // 4. 常见技术短语（通过空格分隔的多单词）
+  const techPhrases = text.toLowerCase().match(/(?:deep learning|machine learning|neural network|graph neural|reinforcement learning|computer vision|large language model|natural language processing|model compression|weight banding|reward hacking|extrinsic hallucination|cognitive science|thinking)/g);
+  if (techPhrases) {
+    phrases.push(...techPhrases);
+  }
+  
+  return [...new Set(phrases)];
+}
+
+// 技术术语词典扩展
 const TECH_TERMS = [
   // LLM & NLP
   'llm', 'gpt', 'transformer', 'attention', 'token', 'prompt', 'incontext', 'finetune', 'lora',
-  'agent', 'agents', 'multimodal', 'vision', 'language', 'reasoning', 'planning',
+  'agent', 'agents', 'multimodal', 'vision', 'language', 'reasoning', 'planning', 'thinking',
   // ML
-  'deep learning', 'neural network', 'cnn', 'rnn', 'lstm', 'gnn', 'graph neural',
-  'reinforcement learning', 'rl', 'policy', 'reward', 'value function',
+  'deep learning', 'machine learning', 'neural network', 'cnn', 'rnn', 'lstm', 'gnn', 'graph neural',
+  'reinforcement learning', 'rl', 'policy', 'reward', 'value function', 'q-learning',
   // Vision
-  'computer vision', 'cv', 'image', 'video', 'detection', 'segmentation',
+  'computer vision', 'cv', 'image', 'video', 'detection', 'segmentation', 'haptic',
   // Infrastructure
   'deployment', 'inference', 'optimization', 'quantization', 'pruning', 'compression',
-  'distributed', 'parallel', 'gpu', 'tpu', 'memory',
+  'distributed', 'parallel', 'gpu', 'tpu', 'memory', 'framework',
   // Safety & Ethics
-  'safety', 'alignment', 'bias', 'fairness', 'interpretability', 'explainability',
+  'safety', 'alignment', 'bias', 'fairness', 'interpretability', 'explainability', 'hallucination',
   // Code & Engineering
-  'code generation', 'programming', 'software', 'engineering', 'testing',
+  'code generation', 'programming', 'software', 'engineering', 'testing', 'implementation',
   // Specific models/approaches
   'diffusion', 'stable diffusion', 'dall-e', 'midjourney',
-  'whisper', ' speech', 'audio',
-  'claude', 'gemini', 'mistral', 'llama', 'qwen'
+  'whisper', 'speech', 'audio', 'voice',
+  'claude', 'gemini', 'mistral', 'llama', 'qwen', 'kimi',
+  // Companies & Organizations
+  'openai', 'anthropic', 'google deepmind', 'deepmind', 'meta', 'mistral ai',
+  'huggingface', 'github', 'arxiv', 'distill', 'semianalysis',
+  // Concepts
+  'persona', 'user simulation', 'enterprise agents', 'financial institutions',
+  'weight banding', 'a2h protocol', 'agent-to-human'
 ];
 
 // 停用词（忽略）
@@ -111,7 +155,7 @@ function getBaseTags(content, feedCategory) {
 
 // 生成标签（核心函数）
 function generateTags(title, description, feedCategory) {
-  const text = title + ' ' + description;
+  const text = (title + ' ' + description).toLowerCase();
   
   // 1. 提取短语
   const phrases = extractPhrases(text);
@@ -119,14 +163,18 @@ function generateTags(title, description, feedCategory) {
   // 2. 匹配技术术语
   const techTerms = matchTechTerms(text);
   
-  // 3. 合并并去重
-  const allTags = [...new Set([...phrases, ...techTerms])];
+  // 3. 合并
+  let allTags = [...new Set([...phrases, ...techTerms])];
   
-  // 4. 添加基础标签
+  // 4. 过滤无意义标签
+  const meaningless = new Set(['rl', 'title', 'source', 'published time', 'markdown content', 'image']);
+  allTags = allTags.filter(t => !meaningless.has(t) && t.length > 2);
+  
+  // 5. 添加基础标签
   const baseTags = getBaseTags('', feedCategory);
   allTags.push(...baseTags);
   
-  // 5. 选择最相关的（按优先级：techTerms > phrases > base）
+  // 6. 打分排序
   const priorityScored = allTags.map(tag => {
     let score = 0;
     if (techTerms.includes(tag)) score += 3;
@@ -137,7 +185,7 @@ function generateTags(title, description, feedCategory) {
   
   priorityScored.sort((a, b) => b.score - a.score);
   
-  // 6. 取前 5 个
+  // 7. 取前 5 个
   const selected = priorityScored.slice(0, 5).map(p => p.tag);
   
   return selected;
