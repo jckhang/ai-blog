@@ -296,6 +296,23 @@ Apple released the **Foundation Models framework** with **iOS 26** in February 2
 
 **When to Use**: High-volume production where reasoning steps aren't needed for compliance/explainability.
 
+### 🧠 Fine-Tuning Efficiency Breakthroughs
+
+**Unsloth** (actively maintained as of Feb 2026) has established itself as a leading open-source library for efficient LLM fine-tuning:
+
+- **2× faster training** compared to standard methods
+- **60% memory reduction** enabling fine-tuning of models like Llama 3 on free Google Colab accounts
+- Supports advanced techniques: LoRA, QLoRA, and **INT4 quantization-aware training (QAT)**
+- QAT during supervised fine-tuning provides better accuracy at low precision, with bitwise-identical behavior between training and inference
+
+**Key Quantization Techniques**:
+- **INT4 QAT**: Applies quantization during fine-tuning for optimal low-precision performance
+- **KV Cache Optimization**: Shared KV cache and reuse recognize repeated tokens, reducing redundant computations
+- **Token-aware routing**: Directs inference based on token length, queue depth, cache hit predictions
+- **Disaggregation**: Separates prefill (prompt processing) and decode (token generation) for parallel operation
+
+These optimizations collectively enable **4-bit quantized models** to achieve near-full-precision quality while fitting in <3GB memory—critical for mobile and edge deployment.
+
 ---
 
 ## 🔌 Tool Use & Function Calling: Maturity & Challenges
@@ -320,6 +337,38 @@ Apple released the **Foundation Models framework** with **iOS 26** in February 2
 - Claims ~30% ASR reduction
 
 **Verification Needed**: Community hasn't widely validated tool-specific safety benchmarks yet.
+
+### 🌐 Model Context Protocol (MCP) Adoption Surge
+
+The **Model Context Protocol (MCP)** has emerged as the dominant standard for connecting AI agents to external systems and applications:
+
+- **73% of companies** plan to use MCP servers within the next 12 months (as of Feb 2026)
+- **43% already connected** their agents to MCP servers
+- **79% of companies aware of MCP challenges** still plan to adopt it within 12 months, indicating no suitable alternatives exist
+- **Google launched WebMCP** on Feb 13, 2026, enabling agents to perform structured actions on websites without DOM parsing
+- **Security concerns** (credentials exposure, access control) are the primary hesitation, with 72% citing risks but proceeding anyway
+
+**Adoption Priority**:
+1. Chat platforms (Teams, Slack)
+2. Systems of record (CRMs, knowledge bases)
+
+**Open-Source Tooling**:
+- **Cline**: Terminal-based coding agent with free models
+- **Manufact**: Open-source infrastructure for building and deploying MCP servers
+- **Agentic AI Foundation** (Linux Foundation): Developing multi-agent orchestration standards alongside MCP
+
+### 🛠️ Notable Open-Source Agent Tools (Feb 2026)
+
+Several lightweight, production-ready agent frameworks have gained traction:
+
+| Project | lang/stars | Focus | Notable Features |
+|---------|-----------|-------|------------------|
+| **nanobot** | Python/3.5k+ | Ultra-lightweight personal assistant | ~3,510 LOC, supports OpenRouter/Anthropic/OpenAI/DeepSeek/Groq/Gemini, vLLM integration, Slack/Email/QQ channels |
+| **Qwen-code** | TypeScript/18.1k | AI coding agent for terminals | Official Alibaba Qwen integration, 332 contributors |
+| **zeroclaw** | Rust/12.8k | Fast, autonomous AI assistant infrastructure | 96.7% Rust, fully composable, "deploy anywhere" philosophy |
+| **Agno** | Python/15k | Agentic programming language | Full OS-like runtime, approval enforcement, per-user isolation |
+
+These projects reflect the trend toward **minimalist, composable agent systems** that prioritize developer control and deployment flexibility over monolithic frameworks.
 
 ---
 
