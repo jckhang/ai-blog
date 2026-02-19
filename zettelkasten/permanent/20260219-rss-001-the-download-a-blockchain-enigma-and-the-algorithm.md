@@ -149,7 +149,11 @@ Discover special offers, top stories, upcoming events, and more.
 
 ## 相关链接
 
-- [[001-zettelkasten-是什么]]
+- [[001-zettelkasten-是什么]] - Zettelkasten 系统的基本概念
+- [[009-写作就是思考]] - 写作即思考的理念
+- [[011-从笔记到文章]] - 如何将研究笔记转化为文章
+- [[012-工具选择原则]] - 工具选择的原则与考量
+- [[016-llm-research-automation]] - 研究自动化流水线
 
 ---
 *RSS 自动采集 - Jina AI 全文抓取*

@@ -117,7 +117,10 @@ By discussing these challenges, we hope that future projects like Distill will b
 
 ## 相关链接
 
-- [[001-zettelkasten-是什么]]
+- [[001-zettelkasten-是什么]] - Zettelkasten 系统的基本概念
+- [[005-文献笔记的写法]] - 如何撰写文献笔记
+- [[009-写作就是思考]] - 写作即思考的理念
+- [[013-信任系统]] - 信任系统的价值与边界
 
 ---
 *RSS 自动采集 - Jina AI 全文抓取*

@@ -259,7 +259,10 @@ Have an idea for a project that will add value for arXiv's community? [**Learn m
 
 ## 相关链接
 
-- [[001-zettelkasten-是什么]]
+- [[001-zettelkasten-是什么]] - Zettelkasten 系统的基本概念
+- [[011-从笔记到文章]] - 如何将研究笔记转化为文章
+- [[016-llm-research-automation]] - LLM 研究自动化流水线
+- [[017-深度研究工具链]] - 深度研究工具链概述
 
 ---
 *RSS 自动采集 - Jina AI 全文抓取*
