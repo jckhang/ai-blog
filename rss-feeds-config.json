@@ -1,0 +1,142 @@
+{
+  "name": "Andrej Karpathy RSS Recommendations (Curated)",
+  "description": "高质量、长文、非算法推荐的RSS订阅列表，基于Karpathy理念精选",
+  "categories": {
+    "ai_research": "AI 研究论文 & 博客",
+    "tech_deep": "深度技术文章",
+    "engineering": "工程实践",
+    "thought": "思想 & 文化"
+  },
+  "feeds": [
+    {
+      "id": "arxiv_cs",
+      "title": "arXiv.org > Computer Science",
+      "url": "https://rss.arxiv.org/rss/cs",
+      "category": "ai_research",
+      "priority": 1,
+      "notes": "计算机科学最新论文"
+    },
+    {
+      "id": "karpathy_blog",
+      "title": "Andrej Karpathy Blog",
+      "url": "https://karpathy.ai/rss.xml",
+      "category": "ai_research",
+      "priority": 1,
+      "notes": "Karpathy 个人博客，必须有"
+    },
+    {
+      "id": "openai_blog",
+      "title": "OpenAI Blog",
+      "url": "https://openai.com/blog/rss.xml",
+      "category": "ai_research",
+      "priority": 2,
+      "notes": "OpenAI 官方研究博客"
+    },
+    {
+      "id": "huggingface_blog",
+      "title": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "category": "ai_research",
+      "priority": 2,
+      "notes": "HF 团队和社区文章"
+    },
+    {
+      "id": "distill_pub",
+      "title": "Distill: Machine Learning Research",
+      "url": "https://distill.pub/rss.xml",
+      "category": "ai_research",
+      "priority": 1,
+      "notes": "可视化深度论文，极高质量"
+    },
+    {
+      "id": "ai_news",
+      "title": "AI News",
+      "url": "https://www.artificialintelligence-news.com/feed/",
+      "category": "ai_research",
+      "priority": 3,
+      "notes": "每日AI新闻聚合"
+    },
+    {
+      "id": " MIT_tech_review",
+      "title": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/feed/",
+      "category": "tech_deep",
+      "priority": 1,
+      "notes": "深度科技分析，非煽动性"
+    },
+    {
+      "id": "beyond_intelligence",
+      "title": "Beyond Intelligence",
+      "url": "https://beyondintelligence.net/feed",
+      "category": "tech_deep",
+      "priority": 2,
+      "notes": "AI安全与治理"
+    },
+    {
+      "id": " Gwern_blog",
+      "title": "Gwern.net",
+      "url": "https://gwern.net/rss.xml",
+      "category": "tech_deep",
+      "priority": 1,
+      "notes": "深度长文，涵盖AI、统计、心理学"
+    },
+    {
+      "id": "semianalogy",
+      "title": "SemiAnalysis",
+      "url": "https://semianalysis.com/feed/",
+      "category": "engineering",
+      "priority": 1,
+      "notes": "半导体、AI基础设施深度分析"
+    },
+    {
+      "id": "lilian_weng",
+      "title": "Lilian Weng's Blog",
+      "url": "https://lilianweng.github.io/index.xml",
+      "category": "engineering",
+      "priority": 1,
+      "notes": "OpenAI 研究员，强化学习、安全"
+    },
+    {
+      "id": "huyenting",
+      "title": "Huyentento's Blog",
+      "url": "https://huyentento.github.io/index.xml",
+      "category": "engineering",
+      "priority": 2,
+      "notes": "工程实践、MLOps"
+    },
+    {
+      "id": "yes_but_is_it_learning",
+      "title": "Yes, But Is It Learning?",
+      "url": "https://yesbutisitlearning.substack.com/feed",
+      "category": "thought",
+      "priority": 2,
+      "notes": "ML 思想实验、哲学"
+    },
+    {
+      "id": "ai_bragging_rights",
+      "title": "AI Bragging Rights",
+      "url": "https://aibraggingrights.com/feed",
+      "category": "thought",
+      "priority": 3,
+      "notes": "AI 社会影响、伦理"
+    }
+  ],
+  "settings": {
+    "check_interval_minutes": 60,
+    "max_items_per_feed": 10,
+    "dedupe_window_days": 7,
+    "min_content_length": 200,
+    "filter_keywords": [
+      "sponsored",
+      "advertisement",
+      "clickbait",
+      "promoted"
+    ],
+    "quality_indicators": [
+      "reading_time",
+      "word_count",
+      " citations",
+      "figures"
+    ]
+  }
+}
