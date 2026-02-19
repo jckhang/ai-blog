@@ -110,11 +110,11 @@ console.log('执行: node scripts/fix-rss-naming.js --execute');
 // 如果传入了 --execute 参数，则执行
 if (process.argv.includes('--execute')) {
   console.log('\n🚀 开始执行重命名...');
-  renamePlan.forEach(({ old, new }) => {
-    const oldPath = path.join(ZK_PERMANENT_DIR, old);
-    const newPath = path.join(ZK_PERMANENT_DIR, new);
+  renamePlan.forEach(item => {
+    const oldPath = path.join(ZK_PERMANENT_DIR, item.old);
+    const newPath = path.join(ZK_PERMANENT_DIR, item.new);
     fs.renameSync(oldPath, newPath);
-    console.log(`✅ ${old} → ${new}`);
+    console.log(`✅ ${item.old} → ${item.new}`);
   });
   console.log('✅ 全部完成！');
   process.exit(0);
