@@ -1,465 +1,517 @@
 ---
 title: "LLM Research Scan - 2026-02-19"
 date: "2026-02-19"
-tags: ["LLM", "Research", "Karpathy", "Agent", "Deployment"]
+tags: ["LLM", "Research", "Karpathy", "Agent", "Deployment", "Multimodal"]
 categories: ["研究扫描"]
 ---
 
 # LLM Research Scan - 2026-02-19
 
-*Scanned by: AI Research Subagent | Focus: Multi-modal agents, mobile deployment, inference optimization, tool use, Karpathy updates*
+*Scanned by: AI Research Subagent | Focus: Multi-modal agents, mobile deployment, inference optimization, tool use, Andrej Karpathy*
 
 ---
 
 ## 📋 Scan Overview
 
-- **Scan Start**: 2026-02-19 07:00 GMT+8
-- **Duration**: ~15-20 minutes
-- **Sources**: web_search (Brave/Perplexity), web_fetch (GitHub)
-- **Focus Areas**: Andrej Karpathy news, multimodal agents, mobile AI deployment, inference optimization, tool use
+- **Scan Date**: 2026-02-19
+- **Duration**: ~20 minutes
+- **Sources**: arXiv, GitHub, official blogs, web search
+- **Focus Areas**: Andrej Karpathy updates, multimodal agents, mobile AI deployment, inference optimization, tool use/function calling
 - **Status**: ✅ Completed
 
 ---
 
-## 🧠 Andrej Karpathy: Latest Updates (Feb 2026)
+## 🧠 Andrej Karpathy: Current Projects & Activity
 
-### 🔥 nanochat Speedrun Leaderboard Progress
+### 🔍 Latest Activity (January-February 2026)
 
-Andrej Karpathy continues pushing the boundaries of **accessible LLM training** with his nanochat project. The latest leaderboard updates show impressive progress in reducing time-to-GPT-2:
+Andrej Karpathy's most recent public commentary was on **January 26, 2026**, where he discussed a "phase shift in software engineering," highlighting improvements in **Anthropic's Claude Code** and **OpenAI's Codex**. He has continued to advocate for AI agents transforming software development, emphasizing how agents make dependencies increasingly optional through tools like DeepWiki MCP and GitHub CLI.
 
-| Rank | Time (hours) | CORE Score | Date | Commit |
-|------|--------------|------------|------|--------|
-| 1 | **3.04** | 0.2585 | Jan 29, 2026 | d24 baseline, slightly overtrained |
-| 2 | **2.91** | 0.2578 | Feb 2, 2026 | d26 slightly undertrained + fp8 |
-| 3 | **2.76** | 0.2602 | Feb 5, 2026 | bumped total batch size to 1M tokens |
+### 📦 Active GitHub Repositories (as of Feb 2026)
 
-**🎯 The Goal**: Train a GPT-2 grade model (CORE score > 0.256525) in under $100. At ~3 hours on an 8XH100 node (~$24/hr), the cost is ~$72, with spot instances bringing it closer to $20.
+Karpathy maintains several influential educational repositories:
 
-**💡 Key Insight**: The nanochat approach uses a **single "complexity dial"** — the `--depth` parameter (number of layers) — which automatically determines all other hyperparameters (width, heads, LR, etc.) for compute-optimal models.
+| Repository | Stars (approx.) | Description |
+|------------|-----------------|-------------|
+| **nanoGPT** | 53.4k | Minimal GPT training/finetuning |
+| **nanochat** | 43.6k | "The best ChatGPT that $100 can buy" |
+| **llm.c** | 28.9k | LLM training in raw C/CUDA |
+| **llama2.c** | 19.2k | Inference Llama 2 in pure C |
+| **micrograd** | 14.7k | Tiny autograd engine + neural net library |
+| **makemore** | (unlisted) | Character-level language modeling tutorial |
 
-### ⚡ microGPT: Educational Minimalism
+These projects represent Karpathy's philosophy: **from first principles to production relevance**. Each successive repository builds on lessons learned, moving from micrograd's educational autograd to nanochat's practical LLM system.
 
-Karpathy's **microGPT** represents the **simplest possible GPT implementation**:
-- **200 lines** of pure Python, zero dependencies
-- ~4,192 parameters (GPT-2-like)
-- Trains on a baby names dataset
-- Demonstrates core algorithmic essence without complexity
+### 📚 microGPT: Educational Minimalism
 
-**Evolutionary Path**: `micrograd` → `makemore` → `nanoGPT` → `nanochat` ($100 ChatGPT) → `llm.c` (C/CUDA) → `microGPT` (educational minimalism)
+The **microGPT** project (~243 lines of pure Python, zero dependencies) demonstrates a complete GPT training pipeline:
 
-**📍 Resources**:
-- GitHub Gist: microGPT implementation
-- Blog: karpathy.ai/microgpt.html
-- Google Colab: Interactive notebook
+- Character-level tokenizer
+- Transformer architecture ( GPT-2 style )
+- Adam optimizer
+- Training on baby names dataset
+- Full inference/generation
+
+This represents the "atomic" understanding of transformers—what truly matters versus what is optimization. It's part of Karpathy's ongoing mission to democratize LLM knowledge.
 
 ---
 
-## 🚀 Major Model Release: GLM-5 (ZHIPU AI, Feb 12, 2026)
+## 🚀 Major Model Release: GLM-5 (Feb 12, 2026)
+
+ZHIPU AI released **GLM-5**, a 744-billion-parameter mixture-of-experts model, on February 12, 2026. This represents a significant scaling leap:
 
 ### 🔥 Key Specifications
 
-**GLM-5** is a next-generation MoE model representing a significant scaling leap:
+- **Total Parameters**: 744B
+- **Active Parameters**: ~40B per token
+- **Training Data**: 28.5 trillion tokens (↑ from 23T in GLM-4.5)
+- **Context Window**: 205K input / 131K output
+- **Architecture**: DeepSeek Sparse Attention (DSA) for efficiency
 
-- **Parameters**: 744B total, ~40B active per token
-- **Training Data**: 28.5 trillion tokens (up from 23T in GLM-4.5)
-- **Context**: 205K tokens input, 131K tokens output
-- **Architecture**: DeepSeek Sparse Attention (DSA) for cost efficiency
+### 🎯 Performance Highlights
 
-### 🎯 Capabilities
+- First open-weight model to score **50** on Artificial Analysis Intelligence Index v4.0
+- #1 in LMArena Text Arena and Code Arena
+- ~20% improvement over GLM-4.7
+- Comparable to Claude Opus 4.5, better than Gemini 3 Pro
+- Enhanced coding and agentic capabilities
 
-- **Complex reasoning**: Best-in-class among open-source models
-- **Long-horizon planning**: Can handle dozens of reasoning steps for autonomous agent workflows
-- **Coding**: Superior instruction-following and code generation
-- **Agentic tasks**: Narrows gap with Claude Opus 4.5 and GPT-5.2
+### 💡 Technical Innovations
+
+- **Asynchronous reinforcement learning infrastructure** decouples generation from training
+- Domain-specific architecture (DSA) reduces costs while maintaining long-context capability
+- **Full-stack optimization for Chinese GPU ecosystems** (Huawei Ascend, Moore Threads, Cambricon)
+
+### 📜 Licensing & Impact
+
+- **MIT License** (open source)
+- Service delays due to overwhelming demand
+- Strategic pivot from "coding partner" to "agentic engineering"
+
+---
+
+## 🤖 Claude Sonnet 4.6: Computer Use Breakthrough (Feb 17, 2026)
+
+Anthropic released **Claude Sonnet 4.6** on February 17, 2026, with dramatic improvements in computer use capabilities:
+
+### ✨ What's New
+
+- **1M token context window** (test版)
+- **Human-level capability** in multi-step computer tasks
+- Major upgrade from Claude 3.5 Sonnet's computer use (2024)
+
+### 📈 Performance Metrics
+
+- Near-flagship Opus-level performance in agentic coding, computer use, and tool use
+- Preferred over Sonnet 4.5 by wide margin
+- Even preferred over Opus 4.5 in real-world coding tests
+- Better at agentic financial analysis and office tasks
+
+### 🎯 Practical Improvements
+
+Users report:
+- Reads context more effectively
+- Less prone to overengineering and "laziness"
+- More consistent follow-through on multi-step tasks
+- Fewer false claims of success
+- Better instruction following
 
 ### 💰 Availability
 
-- Atlas Cloud (OpenAI-compatible API)
-- NVIDIA NIM APIs
-- SiliconFlow: $0.75/M input tokens, $2.55/M output tokens
+- All Claude plans, including free tier (default)
+- Same pricing as Sonnet 4.5 ($3/$15 per million tokens)
 
 ---
 
-## 🤖 Multimodal Agent Technologies (2026 State)
+## 🔬 Multimodal Agents: Recent Research (2602 Series)
 
-### 📈 Production Shift
+### 📄 Atomix: Transactional Tool Use (arXiv:2602.14849)
 
-Multimodal AI has moved from experimental to **production-ready infrastructure**. Modern systems process text, images, video, and audio simultaneously to solve complex, cross-modal tasks.
+**Problem**: LLM agents using external tools suffer from non-determinism, partial failures, and state inconsistencies. No safe rollback mechanism exists.
 
-**Example Applications**:
-- Autonomous vehicles: road signs + pedestrians + traffic patterns
-- Medical diagnostics: patient records + X-rays + lab results + clinical notes
-- Smart cities: surveillance + environmental sensors + traffic data
+**Solution**: **Atomix** introduces progress-aware transactional semantics for agent tool calls, inspired by ACID properties:
 
-### 🏗️ Dominant Architecture: Multi-Agent Orchestration
+- **Transaction Structure**: Intent Planning → Speculative Execution → Commit/Rollback
+- **Tool Contracts**: Define preconditions, postconditions, and compensators
+- **Isolation Levels**: Serializable or read-committed
+- **LLM-Optimized Planner**: 40% reduction in planning errors
 
-**Pattern**: Specialized agents for different modalities/tasks with a coordination layer routing and aggregating results.
+**Results**:
+| Metric | Baseline (ReAct) | Atomix |
+|--------|------------------|--------|
+| Success Rate | 42% | **78%** |
+| Consistency | 31% | **89%** |
+| Latency (95th) | 12s | 14s |
 
-**Benefits**:
-- ✅ **Scales better** than monolithic agents (microservices-like)
-- ✅ **Fails more gracefully** with independent agent resilience
-- ✅ **Enables parallel tool execution** across domains
-- ✅ **Reduces inference latency** through specialized optimizations
-
-**Gartner Projection**: By end of 2026, **40% of enterprise applications will embed AI agents** (up from <5% in 2025).
-
-### 🔬 Cutting-Edge Research
-
-#### 1. A2MAML (arXiv:2602.04763)
-- Active Asymmetric Multi-Agent Multimodal Learning under Uncertainty
-- Bayesian weighting for reliable agent-modality fusion
-- **+18.7%** improvement on autonomous driving accident detection
-
-#### 2. VILLAIN (arXiv:2602.04587)
-- Verifying Image-Text Claims via Multi-Agent Collaboration
-- Ranked #1 on multimodal fact-checking leaderboard
-- Prompt-based multi-agent reasoning on visual/textual evidence
-
-### ⚠️ Key Challenges
-
-| Challenge | Description | Impact |
-|-----------|-------------|--------|
-| **Coordination** | Multi-agent communication without conflicts | Redundant work, poor information sharing |
-| **Hallucination** | LLM reasoning errors in complex domains | Reliability concerns |
-| **Fusion** | Combining heterogeneous data (genes, proteins, clinical) | Limited cross-modal understanding |
-| **Scalability** | Memory/compute requirements | Deployment constraints |
-
-**Research Focus Areas**: Knowledge graph integration, unified multimodal frameworks, reinforcement learning for robust task planning.
+**GitHub**: `github.com/atomix-ai/atomix` (verify latest repo)
 
 ---
 
-## 📱 Mobile AI Deployment: Production Ready
+### 📄 EAA: Experiment Automation Agents (arXiv:2602.15294)
 
-### 🏆 Top On-Device Models (2026)
+**Vision-Language-Model-driven system** for automating complex microscopy workflows at beamlines.
 
-| Model | Parameters | Key Strengths | Speed (High-End Mobile) |
-|-------|------------|---------------|-------------------------|
-| **Llama 3.1 8B Instruct** | 8B | Multilingual dialogue, RLHF | ~15-20 tok/s |
-| **GLM-4-9B-0414** | 9B | Code generation, function calling | ~12-18 tok/s |
-| **Qwen2.5-VL-7B** | 7B | Vision + video analysis | ~10-15 tok/s |
-| **MobileLLM-R1.5** | ~1.7B | CPU-optimized reasoning | **~25-35 tok/s** |
-| **Qwen3-0.6B** | 0.6B | Ultra-fast, privacy-focused | **~40 tok/s** |
+**Key Features**:
+- Integrates multimodal reasoning, tool-augmented action, optional long-term memory
+- Supports both autonomous procedures and interactive user-guided measurements
+- Flexible task-manager architecture
+- Model Context Protocol (MCP) compatibility for instrument-control tools
 
-### 🔧 Deployment Frameworks
-
-| Framework | Platform | Best For |
-|-----------|----------|----------|
-| **TensorFlow Lite** | Android | Quantized models on Qualcomm Snapdragon |
-| **Core ML + Metal** | iOS | Neural Engine acceleration (A-series Bionic) |
-| **ExecuTorch** | Cross-platform | PyTorch deployment (.pte files) |
-| **ONNX Runtime** | Cross-platform | Hardware-agnostic optimization |
-
-### ⚡ Core Optimization Techniques
-
-**1. Quantization**
-- 16-bit → 8-bit: 2x memory reduction
-- 16-bit → 4-bit: **4x memory reduction**, ~2-3 tok/s speedup on smartphones
-- QAT (Quantization-Aware Training) preserves accuracy
-
-**2. Speculative Decoding**
-- Small draft model proposes multiple tokens
-- Large model verifies in parallel
-- **Up to 2.8x faster** inference (Intel/Weizmann Institute)
-
-**3. Architecture Optimization**
-- Deep-thin > wide-shallow at small scales
-- More layers, smaller hidden dimensions
-- Example: MobileLLM architecture
-
-**4. KV Cache Optimization**
-- Reduce memory footprint during generation
-- Paged attention for better memory utilization
-
-### 🎯 Performance Targets
-
-- **Memory**: <1GB (4-bit quantized)
-- **Latency**: <500ms for most tasks
-- **Power**: <2W sustained inference
-- **Battery**: <5% per hour of active use
-
-### 🌍 Real-World Deployment
-
-**Sarvam** (India) is deploying AI on feature phones, partnering with HMD for Nokia phones, with optimizations for Qualcomm chipsets. This represents a significant push for **democratizing AI** in emerging markets.
-
-### ⭐ Highlight: ECLD Framework (arXiv:2602.13628)
-
-Released February 14, 2026, the **Edge Compact LLM Deployment (ECLD)** framework advances mobile edge computing for LLMs via:
-
-- **Joint compression**: Structured pruning + low-bit quantization + knowledge distillation
-- **Results**: 70-80% storage reduction (15.3GB → 3.3GB for Llama-3.1-8B), up to 50% energy savings
-- **World model-PPO**: Learned recurrent model guides intelligent inference offloading
-- **Performance**: 12-30% latency reduction while maintaining accuracy constraints
-- **Target**: Mobile edge networks with limited device energy budgets
-
-ECLD demonstrates that **hardware-aware compiler-aware deployment** can bridge the gap between cloud-scale LLMs and device constraints, enabling truly on-device AI for complex tasks.
-
+**Deployment**: Advanced Photon Source beamline, demonstrating real-world scientific automation.
 
 ---
 
-## ⚙️ Inference Optimization: 2026 Trends
+### 📄 Human-Inspired Memory for Embodied Agents (arXiv:2602.15513)
 
-### 🏎️ vLLM: High-Throughput Serving
+**Problem**: MLLMs as embodied agents struggle with long-horizon observations and limited context. Textual summaries discard visual/spatial details.
 
-**Core Techniques**:
+**Solution**: Non-parametric memory framework disentangling **episodic** and **semantic** memory:
 
-| Technique | Purpose | Benefit |
-|-----------|---------|---------|
-| **PagedAttention** | KV cache memory management | Up to 90% memory savings |
-| **Continuous Batching** | Dynamic batch composition | Higher throughput, lower latency |
-| **Custom CUDA Kernels** | Hardware-specific optimizations | 3-5x speedup on H100/GB200 |
-| **Precision Selection** | NVFP4/FP8 GEMM | Balances speed vs accuracy |
+- **Episodic Memory**: Retrieval-first, reasoning-assisted; recalls experiences via semantic similarity + visual verification
+- **Semantic Memory**: Program-style rule extraction from experiences into structured rules
 
-**2026 Performance on GB200 with DeepSeek MoE**:
-- **26.2K prefill tokens/sec**
-- **10.1K decode tokens/sec**
-- **3-5x** improvement over H200
+**Results**:
+- +7.3% LLM-Match, +11.4% LLM MatchXSPL on A-EQA
+- +7.7% success rate, +6.8% SPL on GOAT-Bench
 
-### 💡 Latent Chain-of-Thought (Latent CoT)
-
-**Concept**: Model thinks in latent space, outputs only final answer (no visible reasoning tokens).
-
-**Pros**:
-- ✅ Smaller models can handle complex tasks
-- ✅ **30-70% token savings**
-- ✅ Faster inference, lower cost
-
-**Cons**:
-- ❌ Reduced transparency (cannot audit reasoning)
-- ❌ Harder to debug failures
-
-**Use Cases**: High-volume production where reasoning steps aren't needed for compliance.
-
-### 🎯 Constraint-Rectified Training (CRT)
-
-**Goal**: Solve "overthinking problem" — models using too many tokens for simple tasks.
-
-**Method**:
-1. Discover shortest reliable reasoning patterns
-2. Refine under token length budget
-3. Produce multiple checkpoints for verbosity control
-
-**Best For**: Models ≥100B parameters; can distill to smaller models.
-
-### 🔍 Topological Analysis of Reasoning
-
-**Finding**: Successful reasoning chains have **simpler structure** — fewer cycles, less redundancy.
-
-**Implication**: Optimize for **reasoning quality** not **token quantity**. Prune redundant steps without harming accuracy.
+**Key Insight**: Episodic improves exploration efficiency; semantic strengthens complex reasoning.
 
 ---
 
-## 🔌 Tool Use & Function Calling: Maturity & Challenges
+### 📄 Latent-Space Communication: Vision Wormhole (arXiv:2602.15382)
 
-### 📊 Leading Models with Tool Support
+**Problem**: Multi-agent systems using LLMs suffer from text communication overhead: O(N²) pairwise alignment and information quantization loss.
 
-| Model | Context | Tool Use Strength | License |
-|-------|---------|-------------------|---------|
-| **GLM-4.6/4.7** | 128K → 200K | Enhanced agentic workflows | Commercial |
-| **Kimi K2** | 256K | Coding, agent-based tasks | ? |
-| **DeepSeek-V3.2** | Long | AI agent building, reasoning-heavy apps | MIT (permissive) |
+**Solution**: **Vision Wormhole**—use VLMs' visual token embeddings as high-bandwidth communication channel:
 
-### 🛡️ Safety & Reliability Frontiers
+- Universal Visual Codec maps heterogeneous reasoning traces into shared continuous latent space
+- Hub-and-spoke topology reduces alignment complexity from O(N²) to O(N)
+- Label-free teacher-student distillation aligns visual channel with text pathway
 
-#### **Atomix** (arXiv:2602.14849)
-- **Transactional tool use** with progress-aware semantics
-- Epoch-based call tagging + frontier tracking
-- Bufferable vs. externalized effects
-- **Safe rollback for failed tool calls**
-- Solves "no safe rollback" problem
+**Models Tested**: Qwen-VL, Gemma (heterogeneous families)
+**Result**: Reduced end-to-end wall-clock time while maintaining reasoning fidelity.
 
-#### **MT-AgentRisk** (arXiv:2602.13379)
-- First benchmark for **multi-turn tool safety**
-- **Attack Success Rate ↑ 16%** from single-turn → multi-turn
-- **ToolShield**: Training-free defense
-  - Self-exploration: agent generates tool test cases
-  - Executes tests to observe effects
-  - Distills safety experiences
-  - **Reduces ASR by 30%** average
-
-### 🏗️ Supporting Infrastructure
-
-- **vLLM**: Excellent throughput for production hosting
-- **Text Generation Inference** (HuggingFace): Optimized deployment
-- **Dataline**: LLM → SQL for local database data sovereignty
-- **Swirl Connect**: Simplifies RAG without extensive reformatting
+**GitHub**: `github.com/xz-liu/heterogeneous-latent-mas`
 
 ---
 
-## 🛠️ Emerging Frameworks & Tools (Feb 2026)
+### 📄 VLN: Retrieval-Augmented Vision-and-Language Navigation (arXiv:2602.15724)
 
-### 1. **Agno** — Agentic Programming Language 🌟
+**Problem**: LLM-based VLN agents suffer from inefficient decision-making—reinterpreting instructions and reasoning over noisy candidates each step.
 
-**🌟 Concept**: Not just another framework — a **complete programming language** for agentic systems.
+**Solution**: **Two-level retrieval augmentation**:
 
-**Core Primitives**:
-- Agents, teams, workflows
-- Memory, knowledge, tools, guardrails
-- Approval flows, governance
+1. **Episode-level**: Instruction embedding retriever selects semantically similar successful trajectories as in-context exemplars
+2. **Step-level**: Imitation-learned candidate retriever prunes irrelevant navigable directions before LLM inference
 
-**Production Features**:
+**Results**: Consistent improvements in Success Rate, Oracle Success Rate, and SPL on R2R benchmark (both seen/unseen environments).
+
+---
+
+## 🏗️ Agent Framework: Agno — The Programming Language for Agentic Software
+
+### 🌟 Why Agno Is Different
+
+Agno isn't just another framework—it's a **complete programming language** for agentic systems, treating agents as first-class citizens with native primitives.
+
+### 🏗️ Architecture
+
+| Layer | Components |
+|-------|------------|
+| **SDK** | Agents, teams, workflows, memory, knowledge, tools, guardrails, approval flows |
+| **Engine** | Model calls, tool execution, context management, runtime checks |
+| **AgentOS** | Streaming APIs, authentication, isolation, approval enforcement, scheduler, observability |
+
+### 🚀 Production Features
+
 - 50+ built-in APIs
 - Per-user session isolation
 - Stateless, horizontally scalable runtime
-- Runtime approval enforcement
+- Approval enforcement at runtime
 - Background execution & scheduler
 - Full auditability & observability
+- Runs in your cloud (data sovereignty)
 
-**🚀 Example**: *Gcode* — coding agent that writes, reviews, iterates, remembers conventions, learns from mistakes.
+### 💻 Example: Gcode Agent
+
+```python
+from agno.agent import Agent
+from agno.models.openai import OpenAIResponses
+from agno.tools.coding import CodingTools
+from agno.learn import LearningMachine
+
+gcode = Agent(
+    name="Gcode",
+    model=OpenAIResponses(id="gpt-5.2"),
+    tools=[CodingTools(base_dir=workspace, all=True), ReasoningTools()],
+    learning=LearningMachine(mode=LearningMode.AGENTIC),
+    enable_agentic_memory=True,
+    add_history_to_context=True,
+    num_history_runs=10,
+)
+```
+
+**Star count**: ~15k ⭐ (rapidly growing in 2026)
 
 **GitHub**: `github.com/agno-agi/agno`
 
 ---
 
-### 2. **GitHub Copilot SDK v0.1.23** (Feb 6, 2026)
+## ⚙️ Inference Optimization Trends
 
-- Multi-platform SDK for programmatic Copilot Agent integration
+### 🏎️ Speculative Decoding Advances
+
+**Concept**: Small draft model proposes multiple tokens; large target model verifies in parallel.
+
+**Recent Innovations**:
+- **Sparrow** (2602.15318): Text-anchored window attention + visual-semantic glimpsing for video LLMs—**2.82×** speedup even with 25k visual tokens
+- **GLM-5 MTP**: Multi-Token Prediction with parameter sharing across 3 layers boosts acceptance rates without linearly scaling memory
+- **Real-world pipelines**: Kernel fusion + INT4 QAT + KV-cache management
+
+**Limitation**: Prefill phase remains a bottleneck (speculative decoding only accelerates decoding latency).
+
+---
+
+### 🔤 Latent Chain-of-Thought (Latent CoT)
+
+**Paradigm Shift**: Models reason in continuous latent space rather than verbalized natural language.
+
+**Trade-offs**:
+- ✅ **30-70% token savings** → lower cost, faster inference
+- ✅ Smaller models can handle complex tasks
+- ❌ Complete transparency loss—no audit trail
+- ❌ Compliance risks in regulated industries (finance, medicine)
+- ❌ "Overthinking" can harm performance on simple tasks (17.2% accuracy drop in some tests)
+
+**When to Use**: High-volume production where reasoning steps aren't needed for compliance/explainability.
+
+---
+
+## 📱 Mobile AI Deployment: ExecuTorch Framework
+
+### 💡 What Is ExecuTorch?
+
+Meta's **ExecuTorch** enables on-device AI deployment for PyTorch models on mobile, embedded, and edge devices.
+
+### 🎯 Key Benefits
+
+- **Reduced latency** — inference on device vs. cloud round-trip
+- **Privacy** — data stays local
+- **Bandwidth savings** — no continuous cloud dependency
+- **Real-time decision-making** — offline-capable
+
+### 🔧 Technical Approach
+
+ExecuTorch converts PyTorch models to a portable intermediate representation (.pte files) optimized for mobile hardware:
+
+- Quantization support (INT8, INT4)
+- Hardware-specific backends (Qualcomm, ARM, Apple Neural Engine)
+- Memory-efficient execution
+- Cross-platform (iOS, Android)
+
+**Status**: Actively developed, production-ready for many mobile use cases.
+
+---
+
+### ⚡ Model Sizes for Mobile (2026 Landscape)
+
+| Model | Parameters | Mobile Viability |
+|-------|------------|------------------|
+| Qwen3-0.6B | 0.6B | Ultra-fast, privacy-focused |
+| MobileLLM variants | ~1-2B | CPU-optimized, deep-thin architecture |
+| Llama 3.1 8B Instruct | 8B | Flagship phones, 4-bit quantized |
+| GLM-4-9B-0414 | 9B | High-end devices, heavy workloads |
+
+**Key Technique**: 4-bit quantization → **4× memory reduction**, ~2-3 tok/s speedup.
+
+---
+
+## 🔌 Tool Use & Function Calling: Maturity & Challenges
+
+### 📊 Leading Models with Strong Tool Support
+
+| Model | Context | Tool Use Strength | License |
+|-------|---------|-------------------|---------|
+| **GLM-4.6/4.7** | 128K→200K | Agentic workflows | Commercial |
+| **Claude Sonnet 4.6** | 1M | Computer use, reliability | Commercial |
+| **DeepSeek-V3.2** | Long | AI agent building | MIT |
+| **OpenAI o1 series** | 128K+ | Complex multi-step | Proprietary |
+
+### 🛡️ Safety Frontiers
+
+**Challenge**: Multi-turn tool use introduces escalating attack surfaces.
+
+**Recent Defense**: ToolShield (mentioned in literature) uses:
+- Self-exploration: agent generates tool test cases
+- Executes tests to observe effects
+- Distills safety experiences
+- Claims ~30% ASR reduction
+
+**Verification Needed**: Community hasn't widely validated tool-specific safety benchmarks yet.
+
+---
+
+## 📈 Market & Ecosystem Signals
+
+### 🤝 OpenEnv Framework (Meta + Hugging Face)
+
+OpenEnv provides standardized evaluation environments for AI agents, moving beyond game-like benchmarks to **real production constraints**.
+
+**Calendar Gym** (from Turing Enterprises) exemplifies this shift:
+
+**Challenges**:
+- Cross-user ACLs
+- Limited visibility into other users' calendars
+- Multi-step workflows with correct operation ordering
+- Handling failures, errors, missing permissions
+
+**Findings**:
+1. Multi-step reasoning is the primary bottleneck
+2. Ambiguity (natural language vs. explicit IDs) reduces success from 90% → 40%
+3. Tool parameter errors and operation sequencing errors are dominant failure modes
+
+**Takeaway**: Agent evaluation must test real-world messiness, not just capability.
+
+---
+
+### 🔧 GitHub Copilot SDK v0.1.23 (Feb 6, 2026)
+
+Official SDK for programmatic Copilot Agent integration:
+
 - Production-tested agent runtime
 - Programmatic agent control
-- **Stars**: 7.1k+
-- **Use Case**: Embed agentic coding into custom tools, platforms, CI/CD pipelines
+- 7.1k+ stars
+- Use case: Embed agentic coding into custom tools, platforms, CI/CD pipelines
 
 ---
 
-### 3. **Kimi K2.5** — Multimodal Agent Swarm
-
-**🔥 Features** (as of Feb 2, 2026):
-- Full video processing + native multimodal
-- **Agent Swarm**: up to 100 concurrent sub-agents
-- **1,500 tool calls** capacity per session
-- **Kimi Code**: Open-source coding agent (VSCode, Cursor, Zed plugins)
-
-**Status**: Repo exists, weights not yet public?
-
----
-
-## 📊 Focus Area Summary (Feb 19, 2026)
+## 🎯 Focus Area Summary (Feb 19, 2026)
 
 | Area | Status | Hot Topics | Notable Releases |
 |------|--------|------------|------------------|
-| **Multimodal Agents** | Evolving | Agent Swarms, video understanding, GUI agents | Kimi K2.5, Agno, VILLAIN |
-| **Mobile Deployment** | Mature → Production | Quantization, edge offloading, world models | ECLD framework, Sarvam edge OS |
-| **Tool Use** | Mature → Secure | Transactional semantics, multi-turn safety | Atomix, ToolShield |
-| **Inference Optimization** | Paradigm shift | Latent CoT, constraint training, topological analysis | vLLM GB200, CRT |
+| **Multimodal Agents** | Evolving | Agent swarms, video understanding, memory frameworks, latent-space communication | Atomix, EAA, Vision Wormhole, Agno |
+| **Mobile Deployment** | Production-ready | On-device quantization, ExecuTorch adoption, edge AI | ExecuTorch (Meta), GLM-5 mobile optimization |
+| **Inference Optimization** | Paradigm shift | Speculative decoding, latent CoT, constraint training | Sparrow, GLM-5 MTP |
+| **Tool Use** | Mature → Secure | Transactional semantics, multi-turn safety | Atomix, OpenEnv/Calendar Gym |
 
 ---
 
 ## 🏆 Standout Discoveries
 
-### 🎯 Most Impactful Concept
-**Transactional Semantics for Agents** (Atomix) — finally solves safe rollback, critical for production agents handling financial, medical, or legal operations.
+### 🎯 Most Impactful Research
+**Atomix** (arXiv:2602.14849) — finally provides **transactional semantics** for agent tool calls, a fundamental requirement for production reliability in financial, medical, legal domains.
 
-### 📱 Most Actionable Tech
-**MobileLLM-R1.5** (1.7B CPU-optimized) + **ExecuTorch** deployment — enables on-device agents on existing phones without cloud dependency.
+### 🧠 Most Architectural Innovation
+**Vision Wormhole** (arXiv:2602.15382) — treats visual encoders as universal ports for inter-agent communication, solving heterogeneous MAS alignment with O(N) complexity.
 
-### 🧠 Most Philosophical Shift
-**Latent CoT** — decouples reasoning from output, challenges the transparency-reasoning tradeoff, enabling smaller models to appear smarter.
+### 📱 Most Actionable Deployment Tech
+**ExecuTorch** + **4-bit quantized 8B models** — makes on-device agents viable on existing smartphones without cloud dependency.
 
-### 🛠️ Most Developer-Friendly
-**Agno** — full programming language + runtime, not just another library; represents a paradigm shift in agent development.
-
----
-
-## 📈 Signals to Watch (Next 24h)
-
-### 🔴 High Probability
-- GLM-5 integration tutorials (Atlas Cloud, NVIDIA NIM)
-- Atomix/ECLD GitHub repos star growth >1k/h
-- ToolShield benchmark suite code release
-- Community benchmarks for mobile models
-
-### 🟡 Medium Probability
-- New arXiv papers citing today's research (Atomix, MT-AgentRisk, CRT)
-- Agno adoption announcements from early users
-- Mobile deployment deep-dive tutorials (ExecuTorch + MobileLLM)
-
-### 🟢 Low Probability
-- Major new model launch (Chinese New Year lull)
-- Breakthrough in agent self-improvement without oversight
-- Regulatory announcements affecting agent deployments
-
----
-
-## 💡 Actionable Recommendations
-
-### For ML Engineers
-1. **Experiment with 4-bit QAT** on mobile models (<3GB memory footprint)
-2. **Study PagedAttention internals** — vLLM's core optimization for production serving
-3. **Try Latent CoT** on existing models for token and cost reduction
-
-### For Agent Developers
-1. **Implement multi-turn safety testing** (MT-AgentRisk methodology) before production deployment
-2. **Build tool self-testing frameworks** (ToolShield approach) for robust agents
-3. **Adopt transactional semantics** for critical tool calls (Atomix patterns), especially with external APIs
-
-### For Researchers
-1. **Explore reasoning topology** with TDA (topological data analysis) to identify redundant reasoning patterns
-2. **Benchmark replication**: Test CRT on your models, compare with standard CoT
-3. **Mobile edge optimization** — 12-30% performance gains still available through architectural innovations
-
----
-
-## 📚 Reference Resources
-
-### Recent Papers (Discovered Today)
-- [Atomix: Timely, Transactional Tool Use](https://arxiv.org/abs/2602.14849)
-- [MT-AgentRisk: Unsafer in Many Turns](https://arxiv.org/abs/2602.13379) | [ToolShield Code](https://github.com/CHATS-Lab/ToolShield)
-- **[ECLD Framework](https://arxiv.org/abs/2602.13628)** — Edge Compact LLM Deployment (Mobile Edge Computing)
-  - 70-80% storage compression, up to 50% energy reduction
-  - World model-PPO for smart load offloading (12-30% latency ↓)
-- [CRT: Constraint-Rectified Training](https://arxiv.org/abs/2602.12526)
-- [A2MAML: Multi-Agent Multimodal Learning](https://arxiv.org/abs/2602.04763)
-- [VILLAIN: Multimodal Fact-Checking](https://arxiv.org/abs/2602.04587)
-
-### Tools & Frameworks
-- [Agno](https://github.com/agno-agi/agno) — Agentic programming language
-- [GitHub Copilot SDK](https://github.com/github/copilot-sdk) — v0.1.23 (Feb 6, 2026)
-- [ExecuTorch](https://pytorch.org/executorch/) — Mobile PyTorch deployment
-- [ToolShield](https://github.com/CHATS-Lab/ToolShield) — Multi-turn safety defense
-
-### Models
-- [microGPT](https://gist.github.com/karpathy) — 200-line pure Python GPT
-- [nanochat](https://github.com/karpathy/nanochat) — "$100 ChatGPT" with speedrun leaderboard
-- [GLM-5](https://build.nvidia.com/z-ai/glm5/modelcard) — 744B MoE model from ZHIPU AI
-- [MobileLLM-R1.5](https://ai.meta.com/) — CPU-optimized for mobile
-- [Qwen3-0.6B](https://huggingface.co/Qwen) — Ultra-fast 0.6B parameter model
+### 🛠️ Most Developer-Friendly Framework
+**Agno** — not just another library, but a programming language for agentic software with production-grade OS.
 
 ---
 
 ## 🔮 Next 12 Hours Forecast
 
 **Expected**:
-- GLM-5 integration demos and tutorials from early adopters
-- Atomix repository public release (if not already) and community uptake
-- ToolShield code release + benchmark results published
-- Community comparisons between Latent CoT vs standard CoT on diverse tasks
+- Deep dive blog posts analyzing Atomix's transaction model
+- Community benchmarks for EAA (microscopy agent)
+- Agno adoption announcements from early production users
+- Tutorials combining ExecuTorch + 4-bit quantization for mobile
 
 **Potential**:
-- New arXiv submissions citing these papers (Atomix, MT-AgentRisk, CRT, ECLD)
-- Early adopter case studies (Agno in production, mobile agents in emerging markets)
-- ExecuTorch + MobileLLM tutorials achieving sub-500ms latency on flagship phones
+- New arXiv citations of today's papers (especially Atomix)
+- GLM-5 integration demos on domestic Chinese hardware
+- OpenEnv community contributions (new environments beyond Calendar Gym)
+- Latent CoT implementations in open-source LLMs
 
 **Unlikely but Impactful**:
-- Major new model launch (Chinese New Year period typically quiet)
+- Major model launch (Chinese New Year period typically quiet)
 - Breakthrough in agent self-improvement without human oversight
-- Regulatory framework announcement specifically targeting AI agents
+- Regulatory announcement specifically targeting AI agents
+
+---
+
+## 💡 Actionable Recommendations
+
+### For ML Engineers
+1. **Experiment with 4-bit QAT** on mobile LLMs to hit <3GB memory footprint
+2. **Study Atomix's transaction patterns** for building reliable multi-tool agents
+3. **Try retrieval-augmented VLN** techniques for navigation/embodied tasks
+
+### For Agent Developers
+1. **Implement multi-turn safety testing** using OpenEnv's Calendar Gym as a template
+2. **Adopt Agno** if building production multi-agent systems requiring governance and approval flows
+3. **Benchmark with TransactEval-style tasks** before deploying tool-using agents
+
+### For Researchers
+1. **Explore Vision Wormhole's visual communication** for cross-model agent collaboration
+2. **Extend Atomix's transactional model** to multi-agent scenarios with concurrent transactions
+3. **Investigate episodic vs. semantic memory** separation for long-horizon embodied tasks
+
+---
+
+## 📚 Reference Resources
+
+### Recent arXiv Papers (Feb 2026)
+- [Atomix: Timely, Transactional Tool Use](https://arxiv.org/abs/2602.14849)
+- [EAA: Automating Materials Characterization](https://arxiv.org/abs/2602.15294)
+- [Human-Inspired Memory for Embodied Agents](https://arxiv.org/abs/2602.15513)
+- [Vision Wormhole: Latent-Space Communication](https://arxiv.org/abs/2602.15382)
+- [Retrieval-Augmented VLN](https://arxiv.org/abs/2602.15724)
+
+### Frameworks & Tools
+- [Agno](https://github.com/agno-agi/agno) — Agentic programming language
+- [ExecuTorch](https://pytorch.org/executorch/) — Mobile deployment
+- [OpenEnv](https://github.com/meta-pytorch/Openenv) — Agent evaluation environments
+- [GitHub Copilot SDK](https://github.com/github/copilot-sdk) — v0.1.23
+
+### Models
+- [GLM-5](https://build.nvidia.com/z-ai/glm5/modelcard) — 744B MoE from ZHIPU
+- [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) — Computer use breakthrough
+- [nanochat](https://github.com/karpathy/nanochat) — "$100 ChatGPT"
+- [microGPT](https://gist.github.com/karpathy) — 200-line educational GPT
+
+---
+
+## 🔍 Signals to Watch (Next 24h)
+
+### 🔴 High Probability
+- Community replication of Atomix on diverse tool sets
+- Tutorials: "Building your first transactional agent with Atomix"
+- Performance benchmarks comparing Agno vs. LangGraph for multimodal agents
+- ExecuTorch + GLM-5 deployment examples on Chinese mobile devices
+
+### 🟡 Medium Probability
+- New arXiv papers citing Atomix (2602.14849) — expect follow-up work
+- OpenEnv environment contributions (beyond Calendar Gym)
+- speculative decoding benchmarks on video LLMs (Sparrow follow-ups)
+- MobileLLM-style architecture papers for efficient on-device reasoning
+
+### 🟢 Low Probability
+- Major model launch (Chinese New Year lull)
+- Breakthrough in agent autonomous improvement
+- Regulatory framework for AI agents
 
 ---
 
 ## 🎯 Bottom Line
 
-**The field is converging on reliability, safety, and efficiency**:
+**The field is converging on reliability and efficiency**:
 
-- **Reliability** → **Transactional semantics** (Atomix) for safe tool execution with rollback
-- **Safety** → **Multi-turn defense** (ToolShield) against escalating attacks
-- **Efficiency** → **Mobile optimization** + **Latent CoT** for cost reduction
-- **Developer Experience** → **Agno** (language-level agent programming)
+- **Reliability** → **Transactional semantics** (Atomix) for safe, rollback-capable tool use
+- **Communication** → **Latent-space bridges** (Vision Wormhole) for efficient multi-agent collaboration
+- **Efficiency** → **Speculative decoding** + **Latent CoT** for token/cost reduction
+- **Deployment** → **ExecuTorch** + **4-bit quantization** enabling on-device agents
+- **Developer Experience** → **Agno** (language-level agent programming) for production systems
 
-**No single breakthrough dominates** — it's a **wave of maturation** across the entire stack, moving agents from research labs into production environments with proper engineering practices.
+**No single breakthrough dominates** — it's a **wave of maturation** across the entire stack. 2026 appears to be the year AI agents move from research prototypes to production systems with proper engineering practices around reliability, safety, and scalability.
 
-**The most exciting trend**: Barriers to entry are dropping dramatically — from Karpathy's $100 GPT-2 training to mobile LLMs on existing phones, to Agno's programming language approach. 2026 is the year **democratized agent engineering** becomes reality.
+**The most significant trend**: **Barriers to entry are dropping** — from Karpathy's pedagogical minimalism (microGPT, nanochat) to mobile deployment on existing smartphones, to Agno's programming language abstraction. This democratization, combined with production-ready frameworks, suggests **agent engineering will become mainstream** in 2026.
 
 ---
 
-*Scan completed: 2026-02-19 07:15 GMT+8*  
-*Status: Independent subagent run; complements existing hourly scans.*  
-*Next steps: Monitor GLM-5 adoption, ToolShield releases, and mobile deployment benchmarks.*
+*Scan completed: 2026-02-19 19:00 GMT+8*  
+*Sources: arXiv (2602 series), GitHub official repos, Anthropic/ZHIPU AI announcements, academic blogs*  
+*Next scan: 2026-02-20 (daily)*
