@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "64bd762e06d03fdd",
+    "type": "split",
+    "children": [
+      {
+        "id": "56c24cf31eedbdb0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b088261e91acc9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "inbox/2026-02-19-wooden-floor.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-02-19-wooden-floor"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "84e26818004ad2b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "d441a6dfb4603cb0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f4a6def815a95183",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fa3a9fac982f1718",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "a4856fef351e0d3b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 505.5
+  },
+  "right": {
+    "id": "4f856399a6b5cd8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d01baba8395f67d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e97f2dbce72b196",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "inbox/2026-02-19-wooden-floor.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2026-02-19-wooden-floor"
+            }
+          },
+          {
+            "id": "20c6da9b6444e4f3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "inbox/2026-02-19-wooden-floor.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2026-02-19-wooden-floor"
+            }
+          },
+          {
+            "id": "d3ad33dfd03e5b5d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5aeb6aa4da30d692",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "97e59b8980f12bb7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "inbox/2026-02-19-wooden-floor.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2026-02-19-wooden-floor"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "9b088261e91acc9e",
+  "lastOpenFiles": [
+    "inbox/README.md",
+    "permanent/20260219-rss-001-banking-ai-in-multiple-business-functions-at-natwe.md",
+    "permanent/001-zettelkasten-是什么.md",
+    "inbox/2026-02-19-wooden-floor.md",
+    "inbox/2026-02-19-ai-blog-automation-idea.md",
+    "permanent/20260219-rss-001-one-shot-any-web-app-with-gradioaposs-grhtml.md",
+    "permanent/20260219-rss-001-diffusion-models-for-video-generation.md",
+    "permanent/20260219-rss-001-another-giant-leap-the-rubin-cpx-specialized-accel.md",
+    "permanent/20260219-rss-001-the-download-a-blockchain-enigma-and-the-algorithm.md",
+    "permanent/20260219-rss-001-distill-hiatus.md",
+    "permanent/20260219-rss-001-a-koopman-bayesian-framework-for-high-fidelity-per.md",
+    "permanent/002-三种笔记类型.md"
+  ]
+}
