@@ -3,7 +3,7 @@
 id: rss-20260219-bzcrcp
 title: How financial institutions are embedding AI decision-making
 created: 2026-02-19
-tags: ["rss", "ai_research", "auto-import"]
+tags: ["rss", "auto-import", "rl", "title", "source", "published time", "markdown content"]
 source: "AI News"
 source_url: "https://www.artificialintelligence-news.com/news/how-financial-institutions-embedding-ai-decision-making/"
 ---

@@ -3,7 +3,7 @@
 id: rss-20260219-1nla72
 title: Infosys AI implementation framework offers business leaders guidance
 created: 2026-02-19
-tags: ["rss", "ai_research", "auto-import"]
+tags: ["rss", "auto-import", "rl", "infosys", "title", "source", "published time"]
 source: "AI News"
 source_url: "https://www.artificialintelligence-news.com/news/infosys-ai-implementation-framework-offers-business-leaders-guidance/"
 ---

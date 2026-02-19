@@ -3,7 +3,9 @@
 id: rss-20260219-eiu881
 title: Weight Banding
 created: 2026-02-19
-tags: ["rss", "ai_research", "auto-import"]
+tags: ["rss", "auto-import", "image", "neural network", "rl", "weight banding", "weight banding
+
+title"]
 source: "Distill: Machine Learning Research"
 source_url: "https://distill.pub/2020/circuits/weight-banding"
 ---

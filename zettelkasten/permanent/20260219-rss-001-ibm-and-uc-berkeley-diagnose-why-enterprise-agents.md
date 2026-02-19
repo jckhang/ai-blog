@@ -3,7 +3,7 @@
 id: 20260219-rss-001-ibm-and-uc-berkeley-diagnose-why-enterprise-agents
 title: IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST
 created: 2026-02-19
-tags: ["rss", "ai_research", "auto-import"]
+tags: ["rss", "auto-import", "image", "agent", "agents", "rl", "bench"]
 source: "Hugging Face Blog"
 source_url: "https://huggingface.co/blog/ibm-research/itbenchandmast"
 ---
