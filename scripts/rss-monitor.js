@@ -71,14 +71,19 @@ function isDuplicate(link) {
 }
 
 // 生成 Zettelkasten 永久笔记
-function createPermanentNote(item, feed) {
+function createPermanentNote(item, feed, feedIndex) {
   const now = new Date();
-  const dateStr = now.toISOString().split('T')[0];
-  const timestamp = now.getTime();
+  const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
+  const dateCompact = dateStr.replace(/-/g, ''); // YYYYMMDD
   
   const title = item.title.substring(0, 80).replace(/[^\w\s\u4e00-\u9fff-]/g, '').trim();
   const slug = title.toLowerCase().replace(/\s+/g, '-').substring(0, 50);
-  const id = `rss-${dateStr.replace(/-/g, '')}-${Math.random().toString(36).substr(2, 6)}`;
+  
+  // 新命名规范: YYYYMMDD-rss-NNN-slug.md
+  const filename = `${dateCompact}-rss-${feedIndex:03d}-${slug}.md`;
+  
+  // ID 使用相同格式（去掉 .md）
+  const id = filename.replace('.md', '');
 
   const content = `---
 id: ${id}
@@ -109,7 +114,7 @@ ${item.description.substring(0, 1000)}
 *RSS 自动采集 - 请人工审查并补充内容链接*
 `;
 
-  return { id, filename: `${id}-${slug}.md`, content };
+  return { id, filename, content };
 }
 
 // 主监控流程
@@ -149,7 +154,7 @@ async function monitor() {
       
       // 创建笔记（最多 2 条/feed，避免过多）
       for (let i = 0; i < Math.min(highQuality.length, 2); i++) {
-        const note = createPermanentNote(highQuality[i], feed);
+        const note = createPermanentNote(highQuality[i], feed, i + 1);  // feedIndex = 1, 2
         const filepath = path.join(ZK_PERMANENT_DIR, note.filename);
         
         fs.writeFileSync(filepath, note.content, 'utf-8');
