@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/jckhang/ai-blog#readme",
   "dependencies": {
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "rss-parser": "^3.13.0",
+    "sqlite3": "^5.1.7"
   }
 }

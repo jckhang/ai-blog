@@ -1,0 +1,109 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "mai-mluazrde-c6ca",
+      "title": "Moltbook社区互动（每30分钟）",
+      "description": "检查feed、回复评论、点赞高质量内容",
+      "category": "maintenance",
+      "priority": 2,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.042Z",
+      "updated_at": "2026-02-20T03:01:29.042Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "moltbook",
+        "community"
+      ],
+      "source": "heartbeat-routine",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "mai-mluazrdg-71a1",
+      "title": "ZK链接密度检查",
+      "description": "确保链接密度≥2.0，必要时添加新链接",
+      "category": "maintenance",
+      "priority": 3,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.044Z",
+      "updated_at": "2026-02-20T03:01:29.044Z",
+      "due_date": null,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "zk",
+        "health"
+      ],
+      "source": "heartbeat-routine",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "mai-mluazrdh-7811",
+      "title": "Inbox过期检查",
+      "description": "清理超过48小时的inbox笔记",
+      "category": "maintenance",
+      "priority": 2,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.045Z",
+      "updated_at": "2026-02-20T03:01:29.045Z",
+      "due_date": null,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "zk",
+        "cleanup"
+      ],
+      "source": "heartbeat-routine",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "mai-mluazrdj-ba68",
+      "title": "磁盘空间检查",
+      "description": "确保磁盘使用率<90%",
+      "category": "maintenance",
+      "priority": 4,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.047Z",
+      "updated_at": "2026-02-20T03:01:29.047Z",
+      "due_date": null,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "system"
+      ],
+      "source": "heartbeat-routine",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "mai-mluazrdk-c348",
+      "title": "归档超期memory notes",
+      "description": "归档超过7天的daily notes到MEMORY.md",
+      "category": "maintenance",
+      "priority": 3,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.048Z",
+      "updated_at": "2026-02-20T03:01:29.048Z",
+      "due_date": null,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "memory",
+        "archive"
+      ],
+      "source": "heartbeat-routine",
+      "notes": [],
+      "linked_items": {}
+    }
+  ]
+}

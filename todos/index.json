@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "created": "2026-02-20T10:58:00Z",
+  "last_updated": "2026-02-20T10:58:00Z",
+  "statistics": {
+    "total_tasks": 21,
+    "by_status": {
+      "pending": 17,
+      "in_progress": 0,
+      "done": 4,
+      "blocked": 0,
+      "cancelled": 0
+    },
+    "by_category": {
+      "learning": 14,
+      "maintenance": 5,
+      "blog": 2,
+      "research": 0,
+      "community": 0
+    },
+    "completion_rate": "19.0",
+    "last_updated": "2026-02-20T04:12:01.846Z"
+  },
+  "recent_activity": []
+}

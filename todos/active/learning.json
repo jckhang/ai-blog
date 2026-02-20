@@ -1,0 +1,351 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "lea-mluazrdm-ddd7",
+      "title": "知识整理: inbox→permanent转换（目标5篇）",
+      "description": "优先处理Lilian Weng的10篇高质量笔记",
+      "category": "learning",
+      "priority": 1,
+      "status": "done",
+      "created_at": "2026-02-20T03:01:29.050Z",
+      "updated_at": "2026-02-20T03:08:48.654Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": 2,
+      "actual_hours": 1.5,
+      "dependencies": [],
+      "tags": [
+        "zk",
+        "inbox"
+      ],
+      "source": "active-learning-plan",
+      "notes": [],
+      "linked_items": {},
+      "started_at": "2026-02-20T03:03:46.568Z",
+      "completed_at": "2026-02-20T03:08:48.653Z"
+    },
+    {
+      "id": "lea-mluazrdn-2acd",
+      "title": "小时研究: LLM Agent架构深度整合",
+      "description": "基于已有笔记，扩展出系统架构分析（10:00-10:30）",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.051Z",
+      "updated_at": "2026-02-20T03:01:29.051Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": 1.5,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "agent",
+        "architecture"
+      ],
+      "source": "active-learning-plan",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "lea-mluazrdp-7fda",
+      "title": "小时研究: Transformer家族技术综述",
+      "description": "深度阅读Lilian Weng的Transformer V2文章（11:00-11:30）",
+      "category": "learning",
+      "priority": 2,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.053Z",
+      "updated_at": "2026-02-20T03:01:29.053Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": 1.5,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "transformer",
+        "architecture"
+      ],
+      "source": "active-learning-plan",
+      "notes": [],
+      "linked_items": {}
+    },
+    {
+      "id": "lea-mluazrds-04fd",
+      "title": "RSS: A2H: Agent-to-Human Protocol for AI Agent...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15831\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.057Z",
+      "updated_at": "2026-02-20T03:01:29.057Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          1
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazrdu-16a5",
+      "title": "RSS: What Persona Are We Missing? Identifying Unknown Relevant Pe...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15832\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.058Z",
+      "updated_at": "2026-02-20T03:01:29.058Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          2
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazrdv-9f38",
+      "title": "RSS: Towards a More Realistic VR Experience: Merging Haptic Glove...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15833\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.059Z",
+      "updated_at": "2026-02-20T03:01:29.059Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          3
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazrdw-6cac",
+      "title": "RSS: A Koopman-Bayesian Framework for High-Fidelity, Perceptually...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15834\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.060Z",
+      "updated_at": "2026-02-20T03:01:29.060Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          4
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazrdy-05f8",
+      "title": "RSS: A Methodology for Identifying Evaluation Items for Practical...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15835\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.062Z",
+      "updated_at": "2026-02-20T03:01:29.062Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          5
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazrdz-4900",
+      "title": "RSS: EdgeNav-QE: QLoRA Quantization and Dynamic Early Exit for LA...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15836\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "done",
+      "created_at": "2026-02-20T03:01:29.063Z",
+      "updated_at": "2026-02-20T04:10:47.304Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": 1.2,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          6
+        ],
+        "rss_source_id": "arxiv_cs"
+      },
+      "completed_at": "2026-02-20T04:10:47.303Z"
+    },
+    {
+      "id": "lea-mluazre0-f829",
+      "title": "RSS: From Conflicts to Collisions: A Two-Stage Collision Scenario...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15837\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.064Z",
+      "updated_at": "2026-02-20T03:01:29.064Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          7
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazre1-0f3e",
+      "title": "RSS: TurboADMM: A Structure-Exploiting Parallel Solver for Multi-...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15838\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.065Z",
+      "updated_at": "2026-02-20T03:01:29.065Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          8
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazre2-d031",
+      "title": "RSS: EmoTrack: An application to Facilitate User Reflection on Th...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15839\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.066Z",
+      "updated_at": "2026-02-20T03:01:29.066Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          9
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mluazre3-09a4",
+      "title": "RSS: A Decade of Human-Robot Interaction through Immersive Lenses...",
+      "description": "Source: arXiv.org > Computer Science\nURL: https://arxiv.org/abs/2602.15840\n\nQuality: N/A",
+      "category": "learning",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2026-02-20T03:01:29.067Z",
+      "updated_at": "2026-02-20T03:01:29.067Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": null,
+      "actual_hours": null,
+      "dependencies": [],
+      "tags": [
+        "rss",
+        "ai_research"
+      ],
+      "source": "rss-db",
+      "notes": [],
+      "linked_items": {
+        "rss_item_ids": [
+          10
+        ],
+        "rss_source_id": "arxiv_cs"
+      }
+    },
+    {
+      "id": "lea-mlub96mg-1a2c",
+      "title": "深度分析: STEP3-VL-10B技术架构",
+      "description": "",
+      "category": "learning",
+      "priority": 1,
+      "status": "done",
+      "created_at": "2026-02-20T03:08:48.712Z",
+      "updated_at": "2026-02-20T03:41:54.697Z",
+      "due_date": "2026-02-20",
+      "estimated_hours": 2,
+      "actual_hours": 1.5,
+      "dependencies": [],
+      "tags": [],
+      "source": "manual",
+      "notes": [],
+      "linked_items": {},
+      "started_at": "2026-02-20T03:41:54.633Z",
+      "completed_at": "2026-02-20T03:41:54.695Z"
+    }
+  ]
+}
