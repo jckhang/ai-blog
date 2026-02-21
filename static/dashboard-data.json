@@ -1,115 +1,95 @@
 {
-  "generated": "2026-02-21T02:32:47.204Z",
+  "generated": "2026-02-21T06:30:57.939Z",
   "overview": {
     "total_rss_feeds": 10,
     "total_processed_urls": 74,
-    "total_permanent_notes": 67,
-    "inbox_pending_count": 69,
-    "link_density": 1.81,
-    "orphan_rate_percent": 51.9
+    "total_permanent_notes": 78,
+    "inbox_pending_count": 58,
+    "link_density": "2.71",
+    "orphan_rate_percent": "65.4"
   },
   "rss_feeds": [
     {
       "id": "arxiv_cs",
       "title": "arXiv.org > Computer Science",
       "category": "ai_research",
-      "priority": 1,
-      "url": "https://rss.arxiv.org/rss/cs",
-      "notes": "计算机科学最新论文，高质量研究"
+      "priority": 1
     },
     {
       "id": "karpathy_blog",
       "title": "Andrej Karpathy Blog",
       "category": "ai_research",
-      "priority": 1,
-      "url": "https://karpathy.ai/rss.xml",
-      "notes": "Karpathy 个人博客，必须有"
-    },
-    {
-      "id": "openai_blog",
-      "title": "OpenAI Blog",
-      "category": "ai_research",
-      "priority": 2,
-      "url": "https://openai.com/blog/rss.xml",
-      "notes": "OpenAI 官方研究博客（需要web_fetch全文补全）"
-    },
-    {
-      "id": "huggingface_blog",
-      "title": "Hugging Face Blog",
-      "category": "ai_research",
-      "priority": 2,
-      "url": "https://huggingface.co/blog/feed.xml",
-      "notes": "HF 团队和社区文章（需要web_fetch全文补全）"
-    },
-    {
-      "id": "ai_news",
-      "title": "AI News",
-      "category": "ai_research",
-      "priority": 3,
-      "url": "https://www.artificialintelligence-news.com/feed/",
-      "notes": "每日AI新闻聚合"
+      "priority": 1
     },
     {
       "id": "mit_tech_review",
       "title": "MIT Technology Review",
       "category": "tech_deep",
-      "priority": 1,
-      "url": "https://www.technologyreview.com/feed/",
-      "notes": "深度科技分析，非煽动性"
-    },
-    {
-      "id": "beyond_intelligence",
-      "title": "Beyond Intelligence",
-      "category": "tech_deep",
-      "priority": 2,
-      "url": "https://beyondintelligence.net/feed",
-      "notes": "AI安全与治理"
+      "priority": 1
     },
     {
       "id": "gwern_blog",
       "title": "Gwern.net",
       "category": "tech_deep",
-      "priority": 1,
-      "url": "https://gwern.net/rss.xml",
-      "notes": "深度长文，涵盖AI、统计、心理学"
+      "priority": 1
     },
     {
       "id": "semianalogy",
       "title": "SemiAnalysis",
       "category": "engineering",
-      "priority": 1,
-      "url": "https://semianalysis.com/feed/",
-      "notes": "半导体、AI基础设施深度分析（内容较商业，质量评分待优化）"
+      "priority": 1
     },
     {
       "id": "lilian_weng",
       "title": "Lilian Weng's Blog",
       "category": "engineering",
-      "priority": 1,
-      "url": "https://lilianweng.github.io/index.xml",
-      "notes": "OpenAI 研究员，强化学习、安全"
+      "priority": 1
+    },
+    {
+      "id": "openai_blog",
+      "title": "OpenAI Blog",
+      "category": "ai_research",
+      "priority": 2
+    },
+    {
+      "id": "huggingface_blog",
+      "title": "Hugging Face Blog",
+      "category": "ai_research",
+      "priority": 2
+    },
+    {
+      "id": "beyond_intelligence",
+      "title": "Beyond Intelligence",
+      "category": "tech_deep",
+      "priority": 2
+    },
+    {
+      "id": "ai_news",
+      "title": "AI News",
+      "category": "ai_research",
+      "priority": 3
     }
   ],
   "recent_inbox": [
-    "20260220-rss-ai_news-1771631337736-exploring-ai-in-the-apac-retail-sector.md",
-    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-ensure-the-long-term.md",
-    "20260220-rss-gwern_blog-1771590517352-august-2020-gwern-net-newsletter.md",
-    "20260220-rss-gwern_blog-1771590517273-september-2020-news.md",
-    "20260220-rss-gwern_blog-1771590517195-october-2020-news.md",
-    "20260220-rss-gwern_blog-1771590517113-november-newsletter.md",
-    "20260220-rss-gwern_blog-1771590517033-december-newsletter.md",
-    "20260220-rss-gwern_blog-1771590516946-jan-2021-gwern-net-newsletter.md",
-    "20260220-rss-gwern_blog-1771590516862-february-2021-gwern-net-newsletter.md",
-    "20260220-rss-gwern_blog-1771590516764-march-2021-gwern-net-newsletter.md"
+    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-ensure-the-long-term",
+    "20260220-rss-huggingface_blog-1771590508404-h-company-s-new-holo2-model-takes-the-lead-in-ui-l",
+    "20260220-rss-huggingface_blog-1771590507003-transformers-js-v4-preview-now-available-on-npm",
+    "20260220-rss-huggingface_blog-1771590507539-introducing-sygra-studio",
+    "20260220-rss-huggingface_blog-1771590508046-community-evals-because-we-re-done-trusting-black",
+    "20260220-rss-huggingface_blog-1771590505513-one-shot-any-web-app-with-gradio-s-gr-html",
+    "20260220-rss-huggingface_blog-1771590506166-custom-kernels-for-all-from-codex-and-claude",
+    "20260220-rss-huggingface_blog-1771590506533-openenv-in-practice-evaluating-tool-using-agents-i",
+    "20260220-rss-huggingface_blog-1771590504818--ai",
+    "20260220-rss-huggingface_blog-1771590505158-ibm-and-uc-berkeley-diagnose-why-enterprise-agents"
   ],
   "recent_permanent_notes": [
-    "20260219-rss-ai_news-003-financial-institutions-embedding-ai-decision.md",
-    "20260219-rss-ai_news-002-dbs-ai-agents-make-payments.md",
-    "20260219-rss-ai_news-001-enterprise-treasury-management-ai-upgrade.md",
-    "20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co.md",
-    "20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines.md",
-    "20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag.md",
-    "20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropi.md"
+    "20260219-rss-arxiv_cs-1771531680262-what-persona-are-we-missing-identifying-unknown-re",
+    "20260219-rss-arxiv_cs-1771531680262-towards-a-more-realistic-vr-experience-merging-hap",
+    "20260219-rss-arxiv_cs-1771531680262-a-koopman-bayesian-framework-for-high-fidelity-per",
+    "20260219-rss-arxiv_cs-1771531680261-a2h-agent-to-human-protocol-for-ai-agent",
+    "20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co",
+    "20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines",
+    "20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag"
   ],
   "processed_urls_count": 74,
   "health_targets": {
