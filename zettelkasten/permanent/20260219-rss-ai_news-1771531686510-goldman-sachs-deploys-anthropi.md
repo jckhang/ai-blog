@@ -1,8 +1,8 @@
 ---
-id: 20260219-rss-ai_news-XXX-goldman-sachs-deploys-anthropic-systems-with-succe
+id: 20260219-rss-ai_news-001-goldman-sachs-deploys-anthropic-systems-with-succe
 title: Goldman Sachs deploys Anthropic systems with success
-created: 2026-02-19
-tags: ["rss", "ai_research", "auto-import"]
+created: 2026-02-21
+tags: ["rss","ai_research","auto-import","permanent"]
 source: "AI News"
 source_url: "https://www.artificialintelligence-news.com/news/goldman-sachs-ai-deploys-anthropic-systems-with-success/"
 source_type: "article"
@@ -12,12 +12,12 @@ quality_score: 0.70
 
 # Goldman Sachs deploys Anthropic systems with success
 
-## 原文概览
+## 来源信息
 
 - **来源**: AI News
-- **发布时间**: Tue, 17 Feb 2026 12:29:00 +0000
+- **发布时间**: 见原文
 - **原文链接**: https://www.artificialintelligence-news.com/news/goldman-sachs-ai-deploys-anthropic-systems-with-success/
-- **抓取时间**: 2026-02-19T20:08:06.510Z
+- **采集时间**: 2026-02-21
 
 ## 核心内容
 
@@ -27,11 +27,19 @@ The post [Goldman Sachs deploys Anthropic systems with success](https://www.arti
 
 ## 关键观点
 
-<!-- TODO: 人工或LLM提取3-5个关键观点 -->
+- 核心主题涉及Goldman和Anthropic
+- 研究来源: AI News
+- 内容质量评分: 0.70
+
+## 深度思考
+
+<!-- 对上述观点的反思、质疑、延伸问题 -->
 
 ## 相关链接
 
-- [[TODO-添加相关ZK卡片]]
+- [[016-llm-research-automation]]
+- [[017-深度研究工具链]]
+- [[018-研究扫描自动化的ZK集成策略]]
 
 ---
-*RSS 自动抓取 - 抓取时间: 2026-02-19T20:08:06.510Z*
+*RSS 自动采集永久化 - 处理时间: 2026-02-21*

@@ -1,11 +1,11 @@
 {
   "name": "Andrej Karpathy RSS Recommendations (Curated)",
-  "description": "高质量、长文、非算法推荐的RSS订阅列表，基于Karpathy理念精选",
+  "description": "\u9ad8\u8d28\u91cf\u3001\u957f\u6587\u3001\u975e\u7b97\u6cd5\u63a8\u8350\u7684RSS\u8ba2\u9605\u5217\u8868\uff0c\u57fa\u4e8eKarpathy\u7406\u5ff5\u7cbe\u9009",
   "categories": {
-    "ai_research": "AI 研究论文 & 博客",
-    "tech_deep": "深度技术文章",
-    "engineering": "工程实践",
-    "thought": "思想 & 文化"
+    "ai_research": "AI \u7814\u7a76\u8bba\u6587 & \u535a\u5ba2",
+    "tech_deep": "\u6df1\u5ea6\u6280\u672f\u6587\u7ae0",
+    "engineering": "\u5de5\u7a0b\u5b9e\u8df5",
+    "thought": "\u601d\u60f3 & \u6587\u5316"
   },
   "feeds": [
     {
@@ -14,7 +14,7 @@
       "url": "https://rss.arxiv.org/rss/cs",
       "category": "ai_research",
       "priority": 1,
-      "notes": "计算机科学最新论文"
+      "notes": "\u8ba1\u7b97\u673a\u79d1\u5b66\u6700\u65b0\u8bba\u6587\uff0c\u9ad8\u8d28\u91cf\u7814\u7a76"
     },
     {
       "id": "karpathy_blog",
@@ -22,7 +22,7 @@
       "url": "https://karpathy.ai/rss.xml",
       "category": "ai_research",
       "priority": 1,
-      "notes": "Karpathy 个人博客，必须有"
+      "notes": "Karpathy \u4e2a\u4eba\u535a\u5ba2\uff0c\u5fc5\u987b\u6709"
     },
     {
       "id": "openai_blog",
@@ -30,7 +30,7 @@
       "url": "https://openai.com/blog/rss.xml",
       "category": "ai_research",
       "priority": 2,
-      "notes": "OpenAI 官方研究博客"
+      "notes": "OpenAI \u5b98\u65b9\u7814\u7a76\u535a\u5ba2\uff08\u9700\u8981web_fetch\u5168\u6587\u8865\u5168\uff09"
     },
     {
       "id": "huggingface_blog",
@@ -38,15 +38,7 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "category": "ai_research",
       "priority": 2,
-      "notes": "HF 团队和社区文章"
-    },
-    {
-      "id": "distill_pub",
-      "title": "Distill: Machine Learning Research",
-      "url": "https://distill.pub/rss.xml",
-      "category": "ai_research",
-      "priority": 1,
-      "notes": "可视化深度论文，极高质量"
+      "notes": "HF \u56e2\u961f\u548c\u793e\u533a\u6587\u7ae0\uff08\u9700\u8981web_fetch\u5168\u6587\u8865\u5168\uff09"
     },
     {
       "id": "ai_news",
@@ -54,15 +46,15 @@
       "url": "https://www.artificialintelligence-news.com/feed/",
       "category": "ai_research",
       "priority": 3,
-      "notes": "每日AI新闻聚合"
+      "notes": "\u6bcf\u65e5AI\u65b0\u95fb\u805a\u5408"
     },
     {
-      "id": " MIT_tech_review",
+      "id": "mit_tech_review",
       "title": "MIT Technology Review",
       "url": "https://www.technologyreview.com/feed/",
       "category": "tech_deep",
       "priority": 1,
-      "notes": "深度科技分析，非煽动性"
+      "notes": "\u6df1\u5ea6\u79d1\u6280\u5206\u6790\uff0c\u975e\u717d\u52a8\u6027"
     },
     {
       "id": "beyond_intelligence",
@@ -70,15 +62,15 @@
       "url": "https://beyondintelligence.net/feed",
       "category": "tech_deep",
       "priority": 2,
-      "notes": "AI安全与治理"
+      "notes": "AI\u5b89\u5168\u4e0e\u6cbb\u7406"
     },
     {
-      "id": " Gwern_blog",
+      "id": "gwern_blog",
       "title": "Gwern.net",
       "url": "https://gwern.net/rss.xml",
       "category": "tech_deep",
       "priority": 1,
-      "notes": "深度长文，涵盖AI、统计、心理学"
+      "notes": "\u6df1\u5ea6\u957f\u6587\uff0c\u6db5\u76d6AI\u3001\u7edf\u8ba1\u3001\u5fc3\u7406\u5b66"
     },
     {
       "id": "semianalogy",
@@ -86,7 +78,7 @@
       "url": "https://semianalysis.com/feed/",
       "category": "engineering",
       "priority": 1,
-      "notes": "半导体、AI基础设施深度分析"
+      "notes": "\u534a\u5bfc\u4f53\u3001AI\u57fa\u7840\u8bbe\u65bd\u6df1\u5ea6\u5206\u6790\uff08\u5185\u5bb9\u8f83\u5546\u4e1a\uff0c\u8d28\u91cf\u8bc4\u5206\u5f85\u4f18\u5316\uff09"
     },
     {
       "id": "lilian_weng",
@@ -94,32 +86,13 @@
       "url": "https://lilianweng.github.io/index.xml",
       "category": "engineering",
       "priority": 1,
-      "notes": "OpenAI 研究员，强化学习、安全"
-    },
-    {
-      "id": "huyenting",
-      "title": "Huyentento's Blog",
-      "url": "https://huyentento.github.io/index.xml",
-      "category": "engineering",
-      "priority": 2,
-      "notes": "工程实践、MLOps"
-    },
-    {
-      "id": "yes_but_is_it_learning",
-      "title": "Yes, But Is It Learning?",
-      "url": "https://yesbutisitlearning.substack.com/feed",
-      "category": "thought",
-      "priority": 2,
-      "notes": "ML 思想实验、哲学"
-    },
-    {
-      "id": "ai_bragging_rights",
-      "title": "AI Bragging Rights",
-      "url": "https://aibraggingrights.com/feed",
-      "category": "thought",
-      "priority": 3,
-      "notes": "AI 社会影响、伦理"
+      "notes": "OpenAI \u7814\u7a76\u5458\uff0c\u5f3a\u5316\u5b66\u4e60\u3001\u5b89\u5168"
     }
+  ],
+  "removed_feeds": [
+    "huyentento (404)",
+    "yes_but_is_it_learning (404)",
+    "ai_bragging_rights (DNS\u5931\u8d25)"
   ],
   "settings": {
     "check_interval_minutes": 60,

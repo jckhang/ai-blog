@@ -1,10 +1,24 @@
 {
   "system": "Zettelkasten (卡片笔记写作法)",
   "source": "How to Take Smart Notes by Sönke Ahrens",
-  "generated": "2026-02-19",
+  "generated": "2026-02-20",
   "author": "小E",
   "description": "基于《卡片笔记写作法》构建的笔记卡片系统，用于知识管理和写作",
-  "cards_count": 15,
+  "stats": {
+    "total_notes": 54,
+    "permanent_notes": 54,
+    "literature_notes": 0,
+    "inbox_notes": 0,
+    "link_density": 1.81,
+    "orphan_rate_percent": 51.9,
+    "top_connected": [
+      {"id": "001-zettelkasten-是什么", "incoming": 13},
+      {"id": "003-原子化原则", "incoming": 7},
+      {"id": "009-写作就是思考", "incoming": 6},
+      {"id": "011-从笔记到文章", "incoming": 5},
+      {"id": "012-工具选择原则", "incoming": 5}
+    ]
+  },
   "structure": {
     "inbox": "临时闪念笔记 - 快速捕捉，24-48小时内处理",
     "literature": "文献笔记 - 阅读后提炼，用自己的话重述，标注出处",
@@ -23,5 +37,6 @@
     "写笔记时问：这张笔记能否独立存在？",
     "每张新永久笔记必须链接到至少一张旧笔记",
     "每周浏览最近笔记，查看链接网络涌现"
-  ]
+  ],
+  "last_health_check": "2026-02-20T20:30:00Z"
 }

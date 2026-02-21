@@ -1,0 +1,129 @@
+📊 Generating Dashboard Data...
+
+{
+  "generated": "2026-02-21T02:14:20.047Z",
+  "overview": {
+    "total_rss_feeds": 10,
+    "total_processed_urls": 74,
+    "total_permanent_notes": 67,
+    "inbox_pending_count": 69,
+    "link_density": 1.81,
+    "orphan_rate_percent": 51.9
+  },
+  "rss_feeds": [
+    {
+      "id": "arxiv_cs",
+      "title": "arXiv.org > Computer Science",
+      "category": "ai_research",
+      "priority": 1,
+      "url": "https://rss.arxiv.org/rss/cs",
+      "notes": "计算机科学最新论文，高质量研究"
+    },
+    {
+      "id": "karpathy_blog",
+      "title": "Andrej Karpathy Blog",
+      "category": "ai_research",
+      "priority": 1,
+      "url": "https://karpathy.ai/rss.xml",
+      "notes": "Karpathy 个人博客，必须有"
+    },
+    {
+      "id": "openai_blog",
+      "title": "OpenAI Blog",
+      "category": "ai_research",
+      "priority": 2,
+      "url": "https://openai.com/blog/rss.xml",
+      "notes": "OpenAI 官方研究博客（需要web_fetch全文补全）"
+    },
+    {
+      "id": "huggingface_blog",
+      "title": "Hugging Face Blog",
+      "category": "ai_research",
+      "priority": 2,
+      "url": "https://huggingface.co/blog/feed.xml",
+      "notes": "HF 团队和社区文章（需要web_fetch全文补全）"
+    },
+    {
+      "id": "ai_news",
+      "title": "AI News",
+      "category": "ai_research",
+      "priority": 3,
+      "url": "https://www.artificialintelligence-news.com/feed/",
+      "notes": "每日AI新闻聚合"
+    },
+    {
+      "id": "mit_tech_review",
+      "title": "MIT Technology Review",
+      "category": "tech_deep",
+      "priority": 1,
+      "url": "https://www.technologyreview.com/feed/",
+      "notes": "深度科技分析，非煽动性"
+    },
+    {
+      "id": "beyond_intelligence",
+      "title": "Beyond Intelligence",
+      "category": "tech_deep",
+      "priority": 2,
+      "url": "https://beyondintelligence.net/feed",
+      "notes": "AI安全与治理"
+    },
+    {
+      "id": "gwern_blog",
+      "title": "Gwern.net",
+      "category": "tech_deep",
+      "priority": 1,
+      "url": "https://gwern.net/rss.xml",
+      "notes": "深度长文，涵盖AI、统计、心理学"
+    },
+    {
+      "id": "semianalogy",
+      "title": "SemiAnalysis",
+      "category": "engineering",
+      "priority": 1,
+      "url": "https://semianalysis.com/feed/",
+      "notes": "半导体、AI基础设施深度分析（内容较商业，质量评分待优化）"
+    },
+    {
+      "id": "lilian_weng",
+      "title": "Lilian Weng's Blog",
+      "category": "engineering",
+      "priority": 1,
+      "url": "https://lilianweng.github.io/index.xml",
+      "notes": "OpenAI 研究员，强化学习、安全"
+    }
+  ],
+  "recent_inbox": [
+    "20260220-rss-ai_news-1771631337736-exploring-ai-in-the-apac-retail-sector.md",
+    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-ensure-the-long-term.md",
+    "20260220-rss-gwern_blog-1771590517352-august-2020-gwern-net-newsletter.md",
+    "20260220-rss-gwern_blog-1771590517273-september-2020-news.md",
+    "20260220-rss-gwern_blog-1771590517195-october-2020-news.md",
+    "20260220-rss-gwern_blog-1771590517113-november-newsletter.md",
+    "20260220-rss-gwern_blog-1771590517033-december-newsletter.md",
+    "20260220-rss-gwern_blog-1771590516946-jan-2021-gwern-net-newsletter.md",
+    "20260220-rss-gwern_blog-1771590516862-february-2021-gwern-net-newsletter.md",
+    "20260220-rss-gwern_blog-1771590516764-march-2021-gwern-net-newsletter.md"
+  ],
+  "recent_permanent_notes": [
+    "20260219-rss-ai_news-003-financial-institutions-embedding-ai-decision.md",
+    "20260219-rss-ai_news-002-dbs-ai-agents-make-payments.md",
+    "20260219-rss-ai_news-001-enterprise-treasury-management-ai-upgrade.md",
+    "20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co.md",
+    "20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines.md",
+    "20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag.md",
+    "20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropi.md"
+  ],
+  "processed_urls_count": 74,
+  "health_targets": {
+    "link_density_target": 2,
+    "orphan_rate_target": 3,
+    "inbox_max": 30
+  }
+}
+
+✅ Dashboard data generated
+📊 Total feeds: 10
+📝 Total notes: 67
+📥 Inbox pending: 69
+🔗 Link density: 1.81
+🚨 Orphan rate: 51.9%

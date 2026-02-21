@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS & Zettelkasten Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #333; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card h2 { font-size: 18px; color: #555; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #0070f3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; font-size: 14px; }
+        th { background: #f9f9f9; font-weight: 600; color: #333; }
+        .status-ok { color: #16a34a; font-weight: bold; }
+        .status-warn { color: #d97706; font-weight: bold; }
+        .status-err { color: #dc2626; font-weight: bold; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+        .stat-box { background: white; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stat-box .value { font-size: 32px; font-weight: bold; color: #0070f3; }
+        .stat-box .label { font-size: 14px; color: #666; margin-top: 5px; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .badge-green { background: #dcfce7; color: #16a34a; }
+        .badge-yellow { background: #fef3c7; color: #d97706; }
+        .badge-red { background: #fee2e2; color: #dc2626; }
+        .badge-blue { background: #dbeafe; color: #2563eb; }
+        .progress-bar { width: 100%; height: 20px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: #0070f3; transition: width 0.3s; }
+        .todo-item { padding: 8px 0; border-bottom: 1px dashed #eee; display: flex; align-items: center; gap: 8px; }
+        .todo-item:last-child { border: none; }
+        .todo-item input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
+        .file-list { max-height: 200px; overflow-y: auto; font-size: 13px; color: #666; }
+        .file-list li { padding: 4px 8px; font-family: monospace; }
+        .last-update { color: #999; font-size: 13px; text-align: center; margin-top: 20px; }
+        .refresh-btn { background: #0070f3; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; margin-bottom: 20px; }
+        .refresh-btn:hover { background: #0056b3; }
+        @media (max-width: 768px) { .stat-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 RSS & Zettelkasten Dashboard</h1>
+        <button class="refresh-btn" onclick="location.reload()">🔄 刷新数据</button>
+
+        <!-- 全局统计 -->
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="value" id="total-feeds">0</div>
+                <div class="label">RSS订阅源</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="total-processed">0</div>
+                <div class="label">已处理文章</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="total-notes">0</div>
+                <div class="label">ZK总笔记</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="inbox-count">0</div>
+                <div class="label">Inbox待处理</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="link-density">0.00</div>
+                <div class="label">链接密度</div>
+            </div>
+            <div class="stat-box">
+                <div class="value" id="orphan-rate">0%</div>
+                <div class="label">孤岛率</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- RSS源状态 -->
+            <div class="card">
+                <h2>📡 RSS订阅源状态</h2>
+                <table id="rss-table">
+                    <thead>
+                        <tr>
+                            <th>源名称</th>
+                            <th>优先级</th>
+                            <th>状态</th>
+                            <th>处理数</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Inbox待办 -->
+            <div class="card">
+                <h2>📥 Inbox待处理任务</h2>
+                <p>剩余 <strong id="inbox-remaining">0</strong> 篇待处理</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="inbox-progress" style="width: 0%"></div>
+                </div>
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">待处理批次（每10篇1批）：</p>
+                <ul class="file-list" id="inbox-list"></ul>
+            </div>
+
+            <!-- 最近处理记录 -->
+            <div class="card">
+                <h2>✅ 最近处理的永久笔记</h2>
+                <ul class="file-list" id="recent-notes"></ul>
+            </div>
+
+            <!-- ZK健康度详情 -->
+            <div class="card">
+                <h2>🏥 Zettelkasten健康度</h2>
+                <table id="zk-health">
+                    <tr>
+                        <td>永久笔记总数</td>
+                        <td id="perm-count">0</td>
+                    </tr>
+                    <tr>
+                        <td>链接密度 (目标 ≥2.0)</td>
+                        <td id="density-value">0.00</td>
+                    </tr>
+                    <tr>
+                        <td>孤岛笔记数</td>
+                        <td id="orphan-count">0</td>
+                    </tr>
+                    <tr>
+                        <td>本周新增</td>
+                        <td id="weekly-adds">0</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 系统信息 -->
+            <div class="card">
+                <h2>⚙️ 系统信息</h2>
+                <table id="system-info">
+                    <tr>
+                        <td>Gateway状态</td>
+                        <td id="gateway-status">-</td>
+                    </tr>
+                    <tr>
+                        <td>Blog部署</td>
+                        <td id="blog-status">-</td>
+                    </tr>
+                    <tr>
+                        <td>Moltbook同步</td>
+                        <td id="moltbook-status">-</td>
+                    </tr>
+                    <tr>
+                        <td>最后更新时间</td>
+                        <td id="last-update">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <p class="last-update">最后更新: <span id="update-time">-</span></p>
+    </div>
+
+    <script>
+        // Load dashboard data
+        fetch('dashboard-data.json')
+            .then(res => res.json())
+            .then(data => {
+                // Update overview stats
+                document.getElementById('total-feeds').textContent = data.overview.total_rss_feeds;
+                document.getElementById('total-processed').textContent = data.overview.total_processed_urls;
+                document.getElementById('total-notes').textContent = data.overview.total_permanent_notes;
+                document.getElementById('inbox-count').textContent = data.overview.inbox_pending_count;
+                document.getElementById('link-density').textContent = data.overview.link_density.toFixed(2);
+                document.getElementById('orphan-rate').textContent = data.overview.orphan_rate_percent + '%';
+                
+                // Color code link density
+                const densityEl = document.getElementById('link-density');
+                if (data.overview.link_density >= 2.0) {
+                    densityEl.className = 'status-ok';
+                } else {
+                    densityEl.className = 'status-warn';
+                }
+                
+                // RSS feeds table
+                const rssTbody = document.querySelector('#rss-table tbody');
+                data.rss_feeds.forEach(feed => {
+                    const row = document.createElement('tr');
+                    const status = feed.priority === 1 ? '🟢 High' : feed.priority === 2 ? '🟡 Medium' : '🔴 Low';
+                    row.innerHTML = `
+                        <td>${feed.title}</td>
+                        <td><span class="badge badge-${feed.priority === 1 ? 'green' : feed.priority === 2 ? 'yellow' : 'red'}">P${feed.priority}</span></td>
+                        <td>${status}</td>
+                        <td>-</td>
+                    `;
+                    rssTbody.appendChild(row);
+                });
+                
+                // Inbox list
+                const inboxList = document.getElementById('inbox-list');
+                data.recent_inbox.forEach(file => {
+                    const li = document.createElement('li');
+                    li.textContent = file;
+                    inboxList.appendChild(li);
+                });
+                
+                // Recent permanent notes
+                const notesList = document.getElementById('recent-notes');
+                data.recent_permanent_notes.forEach(note => {
+                    const li = document.createElement('li');
+                    li.textContent = note;
+                    notesList.appendChild(li);
+                });
+                
+                // ZK health
+                document.getElementById('perm-count').textContent = data.overview.total_permanent_notes;
+                document.getElementById('density-value').textContent = data.overview.link_density.toFixed(2);
+                document.getElementById('orphan-count').textContent = data.overview.orphan_rate_percent;
+                document.getElementById('weekly-adds').textContent = '-'; // Would need date filtering
+                
+                // Progress bar for inbox
+                const maxInbox = 30; // target
+                const percentage = Math.min((data.overview.inbox_pending_count / maxInbox) * 100, 100);
+                document.getElementById('inbox-progress').style.width = percentage + '%';
+                
+                // System info (static for now)
+                document.getElementById('gateway-status').innerHTML = '<span class="status-ok">Running</span>';
+                document.getElementById('blog-status').innerHTML = '<span class="status-ok">Deployed</span>';
+                document.getElementById('moltbook-status').innerHTML = data.overview.inbox_pending_count > 0 ? '<span class="status-warn">Pending</span>' : '<span class="status-ok">Synced</span>';
+                
+            })
+            .catch(err => {
+                console.error('Failed to load dashboard data:', err);
+                document.querySelector('.container').innerHTML = '<div class="card"><h2>❌ Error loading data</h2><p>Make sure dashboard-data.json exists and is valid JSON.</p></div>';
+            });
+        
+        document.getElementById('update-time').textContent = new Date().toLocaleString('zh-CN');
+    </script>
+</body>
+</html>

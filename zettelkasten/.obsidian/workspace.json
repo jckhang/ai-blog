@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_meta/README.md",
+                "file": "permanent/20260219-rss-001-distill-hiatus.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "20260219-rss-001-distill-hiatus"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_meta/README.md",
+                "file": "permanent/20260219-rss-001-distill-hiatus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for 20260219-rss-001-distill-hiatus"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_meta/README.md",
+                "file": "permanent/20260219-rss-001-distill-hiatus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from 20260219-rss-001-distill-hiatus"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_meta/README.md",
+                "file": "permanent/20260219-rss-001-distill-hiatus.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of 20260219-rss-001-distill-hiatus"
             }
           }
         ]
@@ -185,32 +185,33 @@
   },
   "active": "9b088261e91acc9e",
   "lastOpenFiles": [
-    "permanent/20260220-011-edgeNav-qe-mobile-ai-optimization.md",
-    "permanent/20260220-010-llm-agent-systems-lilian-weng-analysis.md",
-    "permanent/20260220-009-step3-vl-10b-architecture-deep-dive.md",
-    "permanent/20260220-008-llm-research-trends-2026.md",
-    "permanent/016-llm-research-automation.md",
-    "permanent/017-深度研究工具链.md",
-    "permanent/018-研究扫描自动化的ZK集成策略.md",
-    "permanent/013-信任系统.md",
-    "permanent/012-工具选择原则.md",
-    "permanent/20260219-rss-misc-a-gentle-introduction-to-graph-neural-networks.md",
-    "permanent/20260219-rss-misc-extrinsic-hallucinations-in-llms.md",
-    "permanent/20260220-002-llm-powered-autonomous-agents.md",
-    "permanent/20260219-rss-misc-ibm-and-uc-berkeley-diagnose-why-enterprise-agents.md",
-    "permanent/20260219-rss-misc-a2h-agent-to-human-protocol-for-ai-agent.md",
+    "permanent/20260219-rss-ai_news-003-financial-institutions-embedding-ai-decision.md",
+    "permanent/20260219-rss-ai_news-002-dbs-ai-agents-make-payments.md",
     "permanent/20260219-rss-001-diffusion-models-for-video-generation.md",
-    "permanent/20260219-rss-001-distill-hiatus.md",
-    "permanent/20260220-004-a2h-agent-to-human-protocol.md",
-    "permanent/20260220-006-llm-agent-architecture-deep-dive.md",
-    "inbox/20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropic-systems-with-succe.md",
+    "permanent/20260220-017-adversarial-attacks-on-llms-security-implications.md",
+    "inbox/20260219-rss-arxiv_cs-1771531696758-a2h-agent-to-human-protocol-for-ai-agent.md",
+    "permanent/20260219-rss-ai_news-001-enterprise-treasury-management-ai-upgrade.md",
+    "inbox/20260219-rss-arxiv_cs-1771531696759-a-koopman-bayesian-framework-for-high-fidelity-per.md",
+    "inbox/20260219-rss-ai_news-1771531701975-how-financial-institutions-are-embedding-ai-decisi.md",
     "inbox/20260219-rss-ai_news-1771531686507-how-ai-upgrades-enterprise-treasury-management.md",
-    "permanent/20260220-007-transformer-family-version-2-deep-dive.md",
-    "permanent/auto-20260219-001-260216709-knowledgeembedded-latent-pr.md",
-    "permanent/auto-20260219-004--.md",
-    "permanent/auto-20260219-003--ehr.md",
-    "permanent/auto-20260219-002--.md",
-    "permanent/auto-20260219-005---personas-.md",
+    "permanent/20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co.md",
+    "permanent/20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines.md",
+    "permanent/20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag.md",
+    "permanent/20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropi.md",
+    "permanent/20260219-rss-ai_news-1771531686510-alibaba-qwen-is-challenging-pr.md",
+    "permanent/20260219-rss-ai_news-1771531686509-ss-c-blue-prism-on-the-journey.md",
+    "permanent/20260219-rss-ai_news-1771531686509-infosys-ai-implementation-fram.md",
+    "permanent/20260219-rss-ai_news-1771531686508-how-financial-institutions-are.md",
+    "permanent/20260219-rss-ai_news-1771531686508-dbs-pilots-system-that-lets-ai.md",
+    "permanent/20260219-rss-ai_news-1771531686507-how-ai-upgrades-enterprise-tre.md",
+    "inbox/20260219-rss-ai_news-1771531701974-dbs-pilots-system-that-lets-ai-agents-make-payment.md",
+    "inbox/20260219-rss-ai_news-1771531701973-how-ai-upgrades-enterprise-treasury-management.md",
+    "inbox/20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-business-functions-at-natwe.md",
+    "inbox/20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-agentic-ai-with-orches.md",
+    "inbox/20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropic-systems-with-succe.md",
+    "inbox/20260219-rss-ai_news-1771531686510-alibaba-qwen-is-challenging-proprietary-ai-model-e.md",
+    "inbox/20260219-rss-ai_news-1771531686509-ss-c-blue-prism-on-the-journey-from-rpa-to-agentic.md",
+    "inbox/processed",
     "inbox",
     "deduplicate-inbox.js"
   ]
