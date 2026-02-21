@@ -1,12 +1,12 @@
 {
-  "generated": "2026-02-21T06:30:57.939Z",
+  "generated": "2026-02-21T09:35:42.746Z",
   "overview": {
     "total_rss_feeds": 10,
     "total_processed_urls": 74,
-    "total_permanent_notes": 78,
-    "inbox_pending_count": 58,
-    "link_density": "2.71",
-    "orphan_rate_percent": "65.4"
+    "total_permanent_notes": 136,
+    "inbox_pending_count": 0,
+    "link_density": "2.84",
+    "orphan_rate_percent": "80.1"
   },
   "rss_feeds": [
     {
@@ -70,26 +70,15 @@
       "priority": 3
     }
   ],
-  "recent_inbox": [
-    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-ensure-the-long-term",
-    "20260220-rss-huggingface_blog-1771590508404-h-company-s-new-holo2-model-takes-the-lead-in-ui-l",
-    "20260220-rss-huggingface_blog-1771590507003-transformers-js-v4-preview-now-available-on-npm",
-    "20260220-rss-huggingface_blog-1771590507539-introducing-sygra-studio",
-    "20260220-rss-huggingface_blog-1771590508046-community-evals-because-we-re-done-trusting-black",
-    "20260220-rss-huggingface_blog-1771590505513-one-shot-any-web-app-with-gradio-s-gr-html",
-    "20260220-rss-huggingface_blog-1771590506166-custom-kernels-for-all-from-codex-and-claude",
-    "20260220-rss-huggingface_blog-1771590506533-openenv-in-practice-evaluating-tool-using-agents-i",
-    "20260220-rss-huggingface_blog-1771590504818--ai",
-    "20260220-rss-huggingface_blog-1771590505158-ibm-and-uc-berkeley-diagnose-why-enterprise-agents"
-  ],
+  "recent_inbox": [],
   "recent_permanent_notes": [
-    "20260219-rss-arxiv_cs-1771531680262-what-persona-are-we-missing-identifying-unknown-re",
-    "20260219-rss-arxiv_cs-1771531680262-towards-a-more-realistic-vr-experience-merging-hap",
-    "20260219-rss-arxiv_cs-1771531680262-a-koopman-bayesian-framework-for-high-fidelity-per",
-    "20260219-rss-arxiv_cs-1771531680261-a2h-agent-to-human-protocol-for-ai-agent",
-    "20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co",
-    "20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines",
-    "20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag"
+    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-",
+    "20260220-rss-huggingface_blog-1771590508404-h-company-s-new-holo2-model-ta",
+    "20260220-rss-huggingface_blog-1771590508046-community-evals-because-we-re-",
+    "20260220-rss-huggingface_blog-1771590507539-introducing-sygra-studio",
+    "20260220-rss-huggingface_blog-1771590507003-transformers-js-v4-preview-now",
+    "20260220-rss-huggingface_blog-1771590506533-openenv-in-practice-evaluating",
+    "20260220-rss-huggingface_blog-1771590506166-custom-kernels-for-all-from-co"
   ],
   "processed_urls_count": 74,
   "health_targets": {
