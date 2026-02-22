@@ -40,8 +40,5 @@ Abstract: Age assessment is crucial in forensic and judicial decision-making, pa
 
 ## 相关链接
 
-- [[003-原子化原则]]
-- [[004-链接原则]]
+- [[016-llm-research-automation]]
 
-
-*RSS 自动采集永久化 - 处理时间: 2026-02-20*

@@ -43,9 +43,6 @@ The post [AI: Executives&#8217; optimism about the future](https://www.artificia
 
 ## 相关链接
 
-- [[001-zettelkasten-是什么]]
-- [[009-写作就是思考]]
-- [[011-从笔记到文章]]
+- [[016-llm-research-automation]]
+- [[017-深度研究工具链]]
 
-
-*RSS 自动采集永久化 - 处理时间: 2026-02-20*

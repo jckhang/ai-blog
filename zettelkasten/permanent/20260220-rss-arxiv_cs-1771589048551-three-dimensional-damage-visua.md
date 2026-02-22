@@ -40,7 +40,6 @@ Abstract: Recent advancements in civil infrastructure inspections underscore the
 
 ## 相关链接
 
-- [[003-原子化原则]]
+- [[016-llm-research-automation]]
+- [[017-深度研究工具链]]
 
-
-*RSS 自动采集永久化 - 处理时间: 2026-02-20*

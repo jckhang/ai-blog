@@ -39,7 +39,6 @@ Abstract: Text-to-SQL systems powered by Large Language Models have excelled on 
 
 ## 相关链接
 
-- [[20260219-rss-001-llm-powered-autonomous-agents]]
+- [[016-llm-research-automation]]
+- [[017-深度研究工具链]]
 
-
-*RSS 自动采集永久化 - 处理时间: 2026-02-20*

@@ -39,8 +39,5 @@ Abstract: In pattern mining, sequential rules provide a formal framework to capt
 
 ## 相关链接
 
-- [[20260219-rss-001-reward-hacking-in-reinforcement-learning]]
-- [[001-zettelkasten-是什么]]
+- [[017-深度研究工具链]]
 
-
-*RSS 自动采集永久化 - 处理时间: 2026-02-20*

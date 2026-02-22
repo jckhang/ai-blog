@@ -15,3 +15,7 @@ Zettelkasten 是德语「卡片盒」的意思，是一种知识管理系统，�
 - [[002-三种笔记类型]]
 - [[003-原子化原则]]
 - [[004-链接原则]]
+- [[H Company's new Holo2 model takes the lead in UI Localization]]
+- [[Community Evals: Because we're done trusting black-box leaderboards over the community]]
+- [[GGML and llama.cpp join HF to ensure the long-term progress of Local AI]]
+- [[「データ不足」の壁を越える：合成ペルソナが日本のAI開発を加速]]
