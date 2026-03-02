@@ -1,0 +1,25 @@
+---
+id: auto-20260302-002
+title: 推理速度 Pixel 8  iPhone 15 Pro可达 40 token
+created: 2026-03-02
+tags: ["research", "auto-import", "dd:2026-03-02"]
+aliases: ["推理速度 Pixel 8  iPhone 15 Pro可达 40 token"]
+---
+
+# 推理速度 Pixel 8  iPhone 15 Pro可达 40 token
+
+**推理速度**: Pixel 8 / iPhone 15 Pro可达 **40 tokens/s**（量化感知训练后）
+
+## 来源
+
+- 来源: 研究扫描 
+- 日期: 2026-03-02
+- 自动导入: Yes
+
+## 相关链接
+
+- [[001-zettelkasten-是什么]]
+- [[016-llm-research-automation流水线]]
+
+---
+*自动生成 - 请人工审核并补充链接*

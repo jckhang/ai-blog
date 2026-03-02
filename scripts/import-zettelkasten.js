@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const PROJECT_DIR = '/Users/yuxiang/workspaces/my_openclaw/.openclaw/workspace/projects/ai-blog';
+const PROJECT_DIR = '/Users/jyxc-dz-0100219/workspace/my_openclaw/workspace/projects/ai-blog';
 const ZK_PERMANENT_DIR = path.join(PROJECT_DIR, 'zettelkasten/permanent');
 const SCAN_DIR = path.join(PROJECT_DIR, 'content/posts');
 
