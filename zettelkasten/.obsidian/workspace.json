@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "56c24cf31eedbdb0",
+        "id": "18f7faf1ec606a04",
         "type": "tabs",
         "children": [
           {
-            "id": "9b088261e91acc9e",
+            "id": "588a83779286fac5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "permanent/20260219-rss-001-distill-hiatus.md",
+                "file": "permanent/20260222-scan-003-grok-42-beta四代理协作架构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20260219-rss-001-distill-hiatus"
+              "title": "20260222-scan-003-grok-42-beta四代理协作架构"
             }
           }
         ]
@@ -183,36 +183,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "9b088261e91acc9e",
+  "active": "588a83779286fac5",
   "lastOpenFiles": [
-    "permanent/20260219-rss-ai_news-003-financial-institutions-embedding-ai-decision.md",
-    "permanent/20260219-rss-ai_news-002-dbs-ai-agents-make-payments.md",
-    "permanent/20260219-rss-001-diffusion-models-for-video-generation.md",
-    "permanent/20260220-017-adversarial-attacks-on-llms-security-implications.md",
-    "inbox/20260219-rss-arxiv_cs-1771531696758-a2h-agent-to-human-protocol-for-ai-agent.md",
-    "permanent/20260219-rss-ai_news-001-enterprise-treasury-management-ai-upgrade.md",
-    "inbox/20260219-rss-arxiv_cs-1771531696759-a-koopman-bayesian-framework-for-high-fidelity-per.md",
-    "inbox/20260219-rss-ai_news-1771531701975-how-financial-institutions-are-embedding-ai-decisi.md",
-    "inbox/20260219-rss-ai_news-1771531686507-how-ai-upgrades-enterprise-treasury-management.md",
-    "permanent/20260219-rss-ai_news-1771531686511-debenhams-pilots-agentic-ai-co.md",
-    "permanent/20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-busines.md",
-    "permanent/20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-ag.md",
-    "permanent/20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropi.md",
-    "permanent/20260219-rss-ai_news-1771531686510-alibaba-qwen-is-challenging-pr.md",
-    "permanent/20260219-rss-ai_news-1771531686509-ss-c-blue-prism-on-the-journey.md",
-    "permanent/20260219-rss-ai_news-1771531686509-infosys-ai-implementation-fram.md",
-    "permanent/20260219-rss-ai_news-1771531686508-how-financial-institutions-are.md",
-    "permanent/20260219-rss-ai_news-1771531686508-dbs-pilots-system-that-lets-ai.md",
-    "permanent/20260219-rss-ai_news-1771531686507-how-ai-upgrades-enterprise-tre.md",
-    "inbox/20260219-rss-ai_news-1771531701974-dbs-pilots-system-that-lets-ai-agents-make-payment.md",
-    "inbox/20260219-rss-ai_news-1771531701973-how-ai-upgrades-enterprise-treasury-management.md",
-    "inbox/20260219-rss-ai_news-1771531686511-banking-ai-in-multiple-business-functions-at-natwe.md",
-    "inbox/20260219-rss-ai_news-1771531686510-insurance-giant-aig-deploys-agentic-ai-with-orches.md",
-    "inbox/20260219-rss-ai_news-1771531686510-goldman-sachs-deploys-anthropic-systems-with-succe.md",
-    "inbox/20260219-rss-ai_news-1771531686510-alibaba-qwen-is-challenging-proprietary-ai-model-e.md",
-    "inbox/20260219-rss-ai_news-1771531686509-ss-c-blue-prism-on-the-journey-from-rpa-to-agentic.md",
-    "inbox/processed",
-    "inbox",
-    "deduplicate-inbox.js"
+    "inbox/20260223-rss-arxiv_cs-1771823040932-epistemic-traps-rational-misalignment-driven-by-mo.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040931-mind-the-boundary-stabilizing-gemini-enterprise-a2.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040931-lost-before-translation-social-information-transmi.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040931-digital-self-efficacy-as-a-foundation-for-a-genera.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040931-assessing-llm-response-quality-in-the-context-of-t.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040930-ai-hallucination-from-students-perspective-a-thema.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040930-the-dark-side-of-dark-mode-user-behaviour-rebound.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040929-evaluating-text-based-conversational-agents-for-me.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040929-visual-interface-workflow-management-system-streng.md",
+    "inbox/20260223-rss-arxiv_cs-1771823040928-when-how-to-write-for-personalized-demand-aware-qu.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456398-epistemic-traps-rational-misalignment-driven-by-mo.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456397-ontology-guided-neuro-symbolic-inference-grounding.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456396-the-token-games-evaluating-language-model-reasonin.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456395-el-agente-gr-fico-structured-execution-graphs-for.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456392-alignment-in-time-peak-aware-orchestration-for-lon.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456392-workflowperturb-calibrated-stress-tests-for-evalua.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456390-cross-embodiment-offline-reinforcement-learning-fo.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456389-neurosymbolic-language-reasoning-as-satisfiability.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456388-somtime-the-world-ain-t-fair-violating-fairness-us.md",
+    "inbox/20260223-rss-papers_cool_arxiv_ai-1771819456386-diffusing-to-coordinate-efficient-online-multi-age.md",
+    "permanent/20260222-scan-002-paperqa3能读图表的研究代理.md",
+    "inbox/test-article.md",
+    "inbox/20260223-rss-techcrunch-1771805053256-apple-might-take-a-new-approach-to-announcing-its.md",
+    "inbox/20260222-rss-techcrunch-1771801450595-can-the-creator-economy-stay-afloat-in-a-flood-of.md",
+    "inbox/20260222-rss-techcrunch-1771783457002-microsoft-s-new-gaming-ceo-vows-not-to-flood-the-e.md",
+    "inbox/20260222-rss-techcrunch-1771783456942-wikipedia-blacklists-archive-today-after-alleged-d.md",
+    "literature/tentative",
+    "debug-json/failed-1771770456476.txt",
+    "debug-json/failed-1771770442144.txt",
+    "debug-json/failed-1771770432881.txt",
+    "debug-json/failed-1771770425429.txt",
+    "debug-errors/error-20260222-axrp-episode-48---guive-assadi-on-ai-property-righ.json",
+    "debug-errors",
+    "debug-json/failed-1771770414781.txt",
+    "debug-json/failed-1771770219661.txt",
+    "debug-json/failed-1771770202675.txt"
   ]
 }

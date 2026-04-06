@@ -1,0 +1,42 @@
+{
+  "distill": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "huggingface": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "mit-tech-review": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "arxiv-cs-ai": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "arxiv-cs-cl": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "arxiv-cs-lg": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "karpathy": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "lesswrong": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "ai-alignment": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  },
+  "lesswrong-curated": {
+    "lastCheck": 1771765871150,
+    "lastRun": 1771765871150
+  }
+}

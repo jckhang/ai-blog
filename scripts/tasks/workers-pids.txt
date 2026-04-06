@@ -1,0 +1,9 @@
+Started worker 1 (PID 7324)
+Started worker 2 (PID 7325)
+Started worker 3 (PID 7326)
+Started worker 1 (PID 7526)
+Started worker 2 (PID 7527)
+Started worker 3 (PID 7528)
+Worker 1 PID 7697
+Worker 2 PID 7698
+Worker 3 PID 7699

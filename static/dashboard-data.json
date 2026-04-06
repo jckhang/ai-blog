@@ -1,86 +1,133 @@
 {
-  "generated": "2026-02-21T09:35:42.746Z",
+  "generated": "2026-02-23T06:37:09.155Z",
   "overview": {
-    "total_rss_feeds": 10,
-    "total_processed_urls": 74,
-    "total_permanent_notes": 136,
-    "inbox_pending_count": 0,
-    "link_density": "2.84",
-    "orphan_rate_percent": "80.1"
+    "total_rss_feeds": 12,
+    "total_processed_urls": 125,
+    "total_permanent_notes": 24,
+    "inbox_pending_count": 67,
+    "link_density": 1.81,
+    "orphan_rate_percent": 51.9
   },
   "rss_feeds": [
     {
       "id": "arxiv_cs",
       "title": "arXiv.org > Computer Science",
       "category": "ai_research",
-      "priority": 1
+      "priority": 1,
+      "url": "https://rss.arxiv.org/rss/cs",
+      "notes": "计算机科学最新论文，高质量研究"
     },
     {
       "id": "karpathy_blog",
       "title": "Andrej Karpathy Blog",
       "category": "ai_research",
-      "priority": 1
-    },
-    {
-      "id": "mit_tech_review",
-      "title": "MIT Technology Review",
-      "category": "tech_deep",
-      "priority": 1
-    },
-    {
-      "id": "gwern_blog",
-      "title": "Gwern.net",
-      "category": "tech_deep",
-      "priority": 1
-    },
-    {
-      "id": "semianalogy",
-      "title": "SemiAnalysis",
-      "category": "engineering",
-      "priority": 1
-    },
-    {
-      "id": "lilian_weng",
-      "title": "Lilian Weng's Blog",
-      "category": "engineering",
-      "priority": 1
+      "priority": 1,
+      "url": "https://karpathy.bearblog.dev/feed/",
+      "notes": "Karpathy 个人博客，必须有"
     },
     {
       "id": "openai_blog",
       "title": "OpenAI Blog",
       "category": "ai_research",
-      "priority": 2
+      "priority": 2,
+      "url": "https://openai.com/blog/rss.xml",
+      "notes": "OpenAI 官方研究博客（需要web_fetch全文补全）"
     },
     {
       "id": "huggingface_blog",
       "title": "Hugging Face Blog",
       "category": "ai_research",
-      "priority": 2
-    },
-    {
-      "id": "beyond_intelligence",
-      "title": "Beyond Intelligence",
-      "category": "tech_deep",
-      "priority": 2
+      "priority": 2,
+      "url": "https://huggingface.co/blog/feed.xml",
+      "notes": "HF 团队和社区文章（需要web_fetch全文补全）"
     },
     {
       "id": "ai_news",
       "title": "AI News",
       "category": "ai_research",
-      "priority": 3
+      "priority": 3,
+      "url": "https://www.artificialintelligence-news.com/feed/",
+      "notes": "每日AI新闻聚合"
+    },
+    {
+      "id": "mit_tech_review",
+      "title": "MIT Technology Review",
+      "category": "tech_deep",
+      "priority": 1,
+      "url": "https://www.technologyreview.com/feed/",
+      "notes": "深度科技分析，非煽动性"
+    },
+    {
+      "id": "beyond_intelligence",
+      "title": "Beyond Intelligence",
+      "category": "tech_deep",
+      "priority": 2,
+      "url": "https://beyondintelligence.net/feed",
+      "notes": "AI安全与治理"
+    },
+    {
+      "id": "gwern_blog",
+      "title": "Gwern.net",
+      "category": "tech_deep",
+      "priority": 1,
+      "url": "https://gwern.net/rss.xml",
+      "notes": "深度长文，涵盖AI、统计、心理学"
+    },
+    {
+      "id": "semianalogy",
+      "title": "SemiAnalysis",
+      "category": "engineering",
+      "priority": 1,
+      "url": "https://semianalysis.com/feed/",
+      "notes": "半导体、AI基础设施深度分析（内容较商业，质量评分待优化）"
+    },
+    {
+      "id": "lilian_weng",
+      "title": "Lilian Weng's Blog",
+      "category": "engineering",
+      "priority": 1,
+      "url": "https://lilianweng.github.io/index.xml",
+      "notes": "OpenAI 研究员，强化学习、安全"
+    },
+    {
+      "id": "papers_cool_arxiv_ai",
+      "title": "Papers.cool - arXiv AI",
+      "category": "ai_research",
+      "priority": 1,
+      "url": "https://papers.cool/arxiv/cs.AI/feed",
+      "notes": "arXiv AI 论文精选，高质量学术研究"
+    },
+    {
+      "id": "techcrunch",
+      "title": "TechCrunch",
+      "category": "tech_deep",
+      "priority": 2,
+      "url": "https://techcrunch.com/feed/",
+      "notes": "科技新闻与创业资讯，商业视角"
     }
   ],
-  "recent_inbox": [],
-  "recent_permanent_notes": [
-    "20260220-rss-huggingface_blog-1771604985340-ggml-and-llama-cpp-join-hf-to-",
-    "20260220-rss-huggingface_blog-1771590508404-h-company-s-new-holo2-model-ta",
-    "20260220-rss-huggingface_blog-1771590508046-community-evals-because-we-re-",
-    "20260220-rss-huggingface_blog-1771590507539-introducing-sygra-studio",
-    "20260220-rss-huggingface_blog-1771590507003-transformers-js-v4-preview-now",
-    "20260220-rss-huggingface_blog-1771590506533-openenv-in-practice-evaluating",
-    "20260220-rss-huggingface_blog-1771590506166-custom-kernels-for-all-from-co"
+  "recent_inbox": [
+    "20260223-rss-arxiv_cs-1771823040931-lost-before-translation-social-information-transmi.md",
+    "20260223-rss-arxiv_cs-1771823040931-mind-the-boundary-stabilizing-gemini-enterprise-a2.md",
+    "20260223-rss-arxiv_cs-1771823040932-epistemic-traps-rational-misalignment-driven-by-mo.md",
+    "20260223-rss-arxiv_cs-1771823040930-ai-hallucination-from-students-perspective-a-thema.md",
+    "20260223-rss-arxiv_cs-1771823040930-the-dark-side-of-dark-mode-user-behaviour-rebound.md",
+    "20260223-rss-arxiv_cs-1771823040931-assessing-llm-response-quality-in-the-context-of-t.md",
+    "20260223-rss-arxiv_cs-1771823040931-digital-self-efficacy-as-a-foundation-for-a-genera.md",
+    "20260223-rss-arxiv_cs-1771823040929-evaluating-text-based-conversational-agents-for-me.md",
+    "20260223-rss-arxiv_cs-1771823040929-visual-interface-workflow-management-system-streng.md",
+    "20260223-rss-arxiv_cs-1771823040928-when-how-to-write-for-personalized-demand-aware-qu.md"
   ],
-  "processed_urls_count": 74,
+  "recent_permanent_notes": [
+    "20260222-scan-004-group-evolving-agents协同进化框架.md",
+    "20260222-scan-005-量化与优化技术栈.md",
+    "20260222-scan-006-ferret-ui苹果移动界面理解.md",
+    "20260222-scan-007-代理安全治理框架uc-berkeley.md",
+    "20260222-scan-008-模型性能快照2026年2月.md",
+    "20260222-scan-009-对ai-agent项目的启示.md",
+    "20260222-scan-001--.md"
+  ],
+  "processed_urls_count": 125,
   "health_targets": {
     "link_density_target": 2,
     "orphan_rate_target": 3,

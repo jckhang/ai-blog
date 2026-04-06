@@ -31,6 +31,7 @@ const RSS_FEEDS = {
   'karpathy': 'https://karpathy.github.io/feed.xml',
   'gwern': 'https://www.gwern.net/feed.xml',
   'lesswrong': 'https://lesswrong.com/feed.xml?sequence=feed',
+  'lesswrong-curated': 'https://www.lesswrong.com/feed.xml?view=curated-rss',
   'ai-alignment': 'https://www.alignmentforum.org/feed.xml'
 };
 
@@ -84,16 +85,30 @@ async function fetchFeed(url) {
 
 async function fetchFullContent(url) {
   try {
-    const jinaUrl = `https://r.jina.ai/${url.startsWith('http') ? url : 'https://' + url}`;
-    const items = await fetchFeed(jinaUrl);
-    if (items && items.length > 0) {
-      // Jina returns the full text as a single item
-      return items[0];
+    // Jina AI Reader: https://r.jina.ai/http://URL 或 https://r.jina.ai/http://URL
+    const target = url.startsWith('http') ? url : `https://${url}`;
+    const jinaUrl = `https://r.jina.ai/${target}`;
+    console.log(`      Fetching via Jina: ${jinaUrl}`);
+    
+    const response = await fetch(jinaUrl, { 
+      timeout: 20000,
+      headers: { 'User-Agent': 'OpenClaw-RSS-Monitor/1.0' }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
     }
+    
+    const text = await response.text();
+    // Jina returns markdown content, or an error page
+    if (text.includes('Failed to fetch') || text.length < 100) {
+      throw new Error('Jina returned error or too short');
+    }
+    return text;
   } catch (e) {
     console.log(`   ⚠️  Jina AI failed: ${e.message}`);
+    return '';
   }
-  return '';
 }
 
 function createInboxNote(feedName, item, fullText) {
@@ -169,8 +184,17 @@ async function run() {
       console.log(`    → Processing ${newItems.length} new items (max ${MAX_ITEMS_PER_FEED}, age < ${MAX_AGE_DAYS}d)`);
 
       for (const item of newItems) {
-        // 抓取全文（Jina AI）
-        const fullText = await fetchFullContent(item.link);
+        // 优先使用 RSS 自带的全文内容（content:encoded 或 content）
+        let fullText = item['content:encoded'] || item.content || item.description || '';
+        
+        // 如果内容太短，尝试 Jina AI fetch
+        if (fullText.length < 500 && item.link) {
+          console.log(`      Jina fallback for: ${item.title.substring(0, 50)}...`);
+          const jinaText = await fetchFullContent(item.link);
+          if (jinaText && jinaText.length > 500) {
+            fullText = jinaText;
+          }
+        }
 
         // 创建 inbox 笔记（包含全文）
         const note = createInboxNote(feedName, item, fullText);
